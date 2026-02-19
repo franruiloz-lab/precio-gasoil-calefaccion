@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SchemaBreadcrumb from '../components/SchemaBreadcrumb.astro';
+import PriceChart from '../components/PriceChart.astro';
+import FAQ from '../components/FAQ.astro';
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Evolución del Precio' }
+];
+
+const faqItems = [
+  {
+    pregunta: '¿Cuándo es más barato el gasoil de calefacción?',
+    respuesta: 'Históricamente, los precios más bajos se registran entre junio y agosto, coincidiendo con la menor demanda estival. Los precios empiezan a subir en septiembre-octubre con la llegada del frío.'
+  },
+  {
+    pregunta: '¿Va a bajar el precio del gasoil de calefacción?',
+    respuesta: 'La tendencia depende del precio internacional del petróleo, el tipo de cambio euro/dólar y decisiones de la OPEP. Consulta el gráfico para ver la tendencia reciente y tomar decisiones informadas sobre cuándo comprar.'
+  },
+  {
+    pregunta: '¿Por qué sube el gasoil de calefacción en invierno?',
+    respuesta: 'El aumento de la demanda durante los meses fríos (octubre-febrero) presiona los precios al alza. Además, las refinerías europeas priorizan la producción de gasóleo en invierno, lo que puede generar tensiones en la oferta.'
+  }
+];
+---
+
+<BaseLayout
+  title="Evolución del Precio del Gasoil de Calefacción [2024-2026]"
+  description="Gráfico con la evolución del precio del gasoil de calefacción en España en los últimos 24 meses. Histórico de precios por comunidad autónoma. Datos del Ministerio."
+  type="article"
+>
+  <SchemaBreadcrumb slot="schema" items={breadcrumbItems} />
+
+  <Header />
+
+  <main class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <h1>Evolución del Precio del Gasoil de Calefacción en España</h1>
+    <p>
+      Consulta cómo ha evolucionado el precio del gasoil de calefacción (gasóleo C) en España
+      durante los últimos 24 meses. El gráfico muestra la media nacional mensual con datos
+      del Ministerio para la Transición Ecológica.
+    </p>
+
+    <section id="grafico">
+      <h2>Gráfico de Evolución de Precios</h2>
+      <PriceChart />
+    </section>
+
+    <section id="analisis" style="margin-top:2rem;">
+      <h2>Análisis de la Tendencia del Precio</h2>
+      <div class="content">
+        <p>
+          El precio del gasoil de calefacción sigue un <strong>patrón estacional claro</strong>:
+          alcanza sus valores máximos durante los meses de invierno (noviembre-enero) debido al
+          aumento de la demanda, y sus mínimos durante el verano (julio-agosto) cuando la
+          demanda cae drásticamente.
+        </p>
+        <p>
+          Esta estacionalidad se superpone a las fluctuaciones del <strong>precio internacional
+          del petróleo Brent</strong>, que depende de factores geopolíticos, decisiones de
+          producción de la OPEP y la situación económica global.
+        </p>
+
+        <h3>Factores que influyen en el precio</h3>
+        <ul>
+          <li><strong>Precio del barril de petróleo Brent</strong>: es el factor principal que determina el coste de la materia prima.</li>
+          <li><strong>Tipo de cambio EUR/USD</strong>: el petróleo se cotiza en dólares, por lo que un euro débil encarece las importaciones.</li>
+          <li><strong>Demanda estacional</strong>: mayor demanda en invierno = precios más altos.</li>
+          <li><strong>Fiscalidad</strong>: cambios en impuestos especiales o el IVA afectan directamente al precio final.</li>
+          <li><strong>Costes logísticos</strong>: el precio del transporte y los márgenes de distribución también influyen.</li>
+        </ul>
+
+        <h3>¿Cuándo conviene comprar gasoil de calefacción?</h3>
+        <p>
+          Basándonos en los datos históricos, el <strong>mejor momento para comprar</strong> gasoil
+          de calefacción es entre <strong>junio y agosto</strong>. Anticipar la compra antes de la
+          temporada de calefacción puede suponer un ahorro significativo de entre 3 y 8 céntimos
+          por litro respecto a los precios de pleno invierno.
+        </p>
+      </div>
+    </section>
+
+    <section id="preguntas-frecuentes" style="margin-top:2rem;">
+      <h2>Preguntas Frecuentes sobre la Evolución del Precio</h2>
+      <FAQ items={faqItems} />
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,328 @@
+[
+  {
+    "id": "andalucia",
+    "slug": "andalucia",
+    "nombre": "Andaluc\u00eda",
+    "provincias": ["Almer\u00eda", "C\u00e1diz", "C\u00f3rdoba", "Granada", "Huelva", "Ja\u00e9n", "M\u00e1laga", "Sevilla"],
+    "capital": "Sevilla",
+    "descripcion": "Andaluc\u00eda, con su clima templado, tiene una demanda de gasoil de calefacci\u00f3n menor que las comunidades del norte, pero provincias como Granada y Ja\u00e9n registran inviernos fr\u00edos que incrementan el consumo. El precio medio suele estar ligeramente por debajo de la media nacional gracias a la competencia entre distribuidores en la regi\u00f3n.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Andaluc\u00eda hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Andaluc\u00eda es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Andaluc\u00eda?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Andaluc\u00eda cuesta aproximadamente {precio1000} euros."
+      },
+      {
+        "pregunta": "\u00bfEn qu\u00e9 provincias de Andaluc\u00eda se consume m\u00e1s gasoil de calefacci\u00f3n?",
+        "respuesta": "Las provincias del interior como Granada, Ja\u00e9n y C\u00f3rdoba son las que m\u00e1s gasoil de calefacci\u00f3n consumen en Andaluc\u00eda, debido a sus inviernos m\u00e1s fr\u00edos en comparaci\u00f3n con la costa."
+      }
+    ]
+  },
+  {
+    "id": "aragon",
+    "slug": "aragon",
+    "nombre": "Arag\u00f3n",
+    "provincias": ["Huesca", "Teruel", "Zaragoza"],
+    "capital": "Zaragoza",
+    "descripcion": "Arag\u00f3n es una de las comunidades con mayor demanda de gasoil de calefacci\u00f3n, especialmente en Teruel y Huesca, donde los inviernos son muy fr\u00edos. La provincia de Teruel registra algunas de las temperaturas m\u00e1s bajas de Espa\u00f1a, lo que convierte al gas\u00f3leo C en un combustible esencial para miles de hogares.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n hoy en Arag\u00f3n?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Arag\u00f3n es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Arag\u00f3n?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Arag\u00f3n cuesta aproximadamente {precio1000} euros."
+      },
+      {
+        "pregunta": "\u00bfPor qu\u00e9 es m\u00e1s caro el gasoil en Teruel?",
+        "respuesta": "Los costes de distribuci\u00f3n en zonas rurales y de monta\u00f1a como Teruel son m\u00e1s elevados debido a las distancias y la dispersi\u00f3n de la poblaci\u00f3n, lo que puede encarecer el precio final."
+      }
+    ]
+  },
+  {
+    "id": "asturias",
+    "slug": "asturias",
+    "nombre": "Asturias",
+    "provincias": ["Asturias"],
+    "capital": "Oviedo",
+    "descripcion": "Asturias, con su clima oce\u00e1nico y h\u00famedo, tiene una alta demanda de calefacci\u00f3n durante gran parte del a\u00f1o. El gasoil de calefacci\u00f3n es una opci\u00f3n habitual en zonas rurales y n\u00facleos urbanos del Principado, donde la red de gas natural no llega a todas las viviendas.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Asturias hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Asturias es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Asturias?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Asturias cuesta aproximadamente {precio1000} euros."
+      },
+      {
+        "pregunta": "\u00bfEs Asturias una de las comunidades donde m\u00e1s se usa gasoil de calefacci\u00f3n?",
+        "respuesta": "S\u00ed, Asturias tiene una de las mayores tasas de uso de gasoil de calefacci\u00f3n por su clima fr\u00edo y h\u00famedo, especialmente en zonas rurales donde no llega el gas natural."
+      }
+    ]
+  },
+  {
+    "id": "cantabria",
+    "slug": "cantabria",
+    "nombre": "Cantabria",
+    "provincias": ["Cantabria"],
+    "capital": "Santander",
+    "descripcion": "Cantabria, con inviernos suaves en la costa pero fr\u00edos en el interior, tiene un consumo significativo de gasoil de calefacci\u00f3n. Los valles interiores y las zonas de monta\u00f1a dependen especialmente de este combustible para calentar sus hogares durante los meses m\u00e1s fr\u00edos.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Cantabria hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Cantabria es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Cantabria?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Cantabria cuesta aproximadamente {precio1000} euros."
+      }
+    ]
+  },
+  {
+    "id": "castilla-la-mancha",
+    "slug": "castilla-la-mancha",
+    "nombre": "Castilla-La Mancha",
+    "provincias": ["Albacete", "Ciudad Real", "Cuenca", "Guadalajara", "Toledo"],
+    "capital": "Toledo",
+    "descripcion": "Castilla-La Mancha suele tener los precios de gasoil de calefacci\u00f3n m\u00e1s bajos de Espa\u00f1a. Sus inviernos fr\u00edos y secos, especialmente en provincias como Cuenca y Guadalajara, hacen del gas\u00f3leo C un combustible imprescindible. La amplia red de distribuidores en la regi\u00f3n favorece precios competitivos.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Castilla-La Mancha hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Castilla-La Mancha es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Castilla-La Mancha?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Castilla-La Mancha cuesta aproximadamente {precio1000} euros."
+      },
+      {
+        "pregunta": "\u00bfPor qu\u00e9 es m\u00e1s barato el gasoil de calefacci\u00f3n en Castilla-La Mancha?",
+        "respuesta": "Castilla-La Mancha se beneficia de su ubicaci\u00f3n central y buenas comunicaciones log\u00edsticas, lo que reduce los costes de distribuci\u00f3n. Adem\u00e1s, la competencia entre distribuidores mantiene los precios por debajo de la media."
+      }
+    ]
+  },
+  {
+    "id": "castilla-y-leon",
+    "slug": "castilla-y-leon",
+    "nombre": "Castilla y Le\u00f3n",
+    "provincias": ["\u00c1vila", "Burgos", "Le\u00f3n", "Palencia", "Salamanca", "Segovia", "Soria", "Valladolid", "Zamora"],
+    "capital": "Valladolid",
+    "descripcion": "Castilla y Le\u00f3n es la comunidad aut\u00f3noma m\u00e1s extensa de Espa\u00f1a y una de las que m\u00e1s gasoil de calefacci\u00f3n consume. Sus inviernos largos y fr\u00edos, con temperaturas que pueden descender por debajo de los -10\u00b0C en provincias como Soria, Burgos o Le\u00f3n, hacen del gas\u00f3leo C un combustible esencial.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Castilla y Le\u00f3n hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Castilla y Le\u00f3n es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Castilla y Le\u00f3n?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Castilla y Le\u00f3n cuesta aproximadamente {precio1000} euros."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1les son las provincias m\u00e1s fr\u00edas de Castilla y Le\u00f3n?",
+        "respuesta": "Soria, Burgos, Le\u00f3n y \u00c1vila son las provincias con inviernos m\u00e1s severos, con temperaturas frecuentemente bajo cero, lo que dispara el consumo de gasoil de calefacci\u00f3n."
+      }
+    ]
+  },
+  {
+    "id": "cataluna",
+    "slug": "cataluna",
+    "nombre": "Catalu\u00f1a",
+    "provincias": ["Barcelona", "Girona", "Lleida", "Tarragona"],
+    "capital": "Barcelona",
+    "descripcion": "Catalu\u00f1a presenta una gran diversidad clim\u00e1tica: mientras Barcelona tiene inviernos suaves, las comarcas del Pirineo leridano registran temperaturas extremas. El gasoil de calefacci\u00f3n es especialmente utilizado en las zonas rurales del interior y la monta\u00f1a.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Catalu\u00f1a hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Catalu\u00f1a es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Catalu\u00f1a?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Catalu\u00f1a cuesta aproximadamente {precio1000} euros."
+      }
+    ]
+  },
+  {
+    "id": "comunidad-valenciana",
+    "slug": "comunidad-valenciana",
+    "nombre": "Comunidad Valenciana",
+    "provincias": ["Alicante", "Castell\u00f3n", "Valencia"],
+    "capital": "Valencia",
+    "descripcion": "La Comunidad Valenciana tiene un clima mediterr\u00e1neo con inviernos suaves en la costa, pero las comarcas del interior de Castell\u00f3n y Valencia registran temperaturas fr\u00edas. El consumo de gasoil de calefacci\u00f3n es menor que en el norte, pero sigue siendo relevante en zonas rurales.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en la Comunidad Valenciana hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en la Comunidad Valenciana es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en la Comunidad Valenciana?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en la Comunidad Valenciana cuesta aproximadamente {precio1000} euros."
+      }
+    ]
+  },
+  {
+    "id": "extremadura",
+    "slug": "extremadura",
+    "nombre": "Extremadura",
+    "provincias": ["Badajoz", "C\u00e1ceres"],
+    "capital": "M\u00e9rida",
+    "descripcion": "Extremadura tiene inviernos moderados, pero las zonas del norte de C\u00e1ceres y las sierras registran temperaturas fr\u00edas. El gasoil de calefacci\u00f3n es una opci\u00f3n com\u00fan en las zonas rurales donde la red de gas natural es limitada.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Extremadura hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Extremadura es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Extremadura?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Extremadura cuesta aproximadamente {precio1000} euros."
+      }
+    ]
+  },
+  {
+    "id": "galicia",
+    "slug": "galicia",
+    "nombre": "Galicia",
+    "provincias": ["A Coru\u00f1a", "Lugo", "Ourense", "Pontevedra"],
+    "capital": "Santiago de Compostela",
+    "descripcion": "Galicia tiene un clima oce\u00e1nico con inviernos h\u00famedos y fr\u00edos, lo que genera una alta demanda de calefacci\u00f3n. Las provincias interiores de Lugo y Ourense son las que m\u00e1s gasoil de calefacci\u00f3n consumen, con temperaturas que pueden bajar considerablemente en las zonas de monta\u00f1a.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Galicia hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Galicia es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Galicia?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Galicia cuesta aproximadamente {precio1000} euros."
+      },
+      {
+        "pregunta": "\u00bfQu\u00e9 provincias de Galicia consumen m\u00e1s gasoil de calefacci\u00f3n?",
+        "respuesta": "Lugo y Ourense son las provincias con mayor consumo debido a sus inviernos m\u00e1s fr\u00edos y a la menor penetraci\u00f3n de la red de gas natural en las zonas rurales."
+      }
+    ]
+  },
+  {
+    "id": "islas-baleares",
+    "slug": "islas-baleares",
+    "nombre": "Islas Baleares",
+    "provincias": ["Islas Baleares"],
+    "capital": "Palma de Mallorca",
+    "descripcion": "Las Islas Baleares suelen tener los precios de gasoil de calefacci\u00f3n m\u00e1s altos de Espa\u00f1a, debido a los costes log\u00edsticos del transporte mar\u00edtimo. Aunque los inviernos son suaves, muchas viviendas antiguas dependen del gas\u00f3leo para calentarse.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Baleares hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Baleares es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfPor qu\u00e9 es m\u00e1s caro el gasoil en Baleares?",
+        "respuesta": "El transporte mar\u00edtimo de combustibles a las islas encarece significativamente el precio final respecto a la pen\u00ednsula."
+      }
+    ]
+  },
+  {
+    "id": "islas-canarias",
+    "slug": "islas-canarias",
+    "nombre": "Islas Canarias",
+    "provincias": ["Las Palmas", "Santa Cruz de Tenerife"],
+    "capital": "Las Palmas / Santa Cruz de Tenerife",
+    "descripcion": "Canarias tiene una demanda baja de gasoil de calefacci\u00f3n por su clima subtropical, pero algunas zonas de altitud en islas como Tenerife y Gran Canaria s\u00ed utilizan calefacci\u00f3n. Los precios pueden variar por los costes de transporte insular.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Canarias hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Canarias es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      }
+    ]
+  },
+  {
+    "id": "la-rioja",
+    "slug": "la-rioja",
+    "nombre": "La Rioja",
+    "provincias": ["La Rioja"],
+    "capital": "Logro\u00f1o",
+    "descripcion": "La Rioja, peque\u00f1a pero con inviernos fr\u00edos, tiene un consumo considerable de gasoil de calefacci\u00f3n per c\u00e1pita. Suele registrar precios competitivos gracias a su ubicaci\u00f3n entre las principales rutas log\u00edsticas del norte de Espa\u00f1a.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en La Rioja hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en La Rioja es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en La Rioja?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en La Rioja cuesta aproximadamente {precio1000} euros."
+      }
+    ]
+  },
+  {
+    "id": "madrid",
+    "slug": "madrid",
+    "nombre": "Madrid",
+    "provincias": ["Madrid"],
+    "capital": "Madrid",
+    "descripcion": "La Comunidad de Madrid tiene inviernos fr\u00edos y secos, con temperaturas que frecuentemente bajan de 0\u00b0C. Aunque la red de gas natural est\u00e1 muy extendida en la capital, muchas viviendas unifamiliares y urbanizaciones de la sierra utilizan gasoil de calefacci\u00f3n.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Madrid hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Madrid es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Madrid?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Madrid cuesta aproximadamente {precio1000} euros."
+      },
+      {
+        "pregunta": "\u00bfD\u00f3nde se usa m\u00e1s el gasoil de calefacci\u00f3n en Madrid?",
+        "respuesta": "El uso es especialmente alto en la Sierra Norte, Sierra Oeste y urbanizaciones de chalets donde no llega la red de gas natural canalizado."
+      }
+    ]
+  },
+  {
+    "id": "murcia",
+    "slug": "murcia",
+    "nombre": "Murcia",
+    "provincias": ["Murcia"],
+    "capital": "Murcia",
+    "descripcion": "La Regi\u00f3n de Murcia tiene un clima c\u00e1lido con inviernos suaves, por lo que el consumo de gasoil de calefacci\u00f3n es bajo comparado con el norte de Espa\u00f1a. Sin embargo, las zonas del interior y del noroeste pueden registrar fr\u00edos moderados.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Murcia hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Murcia es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      }
+    ]
+  },
+  {
+    "id": "navarra",
+    "slug": "navarra",
+    "nombre": "Navarra",
+    "provincias": ["Navarra"],
+    "capital": "Pamplona",
+    "descripcion": "Navarra tiene inviernos fr\u00edos, especialmente en los valles pirenaicos del norte. El gasoil de calefacci\u00f3n es ampliamente utilizado en zonas rurales y localidades peque\u00f1as donde el gas natural no est\u00e1 disponible.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en Navarra hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en Navarra es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en Navarra?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en Navarra cuesta aproximadamente {precio1000} euros."
+      }
+    ]
+  },
+  {
+    "id": "pais-vasco",
+    "slug": "pais-vasco",
+    "nombre": "Pa\u00eds Vasco",
+    "provincias": ["\u00c1lava", "Bizkaia", "Gipuzkoa"],
+    "capital": "Vitoria-Gasteiz",
+    "descripcion": "El Pa\u00eds Vasco tiene un clima oce\u00e1nico con inviernos h\u00famedos y moderadamente fr\u00edos. La provincia de \u00c1lava, con su clima m\u00e1s continental, registra mayor demanda de gasoil de calefacci\u00f3n. Los precios en esta comunidad suelen estar en torno a la media nacional.",
+    "faq": [
+      {
+        "pregunta": "\u00bfCu\u00e1l es el precio del gasoil de calefacci\u00f3n en el Pa\u00eds Vasco hoy?",
+        "respuesta": "El precio medio del gasoil de calefacci\u00f3n en el Pa\u00eds Vasco es de {precioMedio} \u20ac/litro, seg\u00fan datos del Ministerio para la Transici\u00f3n Ecol\u00f3gica actualizados a {lastUpdated}."
+      },
+      {
+        "pregunta": "\u00bfCu\u00e1nto cuesta llenar un dep\u00f3sito de 1000 litros en el Pa\u00eds Vasco?",
+        "respuesta": "Al precio actual de {precioMedio} \u20ac/litro, llenar un dep\u00f3sito de 1000 litros en el Pa\u00eds Vasco cuesta aproximadamente {precio1000} euros."
+      }
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SchemaBreadcrumb from '../components/SchemaBreadcrumb.astro';
+import PriceCalculator from '../components/PriceCalculator.astro';
+import FAQ from '../components/FAQ.astro';
+import { formatPrice, calculateCost } from '../utils/format';
+import precios from '../data/precios.json';
+
+const precioNacional = precios.nacional.precioMedio;
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Calculadora Gasoil Calefacción' }
+];
+
+const faqItems = [
+  {
+    pregunta: '¿Cuánto cuesta llenar un depósito de 1000 litros?',
+    respuesta: `Al precio medio nacional de ${formatPrice(precioNacional)} €/litro, llenar un depósito de 1000 litros cuesta aproximadamente ${calculateCost(1000, precioNacional)} euros. El precio exacto depende de tu comunidad autónoma.`
+  },
+  {
+    pregunta: '¿Cuánto cuesta 500 litros de gasoil de calefacción?',
+    respuesta: `Al precio medio nacional actual, 500 litros cuestan aproximadamente ${calculateCost(500, precioNacional)} euros. Selecciona tu comunidad en la calculadora para un cálculo más preciso.`
+  },
+  {
+    pregunta: '¿Cuál es el pedido mínimo de gasoil de calefacción?',
+    respuesta: 'La mayoría de distribuidores establecen un pedido mínimo de entre 400 y 500 litros. Algunos distribuidores online permiten pedidos desde 300 litros, aunque el precio por litro será más alto.'
+  }
+];
+---
+
+<BaseLayout
+  title="Calculadora de Gasoil de Calefacción - Calcula tu Gasto"
+  description={`Calcula cuánto cuesta llenar tu depósito de gasoil de calefacción. Precio actual: ${formatPrice(precioNacional)} €/litro. Introduce los litros y tu comunidad autónoma.`}
+  type="article"
+>
+  <SchemaBreadcrumb slot="schema" items={breadcrumbItems} />
+
+  <Header />
+
+  <main class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <h1>Calculadora de Gasoil de Calefacción</h1>
+    <p>
+      Calcula cuánto te costará llenar tu depósito de gasoil de calefacción.
+      Selecciona tu comunidad autónoma e introduce la cantidad de litros que necesitas.
+      Los precios se basan en datos oficiales del Ministerio para la Transición Ecológica.
+    </p>
+
+    <PriceCalculator />
+
+    <section id="preguntas-frecuentes" style="margin-top:2rem;">
+      <h2>Preguntas sobre el Coste del Gasoil de Calefacción</h2>
+      <FAQ items={faqItems} />
+    </section>
+
+    <section id="info" style="margin-top:2rem;">
+      <h2>¿Cómo calcular el coste del gasoil de calefacción?</h2>
+      <div class="content">
+        <p>
+          El cálculo es sencillo: multiplica el <strong>número de litros</strong> que necesitas por el
+          <strong>precio por litro</strong> en tu comunidad autónoma. Por ejemplo, si necesitas 1.000 litros
+          y el precio medio en tu zona es de {formatPrice(precioNacional)} €/litro, el coste total será
+          de aproximadamente <strong>{calculateCost(1000, precioNacional)} euros</strong>.
+        </p>
+        <p>
+          Ten en cuenta que los distribuidores suelen ofrecer <strong>descuentos por volumen</strong>:
+          cuantos más litros pidas, menor será el precio por litro. También puedes ahorrar con
+          compras agrupadas entre vecinos o comunidades.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

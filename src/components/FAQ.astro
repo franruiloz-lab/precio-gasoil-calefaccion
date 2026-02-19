@@ -1,0 +1,27 @@
+---
+import SchemaFAQ from './SchemaFAQ.astro';
+
+interface FAQItem {
+  pregunta: string;
+  respuesta: string;
+}
+
+interface Props {
+  items: FAQItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<SchemaFAQ items={items} />
+
+<div class="faq-list">
+  {items.map(item => (
+    <details class="faq-item">
+      <summary>{item.pregunta}</summary>
+      <div class="faq-answer">
+        <p>{item.respuesta}</p>
+      </div>
+    </details>
+  ))}
+</div>

@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import PriceHero from '../components/PriceHero.astro';
+import PriceTable from '../components/PriceTable.astro';
+import RegionGrid from '../components/RegionGrid.astro';
+import PriceCalculator from '../components/PriceCalculator.astro';
+import PriceChart from '../components/PriceChart.astro';
+import FAQ from '../components/FAQ.astro';
+import SchemaArticle from '../components/SchemaArticle.astro';
+
+import precios from '../data/precios.json';
+import regiones from '../data/regiones.json';
+import { formatPrice, getCurrentMonthYear, calculateCost } from '../utils/format';
+
+const monthYear = getCurrentMonthYear();
+const siteUrl = 'https://www.preciogasoilcalefaccion.es';
+const precioNacional = precios.nacional.precioMedio;
+
+const tableRows = regiones.map(r => {
+  const p = precios.regiones[r.id as keyof typeof precios.regiones];
+  return {
+    nombre: r.nombre,
+    slug: r.slug,
+    precioMin: p.precioMin,
+    precioMedio: p.precioMedio,
+    precioMax: p.precioMax,
+    linkable: true
+  };
+}).sort((a, b) => a.precioMedio - b.precioMedio);
+
+const faqItems = [
+  {
+    pregunta: '¿Cuál es el precio del gasoil de calefacción hoy en España?',
+    respuesta: `El precio medio del gasoil de calefacción hoy en España es de ${formatPrice(precioNacional)} €/litro. Este dato se actualiza regularmente con información del Ministerio para la Transición Ecológica a través de geoportalgasolineras.es.`
+  },
+  {
+    pregunta: '¿Cuánto cuestan 1000 litros de gasoil de calefacción?',
+    respuesta: `Al precio medio actual de ${formatPrice(precioNacional)} €/litro, 1000 litros de gasoil de calefacción cuestan aproximadamente ${calculateCost(1000, precioNacional)} euros. El precio varía según la comunidad autónoma: desde ${formatPrice(tableRows[0].precioMedio)} €/L en ${tableRows[0].nombre} hasta ${formatPrice(tableRows[tableRows.length - 1].precioMedio)} €/L en ${tableRows[tableRows.length - 1].nombre}.`
+  },
+  {
+    pregunta: '¿Cuándo es más barato comprar gasoil de calefacción?',
+    respuesta: 'Generalmente, el gasoil de calefacción es más barato en los meses de verano (junio-agosto), cuando la demanda baja. Los precios suelen subir en octubre-noviembre al inicio de la temporada de calefacción. Se recomienda anticipar la compra a finales de verano para aprovechar los precios más bajos.'
+  },
+  {
+    pregunta: '¿Qué diferencia hay entre gasóleo A, B y C?',
+    respuesta: 'El gasóleo C (gasoil de calefacción) es el destinado a uso doméstico para calefacción. El gasóleo A es para vehículos de automoción. El gasóleo B es para maquinaria agrícola y embarcaciones. El gasóleo C tiene menor carga fiscal que el A, por lo que su precio es más económico.'
+  },
+  {
+    pregunta: '¿Va a bajar el precio del gasoil de calefacción?',
+    respuesta: 'La tendencia del precio depende del mercado internacional del petróleo, el tipo de cambio euro/dólar y la fiscalidad española. Históricamente, los precios bajan en verano y suben en invierno. Consulta nuestra sección de evolución de precios para ver la tendencia actual y los datos históricos.'
+  },
+  {
+    pregunta: '¿Cuánto cuesta 500 litros de gasoil de calefacción?',
+    respuesta: `Al precio medio nacional de ${formatPrice(precioNacional)} €/litro, 500 litros de gasoil de calefacción cuestan aproximadamente ${calculateCost(500, precioNacional)} euros. Usa nuestra calculadora para obtener el precio exacto en tu comunidad autónoma.`
+  },
+  {
+    pregunta: '¿Cómo se calcula el precio del gasoil de calefacción?',
+    respuesta: 'El precio final incluye: el coste de la materia prima (cotización del petróleo Brent), impuestos (IVA del 21% + Impuesto Especial de Hidrocarburos), margen de distribución y coste de transporte a domicilio. Las variaciones del precio del barril de petróleo y del tipo de cambio euro/dólar son los factores que más influyen en el precio final.'
+  },
+  {
+    pregunta: '¿El precio del gasoil de calefacción de Repsol es diferente?',
+    respuesta: 'El precio puede variar según el distribuidor (Repsol, Cepsa, BP, distribuidores independientes, etc.). Los precios que mostramos son la media del mercado según datos oficiales del Ministerio. Cada proveedor puede aplicar márgenes diferentes, por lo que se recomienda comparar varios presupuestos.'
+  }
+];
+---
+
+<BaseLayout
+  title={`Precio del Gasoil de Calefacción Hoy ${monthYear} - España`}
+  description={`Precio del gasoil de calefacción hoy en España: ${formatPrice(precioNacional)} €/litro. Consulta precios por comunidad autónoma, calculadora de coste y evolución. Actualizado ${precios.lastUpdated}.`}
+  type="article"
+>
+  <SchemaArticle
+    slot="schema"
+    title={`Precio del Gasoil de Calefacción Hoy en España - ${monthYear}`}
+    description={`Precio medio del gasoil de calefacción en España: ${formatPrice(precioNacional)} €/litro. Precios por comunidad autónoma, calculadora y evolución histórica.`}
+    url={siteUrl}
+    dateModified={precios.lastUpdated}
+  />
+
+  <Header />
+
+  <main class="container">
+    <PriceHero
+      precio={precioNacional}
+      variacionMensual={precios.nacional.variacionMensual}
+      lastUpdated={precios.lastUpdated}
+    />
+
+    <!-- Tabla de precios por CCAA -->
+    <section id="precios-comunidades">
+      <h2>Precio del Gasoil de Calefacción por Comunidad Autónoma</h2>
+      <p>
+        Consulta el precio del gasóleo C de calefacción en cada comunidad autónoma de España.
+        Los datos se obtienen del <strong>Ministerio para la Transición Ecológica</strong> y reflejan
+        los precios medios de venta al público. Haz clic en cualquier comunidad para ver más detalles.
+      </p>
+      <PriceTable rows={tableRows} caption="Precios ordenados de menor a mayor" />
+    </section>
+
+    <!-- Grid de regiones -->
+    <section id="comunidades">
+      <h2>Consulta el Precio en tu Comunidad Autónoma</h2>
+      <RegionGrid />
+    </section>
+
+    <!-- Calculadora -->
+    <section id="calculadora">
+      <h2>Calculadora: ¿Cuánto Cuesta Llenar tu Depósito de Gasoil?</h2>
+      <p>
+        Calcula cuánto te costará llenar tu depósito de gasoil de calefacción.
+        Selecciona tu comunidad autónoma e introduce la cantidad de litros para obtener el precio estimado.
+      </p>
+      <PriceCalculator />
+    </section>
+
+    <!-- Gráfico de evolución -->
+    <section id="evolucion">
+      <h2>Evolución del Precio del Gasoil de Calefacción</h2>
+      <p>
+        El siguiente gráfico muestra la evolución del precio medio del gasoil de calefacción
+        en España durante los últimos 24 meses. Se aprecia la estacionalidad típica: precios
+        más altos en invierno (octubre-febrero) y más bajos en verano (junio-agosto).
+      </p>
+      <PriceChart />
+    </section>
+
+    <!-- FAQ -->
+    <section id="preguntas-frecuentes">
+      <h2>Preguntas Frecuentes sobre el Gasoil de Calefacción</h2>
+      <FAQ items={faqItems} />
+    </section>
+
+    <!-- Contenido SEO -->
+    <section id="informacion">
+      <h2>Todo sobre el Gasóleo C de Calefacción</h2>
+      <div class="content">
+        <p>
+          El <strong>gasoil de calefacción</strong>, también conocido como <strong>gasóleo C</strong>,
+          es un combustible derivado del petróleo destinado exclusivamente a la generación de calor
+          en hogares, edificios y comunidades de vecinos. Es una de las opciones más utilizadas en
+          España para calefacción doméstica, especialmente en zonas rurales y localidades donde la
+          red de gas natural no está disponible.
+        </p>
+
+        <h3>¿Qué es el gasóleo C y en qué se diferencia de otros gasóleos?</h3>
+        <p>
+          En España existen tres tipos principales de gasóleo:
+        </p>
+        <ul>
+          <li><strong>Gasóleo A</strong>: destinado a vehículos de automoción. Es el más caro por su mayor carga fiscal.</li>
+          <li><strong>Gasóleo B</strong>: para maquinaria agrícola y embarcaciones. Se identifica por su color rojo.</li>
+          <li><strong>Gasóleo C</strong>: para calefacción doméstica. Tiene la menor carga fiscal y, por tanto, el precio más bajo.</li>
+        </ul>
+        <p>
+          El gasóleo C está regulado por la normativa española y debe cumplir con las especificaciones
+          técnicas del Real Decreto que regula las instalaciones petrolíferas. Su composición está
+          optimizada para la combustión en calderas, ofreciendo un alto rendimiento calorífico.
+        </p>
+
+        <h3>¿Cómo se compone el precio del gasoil de calefacción?</h3>
+        <p>
+          El precio final que paga el consumidor está formado por varios componentes:
+        </p>
+        <ul>
+          <li><strong>Materia prima</strong>: el coste del petróleo Brent en los mercados internacionales, que fluctúa diariamente.</li>
+          <li><strong>Impuesto Especial de Hidrocarburos</strong>: un impuesto fijo por litro que aplica el Estado.</li>
+          <li><strong>IVA (21%)</strong>: aplicado sobre el precio base más impuestos especiales.</li>
+          <li><strong>Margen de distribución</strong>: el beneficio del distribuidor, que varía según la empresa y la zona.</li>
+          <li><strong>Coste de transporte</strong>: el reparto a domicilio mediante camión cisterna encarece el precio, especialmente en zonas rurales o de difícil acceso.</li>
+        </ul>
+
+        <h3>¿Por qué varía el precio según la comunidad autónoma?</h3>
+        <p>
+          Las diferencias de precio entre comunidades se deben principalmente a los costes logísticos
+          de distribución, la competencia entre proveedores en cada zona y la distancia a las refinerías
+          y centros de almacenamiento. Las comunidades insulares (Baleares y Canarias) suelen tener
+          precios más altos por el sobrecoste del transporte marítimo.
+        </p>
+
+        <h3>Consejos para ahorrar en gasoil de calefacción</h3>
+        <ul>
+          <li><strong>Compra en verano</strong>: los precios suelen ser más bajos entre junio y agosto, cuando la demanda baja.</li>
+          <li><strong>Compra en volumen</strong>: cuantos más litros pidas, menor será el precio por litro.</li>
+          <li><strong>Compra agrupada</strong>: algunos servicios permiten agrupar pedidos de varios vecinos para conseguir mejores precios.</li>
+          <li><strong>Compara proveedores</strong>: solicita presupuesto a varios distribuidores antes de comprar.</li>
+          <li><strong>Mantén tu caldera</strong>: una caldera bien mantenida consume menos combustible.</li>
+          <li><strong>Mejora el aislamiento</strong>: invertir en aislamiento térmico reduce la cantidad de gasoil necesaria.</li>
+        </ul>
+
+        <h3>Alternativas al gasoil de calefacción</h3>
+        <p>
+          Si estás considerando cambiar tu sistema de calefacción, estas son las principales alternativas:
+        </p>
+        <ul>
+          <li><strong>Gas natural</strong>: más económico si tienes acceso a la red de gas. Precio medio en torno a 0,07 €/kWh.</li>
+          <li><strong>Aerotermia (bomba de calor)</strong>: alta inversión inicial pero muy eficiente. Puede reducir el gasto un 50-70%.</li>
+          <li><strong>Pellets de biomasa</strong>: opción más ecológica y con precios estables, aunque requiere espacio para el almacenamiento.</li>
+          <li><strong>Gas propano/butano</strong>: alternativa para zonas sin gas natural, aunque suele ser más caro que el gasóleo C.</li>
+        </ul>
+
+        <h3>Fuente de datos</h3>
+        <p>
+          Los precios que mostramos en esta web se obtienen del
+          <a href="https://geoportalgasolineras.es" target="_blank" rel="noopener"><strong>Geoportal de Gasolineras</strong></a>
+          del <strong>Ministerio para la Transición Ecológica y el Reto Demográfico</strong> (MITECO).
+          Esta fuente oficial recopila los precios de venta al público de todas las estaciones de
+          servicio y distribuidores de España.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

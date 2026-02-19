@@ -1,0 +1,132 @@
+---
+import historico from '../data/historico.json';
+import { formatMonth } from '../utils/format';
+
+interface Props {
+  regionId?: string;
+  regionName?: string;
+}
+
+const { regionId, regionName } = Astro.props;
+
+const labels = historico.meses.map(m => formatMonth(m.fecha));
+const nacionalData = historico.meses.map(m => m.nacional);
+const regionData = regionId
+  ? historico.meses.map(m => (m as any)[regionId] || null)
+  : null;
+
+const chartConfig = JSON.stringify({
+  labels,
+  nacionalData,
+  regionData,
+  regionName: regionName || null
+});
+---
+
+<div class="chart-container">
+  <canvas id="price-chart" width="800" height="400" style="width:100%;height:auto;"></canvas>
+  <noscript>
+    <p>Activa JavaScript para ver el gr&aacute;fico de evoluci&oacute;n de precios.</p>
+  </noscript>
+</div>
+
+<!-- Fallback table for SEO (always visible to crawlers) -->
+<details style="margin-top:1rem;">
+  <summary style="cursor:pointer;font-size:0.9rem;color:var(--color-text-secondary);">
+    Ver datos en tabla
+  </summary>
+  <table class="price-table" style="margin-top:0.5rem;">
+    <thead>
+      <tr>
+        <th>Mes</th>
+        <th>Media Nacional</th>
+        {regionName && <th>{regionName}</th>}
+      </tr>
+    </thead>
+    <tbody>
+      {historico.meses.map((m, i) => (
+        <tr>
+          <td>{labels[i]}</td>
+          <td class="price">{m.nacional.toFixed(3).replace('.', ',')} &euro;</td>
+          {regionId && <td class="price">{((m as any)[regionId] || '-').toString().replace('.', ',')} &euro;</td>}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</details>
+
+<script define:vars={{ chartConfig }}>
+  const config = JSON.parse(chartConfig);
+
+  async function loadChart() {
+    const { Chart, registerables } = await import('https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.esm.min.js');
+    Chart.register(...registerables);
+
+    const datasets = [
+      {
+        label: 'Media Nacional',
+        data: config.nacionalData,
+        borderColor: '#1a56db',
+        backgroundColor: 'rgba(26, 86, 219, 0.1)',
+        borderWidth: 2,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 3,
+        pointHoverRadius: 5
+      }
+    ];
+
+    if (config.regionData) {
+      datasets.push({
+        label: config.regionName,
+        data: config.regionData,
+        borderColor: '#059669',
+        backgroundColor: 'rgba(5, 150, 105, 0.1)',
+        borderWidth: 2,
+        fill: false,
+        tension: 0.3,
+        pointRadius: 3,
+        pointHoverRadius: 5
+      });
+    }
+
+    new Chart(document.getElementById('price-chart'), {
+      type: 'line',
+      data: { labels: config.labels, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top' },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(3).replace('.', ',')} \u20ac/L`
+            }
+          }
+        },
+        scales: {
+          y: {
+            title: { display: true, text: '\u20ac/litro' },
+            ticks: {
+              callback: (v) => v.toFixed(3).replace('.', ',')
+            }
+          }
+        }
+      }
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          loadChart();
+          observer.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+    observer.observe(document.getElementById('price-chart'));
+  } else {
+    loadChart();
+  }
+</script>

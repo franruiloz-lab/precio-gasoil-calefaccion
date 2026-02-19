@@ -1,0 +1,38 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  datePublished?: string;
+  dateModified?: string;
+}
+
+const { title, description, url, datePublished = '2026-02-01', dateModified } = Astro.props;
+const siteUrl = 'https://www.preciogasoilcalefaccion.es';
+const modified = dateModified || new Date().toISOString().split('T')[0];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": datePublished,
+  "dateModified": modified,
+  "author": {
+    "@type": "Organization",
+    "name": "Precio Gasoil Calefacci\u00f3n"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Precio Gasoil Calefacci\u00f3n",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/favicon.svg`
+    }
+  },
+  "mainEntityOfPage": url,
+  "image": `${siteUrl}/og-image.jpg`
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

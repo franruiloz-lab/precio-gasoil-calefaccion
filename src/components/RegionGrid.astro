@@ -1,0 +1,26 @@
+---
+import { formatPrice } from '../utils/format';
+import regiones from '../data/regiones.json';
+import precios from '../data/precios.json';
+
+interface Props {
+  excludeSlug?: string;
+}
+
+const { excludeSlug } = Astro.props;
+const regionList = excludeSlug
+  ? regiones.filter(r => r.slug !== excludeSlug)
+  : regiones;
+---
+
+<div class="region-grid">
+  {regionList.map(r => {
+    const p = precios.regiones[r.id as keyof typeof precios.regiones];
+    return (
+      <a href={`/precio-gasoil-calefaccion/${r.slug}/`} class="region-card">
+        <span class="region-name">{r.nombre}</span>
+        <span class="region-price">{formatPrice(p.precioMedio)} &euro;/L</span>
+      </a>
+    );
+  })}
+</div>

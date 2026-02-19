@@ -1,0 +1,31 @@
+---
+import regiones from '../data/regiones.json';
+import precios from '../data/precios.json';
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <h3>Precio del gasoil de calefacci&oacute;n por Comunidad Aut&oacute;noma</h3>
+    <div class="footer-regions">
+      {regiones.map(r => (
+        <a href={`/precio-gasoil-calefaccion/${r.slug}/`}>
+          Gasoil calefacci&oacute;n en {r.nombre}
+        </a>
+      ))}
+    </div>
+
+    <nav>
+      <ul class="site-nav" style="margin-bottom: 1rem;">
+        <li><a href="/">Precios Hoy</a></li>
+        <li><a href="/calculadora/">Calculadora</a></li>
+        <li><a href="/evolucion-precio/">Evoluci&oacute;n del Precio</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-meta">
+      <p>Datos obtenidos de <a href="https://geoportalgasolineras.es" target="_blank" rel="noopener">geoportalgasolineras.es</a> ({precios.source}).</p>
+      <p>&copy; {new Date().getFullYear()} Precio Gasoil Calefacci&oacute;n. Todos los derechos reservados.</p>
+      <p>Los precios son orientativos y pueden variar seg&uacute;n el distribuidor. &Uacute;ltima actualizaci&oacute;n: {precios.lastUpdated}.</p>
+    </div>
+  </div>
+</footer>

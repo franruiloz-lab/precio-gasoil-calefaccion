@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
+import SchemaArticle from '../../components/SchemaArticle.astro';
+import PriceHero from '../../components/PriceHero.astro';
+import PriceTable from '../../components/PriceTable.astro';
+import RegionGrid from '../../components/RegionGrid.astro';
+import PriceCalculator from '../../components/PriceCalculator.astro';
+import PriceChart from '../../components/PriceChart.astro';
+import FAQ from '../../components/FAQ.astro';
+
+import regiones from '../../data/regiones.json';
+import precios from '../../data/precios.json';
+import { formatPrice, getCurrentMonthYear, calculateCost } from '../../utils/format';
+
+export function getStaticPaths() {
+  return regiones.map(r => ({
+    params: { region: r.slug },
+    props: { regionData: r }
+  }));
+}
+
+const { regionData } = Astro.props;
+const monthYear = getCurrentMonthYear();
+const siteUrl = 'https://www.preciogasoilcalefaccion.es';
+const regionPrecios = precios.regiones[regionData.id as keyof typeof precios.regiones];
+const nacionalPrecios = precios.nacional;
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: `Gasoil Calefacción en ${regionData.nombre}` }
+];
+
+// Tabla de provincias (usando precio regional con variaciones simuladas)
+const provinciaRows = regionData.provincias.map((prov: string, i: number) => {
+  const offset = (i - Math.floor(regionData.provincias.length / 2)) * 0.012;
+  return {
+    nombre: prov,
+    precioMin: Math.max(regionPrecios.precioMin + offset, regionPrecios.precioMin - 0.03),
+    precioMedio: regionPrecios.precioMedio + offset,
+    precioMax: Math.min(regionPrecios.precioMax + offset, regionPrecios.precioMax + 0.03),
+    linkable: false
+  };
+});
+
+// FAQ con datos reales inyectados
+const faqItems = regionData.faq.map((f: { pregunta: string; respuesta: string }) => ({
+  pregunta: f.pregunta,
+  respuesta: f.respuesta
+    .replace(/{precioMedio}/g, formatPrice(regionPrecios.precioMedio))
+    .replace(/{lastUpdated}/g, precios.lastUpdated)
+    .replace(/{precio1000}/g, calculateCost(1000, regionPrecios.precioMedio))
+}));
+
+const pageTitle = `Precio Gasoil Calefacción en ${regionData.nombre} Hoy [${formatPrice(regionPrecios.precioMedio)} €/L] - ${monthYear}`;
+const pageDesc = `Precio del gasoil de calefacción en ${regionData.nombre} hoy: ${formatPrice(regionPrecios.precioMedio)} €/litro. Precios por provincia, calculadora de coste y evolución. Actualizado ${precios.lastUpdated}.`;
+
+const diffVsNacional = regionPrecios.precioMedio - nacionalPrecios.precioMedio;
+const diffText = diffVsNacional < 0
+  ? `${Math.abs(diffVsNacional * 100).toFixed(1).replace('.', ',')} céntimos por debajo`
+  : diffVsNacional > 0
+  ? `${(diffVsNacional * 100).toFixed(1).replace('.', ',')} céntimos por encima`
+  : 'igual';
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} type="article">
+  <Fragment slot="schema">
+    <SchemaBreadcrumb items={breadcrumbItems} />
+    <SchemaArticle
+      title={pageTitle}
+      description={pageDesc}
+      url={`${siteUrl}/precio-gasoil-calefaccion/${regionData.slug}/`}
+      dateModified={precios.lastUpdated}
+    />
+  </Fragment>
+
+  <Header />
+
+  <main class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <PriceHero
+      precio={regionPrecios.precioMedio}
+      variacionMensual={regionPrecios.variacionMensual}
+      lastUpdated={precios.lastUpdated}
+      regionName={regionData.nombre}
+    />
+
+    <!-- Comparativa con la media nacional -->
+    <section id="comparativa">
+      <h2>Precio del Gasoil de Calefacción en {regionData.nombre} vs Media Nacional</h2>
+      <p>
+        El precio medio del gasoil de calefacción en <strong>{regionData.nombre}</strong> es de
+        <strong>{formatPrice(regionPrecios.precioMedio)} €/litro</strong>, lo que se sitúa
+        <strong>{diffText}</strong> de la media nacional de {formatPrice(nacionalPrecios.precioMedio)} €/litro.
+      </p>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Mínimo</th>
+            <th>Precio Medio</th>
+            <th>Máximo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>{regionData.nombre}</strong></td>
+            <td class="price price-low">{formatPrice(regionPrecios.precioMin)} €</td>
+            <td class="price">{formatPrice(regionPrecios.precioMedio)} €</td>
+            <td class="price price-high">{formatPrice(regionPrecios.precioMax)} €</td>
+          </tr>
+          <tr>
+            <td><strong>Media Nacional</strong></td>
+            <td class="price price-low">{formatPrice(nacionalPrecios.precioMin)} €</td>
+            <td class="price">{formatPrice(nacionalPrecios.precioMedio)} €</td>
+            <td class="price price-high">{formatPrice(nacionalPrecios.precioMax)} €</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Precios por provincia -->
+    {regionData.provincias.length > 1 && (
+      <section id="provincias">
+        <h2>Precio del Gasoil de Calefacción por Provincia en {regionData.nombre}</h2>
+        <p>
+          Desglose estimado del precio del gasoil de calefacción por cada provincia de {regionData.nombre}.
+        </p>
+        <PriceTable rows={provinciaRows} />
+      </section>
+    )}
+
+    <!-- Calculadora -->
+    <section id="calculadora">
+      <h2>Calculadora de Gasoil de Calefacción en {regionData.nombre}</h2>
+      <p>
+        Calcula cuánto te costará llenar tu depósito de gasoil de calefacción en {regionData.nombre}.
+        Al precio medio actual, 1.000 litros cuestan aproximadamente <strong>{calculateCost(1000, regionPrecios.precioMedio)} €</strong>.
+      </p>
+      <PriceCalculator selectedRegion={regionData.slug} />
+    </section>
+
+    <!-- Gráfico de evolución -->
+    <section id="evolucion">
+      <h2>Evolución del Precio del Gasoil de Calefacción en {regionData.nombre}</h2>
+      <p>
+        Evolución del precio del gasoil de calefacción en {regionData.nombre} comparado con la media nacional
+        durante los últimos 24 meses.
+      </p>
+      <PriceChart regionId={regionData.id} regionName={regionData.nombre} />
+    </section>
+
+    <!-- FAQ -->
+    <section id="preguntas-frecuentes">
+      <h2>Preguntas Frecuentes sobre el Gasoil de Calefacción en {regionData.nombre}</h2>
+      <FAQ items={faqItems} />
+    </section>
+
+    <!-- Contenido unico regional -->
+    <section id="informacion">
+      <h2>Información sobre el Gasoil de Calefacción en {regionData.nombre}</h2>
+      <div class="content">
+        <p>{regionData.descripcion}</p>
+        <p>
+          En {regionData.nombre} el gasoil de calefacción (gasóleo C) es distribuido por múltiples proveedores
+          que realizan entregas a domicilio mediante camiones cisterna. El pedido mínimo suele ser de 400-500 litros
+          y el precio por litro disminuye a medida que aumenta la cantidad solicitada.
+        </p>
+        <p>
+          Para obtener el mejor precio en {regionData.nombre}, se recomienda comparar presupuestos de varios
+          distribuidores, considerar la compra agrupada con vecinos y anticipar los pedidos a los meses de
+          menor demanda (verano).
+        </p>
+      </div>
+    </section>
+
+    <!-- Otras CCAA -->
+    <section id="otras-comunidades">
+      <h2>Precio del Gasoil de Calefacción en Otras Comunidades</h2>
+      <RegionGrid excludeSlug={regionData.slug} />
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import RegionGrid from '../components/RegionGrid.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada - Precio Gasoil Calefacción"
+  description="La página que buscas no existe. Consulta el precio del gasoil de calefacción en España."
+>
+  <Header />
+
+  <main class="container" style="text-align:center;padding:3rem 1rem;">
+    <h1>Página no encontrada</h1>
+    <p style="font-size:1.1rem;color:var(--color-text-secondary);margin-bottom:2rem;">
+      La página que buscas no existe o ha sido movida.
+    </p>
+    <p>
+      <a href="/" style="font-weight:600;">Volver a la página principal</a>
+    </p>
+
+    <section style="margin-top:3rem;text-align:left;">
+      <h2>Consulta el precio en tu comunidad</h2>
+      <RegionGrid />
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

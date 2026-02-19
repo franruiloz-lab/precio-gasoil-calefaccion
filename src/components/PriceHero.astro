@@ -1,0 +1,29 @@
+---
+import { formatPrice, formatDate, getTrendDirection } from '../utils/format';
+
+interface Props {
+  precio: number;
+  variacionMensual: number;
+  lastUpdated: string;
+  regionName?: string;
+}
+
+const { precio, variacionMensual, lastUpdated, regionName } = Astro.props;
+const direction = getTrendDirection(variacionMensual);
+const variacionCt = Math.abs(variacionMensual * 100).toFixed(1).replace('.', ',');
+const trendSymbol = direction === 'down' ? '\u2193' : direction === 'up' ? '\u2191' : '\u2192';
+const trendLabel = direction === 'down' ? `${trendSymbol} -${variacionCt} ct vs mes anterior` : direction === 'up' ? `${trendSymbol} +${variacionCt} ct vs mes anterior` : 'Sin cambios vs mes anterior';
+---
+
+<div class="price-hero">
+  <div class="updated-badge">Actualizado el {formatDate(lastUpdated)}</div>
+  <h1>
+    Precio del Gasoil de Calefacci&oacute;n{regionName ? ` en ${regionName}` : ''} Hoy
+  </h1>
+  <div class="price-big">
+    {formatPrice(precio)} <span class="price-unit">&euro;/litro</span>
+  </div>
+  <div class={`price-trend ${direction}`}>
+    {trendLabel}
+  </div>
+</div>

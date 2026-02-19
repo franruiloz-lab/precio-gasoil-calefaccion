@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.preciogasoilcalefaccion.es/sitemap-index.xml
+Sitemap: https://www.calienteybarato.com/sitemap-index.xml

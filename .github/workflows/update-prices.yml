@@ -2,8 +2,12 @@ name: Update Prices Daily
 
 on:
   schedule:
-    # Every day at 08:00 UTC (09:00 Spain winter, 10:00 Spain summer)
+    # 09:00h España (08:00 UTC)
     - cron: '0 8 * * *'
+    # 13:00h España (12:00 UTC)
+    - cron: '0 12 * * *'
+    # 18:00h España (17:00 UTC)
+    - cron: '0 17 * * *'
   workflow_dispatch:
 
 permissions:

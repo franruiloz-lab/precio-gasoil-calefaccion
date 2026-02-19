@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.calienteybarato.com',
+  site: 'https://calienteybarato.com',
   output: 'static',
   build: {
     format: 'directory'

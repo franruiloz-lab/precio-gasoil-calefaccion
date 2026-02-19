@@ -23,8 +23,8 @@ const chartConfig = JSON.stringify({
 });
 ---
 
-<div class="chart-container">
-  <canvas id="price-chart" width="800" height="400" style="width:100%;height:auto;"></canvas>
+<div class="chart-container" style="position:relative;height:400px;max-height:50vh;">
+  <canvas id="price-chart"></canvas>
   <noscript>
     <p>Activa JavaScript para ver el gr&aacute;fico de evoluci&oacute;n de precios.</p>
   </noscript>
@@ -55,12 +55,13 @@ const chartConfig = JSON.stringify({
   </table>
 </details>
 
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
 <script define:vars={{ chartConfig }}>
   const config = JSON.parse(chartConfig);
 
-  async function loadChart() {
-    const { Chart, registerables } = await import('https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.esm.min.js');
-    Chart.register(...registerables);
+  function initChart() {
+    const canvas = document.getElementById('price-chart');
+    if (!canvas || typeof Chart === 'undefined') return;
 
     const datasets = [
       {
@@ -90,7 +91,7 @@ const chartConfig = JSON.stringify({
       });
     }
 
-    new Chart(document.getElementById('price-chart'), {
+    new Chart(canvas, {
       type: 'line',
       data: { labels: config.labels, datasets },
       options: {
@@ -100,7 +101,7 @@ const chartConfig = JSON.stringify({
           legend: { position: 'top' },
           tooltip: {
             callbacks: {
-              label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(3).replace('.', ',')} \u20ac/L`
+              label: function(ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y.toFixed(3).replace('.', ',') + ' \u20ac/L'; }
             }
           }
         },
@@ -108,7 +109,7 @@ const chartConfig = JSON.stringify({
           y: {
             title: { display: true, text: '\u20ac/litro' },
             ticks: {
-              callback: (v) => v.toFixed(3).replace('.', ',')
+              callback: function(v) { return v.toFixed(3).replace('.', ','); }
             }
           }
         }
@@ -116,17 +117,9 @@ const chartConfig = JSON.stringify({
     });
   }
 
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          loadChart();
-          observer.disconnect();
-        }
-      });
-    }, { rootMargin: '200px' });
-    observer.observe(document.getElementById('price-chart'));
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChart);
   } else {
-    loadChart();
+    initChart();
   }
 </script>

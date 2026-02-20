@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Gasoil Calefacción vs Aerotermia: Comparativa 2026"
   description="Comparativa entre gasoil de calefacción y aerotermia: inversión, ahorro, ROI y cuándo merece la pena cambiar tu caldera de gasoil por bomba de calor."
-  type="article"
+  slug="gasoil-calefaccion-vs-aerotermia"
+  category="Comparativas"
+  breadcrumbName="Gasoil vs Aerotermia"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Gasoil de Calefacción vs Aerotermia: Inversión, Ahorro y ROI"
-    description="Comparativa entre gasoil de calefacción y aerotermia: inversión, ahorro, ROI y cuándo merece la pena cambiar tu caldera de gasoil por bomba de calor."
-    url="https://calienteybarato.com/blog/gasoil-calefaccion-vs-aerotermia/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Gasoil vs Aerotermia', url: '/blog/gasoil-calefaccion-vs-aerotermia/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>Gasoil de Calefacci&oacute;n vs Aerotermia</span>
-    </nav>
-
-    <article class="content">
-      <h1>Gasoil de Calefacci&oacute;n vs Aerotermia: &iquest;Merece la Pena Cambiar?</h1>
+  <h1 slot="title">Gasoil de Calefacci&oacute;n vs Aerotermia: &iquest;Merece la Pena Cambiar?</h1>
 
       <p>La <strong>aerotermia</strong> se ha convertido en una de las alternativas m&aacute;s populares para sustituir las calderas de gasoil. Con la promesa de ahorros energ&eacute;ticos de hasta el 70% y un impacto medioambiental m&iacute;nimo, es normal que muchos propietarios se planteen el cambio. Pero, &iquest;realmente merece la pena la inversi&oacute;n?</p>
 
@@ -247,8 +219,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>Si tu caldera de gasoil est&aacute; al final de su vida &uacute;til y puedes acceder a subvenciones, la aerotermia es probablemente la mejor elecci&oacute;n. Si tu caldera a&uacute;n funciona bien, puede ser m&aacute;s razonable esperar unos a&ntilde;os mientras los precios de la tecnolog&iacute;a contin&uacute;an bajando.</p>
 
       <p>Mientras tanto, consulta el <a href="/">precio del gasoil de calefacci&oacute;n</a> actualizado y usa nuestra <a href="/calculadora/">calculadora</a> para planificar tu consumo. Y no olvides revisar las <a href="/blog/subvenciones-cambiar-caldera-gasoil/">subvenciones disponibles</a> si est&aacute;s pensando en dar el paso.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Cómo Ahorrar en Gasoil de Calefacción: 15 Consejos Prácticos"
   description="15 consejos organizados por categorías para reducir tu gasto en gasoil de calefacción: compra inteligente, reducción de consumo, mantenimiento y aislamiento. Con ahorro estimado para cada consejo."
-  type="article"
+  slug="como-ahorrar-gasoil-calefaccion"
+  category="Ahorro"
+  breadcrumbName="Cómo Ahorrar"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Cómo Ahorrar en Gasoil de Calefacción: 15 Consejos Prácticos con Ahorro Estimado"
-    description="15 consejos organizados por categorías para reducir tu gasto en gasoil de calefacción: compra inteligente, reducción de consumo, mantenimiento y aislamiento. Con ahorro estimado para cada consejo."
-    url="https://calienteybarato.com/blog/como-ahorrar-gasoil-calefaccion/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Cómo ahorrar gasoil', url: '/blog/como-ahorrar-gasoil-calefaccion/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>C&oacute;mo ahorrar en gasoil de calefacci&oacute;n</span>
-    </nav>
-
-    <article class="content">
-      <h1>C&oacute;mo Ahorrar en Gasoil de Calefacci&oacute;n: 15 Consejos Pr&aacute;cticos con Ahorro Estimado</h1>
+  <h1 slot="title">C&oacute;mo Ahorrar en Gasoil de Calefacci&oacute;n: 15 Consejos Pr&aacute;cticos con Ahorro Estimado</h1>
 
       <p>La calefacci&oacute;n con gasoil es uno de los mayores gastos energ&eacute;ticos de los hogares espa&ntilde;oles, especialmente en las zonas fr&iacute;as del interior y del norte peninsular. Una familia media que consume 1.500 litros al a&ntilde;o gasta aproximadamente <strong>1.350 &euro;</strong> solo en combustible. La buena noticia es que, aplicando las medidas adecuadas, es posible <strong>reducir ese gasto entre un 25% y un 45%</strong> sin sacrificar confort.</p>
 
@@ -342,8 +314,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>Ahorrar en gasoil de calefacci&oacute;n no requiere necesariamente grandes inversiones. Las medidas m&aacute;s rentables son las <strong>gratuitas</strong> &mdash;ajustar la temperatura, purgar radiadores, ventilar correctamente, comprar en el momento adecuado&mdash; y las de <strong>bajo coste</strong> &mdash;burletes, termostato programable, v&aacute;lvulas termost&aacute;ticas&mdash;. Aplicando solo estas, puedes reducir tu factura entre un 25% y un 40%, lo que para una familia media supone un ahorro de <strong>340-540 &euro; al a&ntilde;o</strong>.</p>
 
       <p>Empieza por las medidas sin coste, avanza hacia las de baja inversi&oacute;n y, a medio plazo, valora las mejoras de aislamiento que har&aacute;n tu vivienda m&aacute;s confortable y eficiente durante d&eacute;cadas. Consulta el <a href="/">precio actual del gasoil de calefacci&oacute;n</a> y utiliza nuestra <a href="/calculadora/">calculadora</a> para empezar a planificar hoy mismo.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

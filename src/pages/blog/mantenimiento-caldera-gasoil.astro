@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Mantenimiento Caldera de Gasoil: Guía Completa 2026"
   description="Guía completa de mantenimiento de calderas de gasoil: revisión anual, costes, tareas DIY y cuándo llamar al técnico. Ahorra combustible con un buen mantenimiento."
-  type="article"
+  slug="mantenimiento-caldera-gasoil"
+  category="Guías"
+  breadcrumbName="Mantenimiento de Caldera"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Mantenimiento de la Caldera de Gasoil: Guía Completa"
-    description="Guía completa de mantenimiento de calderas de gasoil: revisión anual, costes, tareas DIY y cuándo llamar al técnico. Ahorra combustible con un buen mantenimiento."
-    url="https://calienteybarato.com/blog/mantenimiento-caldera-gasoil/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Mantenimiento caldera gasoil', url: '/blog/mantenimiento-caldera-gasoil/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>Mantenimiento de la caldera de gasoil</span>
-    </nav>
-
-    <article class="content">
-      <h1>Mantenimiento de la Caldera de Gasoil: Gu&iacute;a Completa</h1>
+  <h1 slot="title">Mantenimiento de la Caldera de Gasoil: Gu&iacute;a Completa</h1>
 
       <p>El <strong>mantenimiento de la caldera de gasoil</strong> es una de las inversiones m&aacute;s rentables que puedes hacer como propietario. Una caldera bien mantenida no solo consume menos combustible (hasta un 15% menos), sino que tambi&eacute;n dura m&aacute;s a&ntilde;os, es m&aacute;s segura y genera menos aver&iacute;as.</p>
 
@@ -247,8 +219,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>El mantenimiento de tu caldera de gasoil no es un gasto, es una <strong>inversi&oacute;n</strong> que se traduce en menor consumo, mayor seguridad y mayor duraci&oacute;n del equipo. Programa la revisi&oacute;n anual, realiza las tareas b&aacute;sicas t&uacute; mismo y estate atento a las se&ntilde;ales de alarma.</p>
 
       <p>Para completar tu estrategia de ahorro, consulta el <a href="/">precio del gasoil de calefacci&oacute;n hoy</a>, aprende <a href="/blog/cuando-es-mas-barato-gasoil-calefaccion/">cu&aacute;ndo comprar m&aacute;s barato</a> y conoce <a href="/blog/consumo-caldera-gasoil/">cu&aacute;nto deber&iacute;a consumir tu caldera</a>.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

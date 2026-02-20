@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Gasoil Calefacción vs Gas Natural: Comparativa 2026"
   description="Comparativa completa entre gasoil de calefacción y gas natural: precios, ventajas, inconvenientes y cuándo merece la pena cambiar. Análisis actualizado 2026."
-  type="article"
+  slug="gasoil-calefaccion-vs-gas-natural"
+  category="Comparativas"
+  breadcrumbName="Gasoil vs Gas Natural"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Gasoil de Calefacción vs Gas Natural: Comparativa Completa"
-    description="Comparativa completa entre gasoil de calefacción y gas natural: precios, ventajas, inconvenientes y cuándo merece la pena cambiar. Análisis actualizado 2026."
-    url="https://calienteybarato.com/blog/gasoil-calefaccion-vs-gas-natural/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Gasoil vs Gas Natural', url: '/blog/gasoil-calefaccion-vs-gas-natural/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>Gasoil de Calefacci&oacute;n vs Gas Natural</span>
-    </nav>
-
-    <article class="content">
-      <h1>Gasoil de Calefacci&oacute;n vs Gas Natural: Comparativa Completa</h1>
+  <h1 slot="title">Gasoil de Calefacci&oacute;n vs Gas Natural: Comparativa Completa</h1>
 
       <p>Elegir entre <strong>gasoil de calefacci&oacute;n</strong> y <strong>gas natural</strong> es una de las decisiones energ&eacute;ticas m&aacute;s importantes para cualquier hogar en Espa&ntilde;a. Ambos combustibles tienen ventajas e inconvenientes, y la elecci&oacute;n &oacute;ptima depende de factores como la ubicaci&oacute;n de tu vivienda, el consumo energ&eacute;tico, la infraestructura disponible y tu presupuesto.</p>
 
@@ -238,8 +210,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>No hay una respuesta universal. El <strong>gas natural es m&aacute;s econ&oacute;mico a largo plazo</strong> si tienes acceso a la red y un consumo elevado. Sin embargo, el <strong>gasoil sigue siendo la mejor opci&oacute;n</strong> para viviendas sin acceso al gas natural, segundas residencias o cuando la caldera actual a&uacute;n tiene muchos a&ntilde;os de vida &uacute;til.</p>
 
       <p>Sea cual sea tu elecci&oacute;n, aseg&uacute;rate de <a href="/blog/como-ahorrar-gasoil-calefaccion/">optimizar el consumo</a> y mantener tu instalaci&oacute;n en perfecto estado. Si optas por seguir con gasoil, consulta el <a href="/">precio actual del gasoil de calefacci&oacute;n</a> y aprovecha los momentos de menor precio para hacer tu pedido.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

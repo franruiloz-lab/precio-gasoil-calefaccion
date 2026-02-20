@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="¿Cuánto Consume una Caldera de Gasoil? Guía 2026"
   description="Descubre cuánto consume una caldera de gasoil al día, mes y año según el tamaño de tu vivienda. Tablas de consumo y cálculos actualizados para 2026."
-  type="article"
+  slug="consumo-caldera-gasoil"
+  category="Guías"
+  breadcrumbName="Consumo de Caldera"
 >
-  <SchemaArticle
-    slot="schema"
-    title="¿Cuánto Consume una Caldera de Gasoil? Consumo Diario, Mensual y Anual"
-    description="Descubre cuánto consume una caldera de gasoil al día, mes y año según el tamaño de tu vivienda. Tablas de consumo y cálculos actualizados para 2026."
-    url="https://calienteybarato.com/blog/consumo-caldera-gasoil/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Consumo caldera gasoil', url: '/blog/consumo-caldera-gasoil/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>&iquest;Cu&aacute;nto consume una caldera de gasoil?</span>
-    </nav>
-
-    <article class="content">
-      <h1>&iquest;Cu&aacute;nto Consume una Caldera de Gasoil? Consumo por D&iacute;a, Mes y A&ntilde;o</h1>
+  <h1 slot="title">&iquest;Cu&aacute;nto Consume una Caldera de Gasoil? Consumo por D&iacute;a, Mes y A&ntilde;o</h1>
 
       <p>Conocer el <strong>consumo real de tu caldera de gasoil</strong> es esencial para planificar tus compras de combustible, detectar posibles ineficiencias y controlar tu presupuesto dom&eacute;stico. En este art&iacute;culo te mostramos tablas de consumo detalladas seg&uacute;n el tama&ntilde;o de la vivienda, la zona clim&aacute;tica y el nivel de aislamiento.</p>
 
@@ -334,8 +306,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>El consumo de una caldera de gasoil var&iacute;a enormemente seg&uacute;n la vivienda, la ubicaci&oacute;n y el aislamiento. Una vivienda media de 150 m&sup2; en el centro peninsular consume entre <strong>1.300 y 1.800 litros anuales</strong>, lo que supone un gasto de 1.170-1.620 &euro; al a&ntilde;o al precio actual.</p>
 
       <p>Conocer tu consumo te permite planificar mejor tus compras y detectar ineficiencias. Consulta el <a href="/">precio actualizado del gasoil de calefacci&oacute;n</a>, utiliza la <a href="/calculadora/">calculadora</a> para estimar tu gasto y sigue la <a href="/evolucion-precio/">evoluci&oacute;n del precio</a> para comprar en el mejor momento.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

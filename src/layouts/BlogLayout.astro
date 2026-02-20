@@ -1,0 +1,107 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SchemaBreadcrumb from '../components/SchemaBreadcrumb.astro';
+import SchemaArticle from '../components/SchemaArticle.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  category: 'Guías' | 'Comparativas' | 'Ahorro' | 'Normativa';
+  breadcrumbName: string;
+  dateModified?: string;
+}
+
+const { title, description, slug, category, breadcrumbName, dateModified = '2026-02-20' } = Astro.props;
+
+const categoryConfig: Record<string, { cssClass: string; icon: string }> = {
+  'Guías': { cssClass: 'guias', icon: '\ud83d\udcd6' },
+  'Comparativas': { cssClass: 'comparativas', icon: '\u2696\ufe0f' },
+  'Ahorro': { cssClass: 'ahorro', icon: '\ud83d\udcb0' },
+  'Normativa': { cssClass: 'normativa', icon: '\ud83d\udccb' },
+};
+
+const cfg = categoryConfig[category];
+const siteUrl = 'https://calienteybarato.com';
+const fullUrl = `${siteUrl}/blog/${slug}/`;
+
+const allArticles = [
+  { slug: 'diferencia-gasoleo-a-b-c', title: 'Diferencia entre Gasóleo A, B y C', category: 'Guías' },
+  { slug: 'gasoil-calefaccion-vs-gas-natural', title: 'Gasoil vs Gas Natural', category: 'Comparativas' },
+  { slug: 'gasoil-calefaccion-vs-aerotermia', title: 'Gasoil vs Aerotermia', category: 'Comparativas' },
+  { slug: 'gasoil-calefaccion-vs-pellets', title: 'Gasoil vs Pellets', category: 'Comparativas' },
+  { slug: 'cuando-es-mas-barato-gasoil-calefaccion', title: '¿Cuándo es Más Barato?', category: 'Ahorro' },
+  { slug: 'como-ahorrar-gasoil-calefaccion', title: '15 Consejos para Ahorrar', category: 'Ahorro' },
+  { slug: 'consumo-caldera-gasoil', title: 'Consumo de Caldera de Gasoil', category: 'Guías' },
+  { slug: 'mantenimiento-caldera-gasoil', title: 'Mantenimiento de Caldera', category: 'Guías' },
+  { slug: 'normativa-deposito-gasoil', title: 'Normativa de Depósitos', category: 'Normativa' },
+  { slug: 'iva-impuestos-gasoil-calefaccion', title: 'IVA e Impuestos', category: 'Normativa' },
+  { slug: 'subvenciones-cambiar-caldera-gasoil', title: 'Subvenciones 2026', category: 'Ahorro' },
+  { slug: 'gasoil-calefaccion-comunidad-vecinos', title: 'Calefacción en Comunidades', category: 'Guías' },
+];
+
+const related = allArticles.filter(a => a.slug !== slug).slice(0, 4);
+---
+
+<BaseLayout title={title} description={description} type="article">
+  <SchemaArticle
+    slot="schema"
+    title={title}
+    description={description}
+    url={fullUrl}
+    dateModified={dateModified}
+  />
+  <SchemaBreadcrumb
+    slot="schema"
+    items={[
+      { name: 'Inicio', url: '/' },
+      { name: 'Blog', url: '/blog/' },
+      { name: breadcrumbName, url: `/blog/${slug}/` }
+    ]}
+  />
+
+  <Header />
+
+  <main class="container">
+    <nav class="breadcrumbs">
+      <a href="/">Inicio</a> &raquo;
+      <a href="/blog/">Blog</a> &raquo;
+      <span>{breadcrumbName}</span>
+    </nav>
+
+    <div class="article-header">
+      <div class="article-meta">
+        <span class={`article-badge article-badge--${cfg.cssClass}`}>{cfg.icon} {category}</span>
+        <span>Actualizado: {dateModified}</span>
+      </div>
+      <slot name="title" />
+    </div>
+
+    <article class="content">
+      <slot />
+    </article>
+
+    <section class="blog-related">
+      <h2>Art&iacute;culos Relacionados</h2>
+      <div class="blog-grid">
+        {related.map(a => {
+          const acfg = categoryConfig[a.category];
+          return (
+            <a href={`/blog/${a.slug}/`} class={`blog-card blog-card--${acfg.cssClass}`}>
+              <div class={`blog-category-label blog-category-label--${acfg.cssClass}`}>{a.category}</div>
+              <h3>{a.title}</h3>
+              <span class="blog-card-arrow">Leer art&iacute;culo &rarr;</span>
+            </a>
+          );
+        })}
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;">
+        <a href="/blog/" style="font-weight:600;">Ver todos los art&iacute;culos &rarr;</a>
+      </p>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

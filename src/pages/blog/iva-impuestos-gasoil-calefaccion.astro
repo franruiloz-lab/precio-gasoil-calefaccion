@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="IVA e Impuestos del Gasoil de Calefacción: Desglose Completo"
   description="Conoce todos los impuestos que pagas en el gasoil de calefacción: Impuesto de Hidrocarburos, IVA, margen de distribución y cómo se compone el precio final por litro."
-  type="article"
+  slug="iva-impuestos-gasoil-calefaccion"
+  category="Normativa"
+  breadcrumbName="IVA e Impuestos"
 >
-  <SchemaArticle
-    slot="schema"
-    title="IVA e Impuestos del Gasoil de Calefacción: Desglose Completo"
-    description="Conoce todos los impuestos que pagas en el gasoil de calefacción: Impuesto de Hidrocarburos, IVA, margen de distribución y cómo se compone el precio final por litro."
-    url="https://calienteybarato.com/blog/iva-impuestos-gasoil-calefaccion/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'IVA e Impuestos Gasoil', url: '/blog/iva-impuestos-gasoil-calefaccion/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>IVA e Impuestos Gasoil Calefacci&oacute;n</span>
-    </nav>
-
-    <article class="content">
-      <h1>IVA e Impuestos del Gasoil de Calefacci&oacute;n: Desglose Completo</h1>
+  <h1 slot="title">IVA e Impuestos del Gasoil de Calefacci&oacute;n: Desglose Completo</h1>
 
       <p>Cuando recibes la factura de tu pedido de gasoil de calefacci&oacute;n, el precio que pagas por litro incluye mucho m&aacute;s que el coste del combustible en s&iacute;. Una parte significativa del <a href="/">precio del gasoil de calefacci&oacute;n</a> se destina a <strong>impuestos y tasas</strong> que gravan la producci&oacute;n, distribuci&oacute;n y consumo de hidrocarburos. En este art&iacute;culo desglosamos todos los componentes del precio para que entiendas exactamente qu&eacute; est&aacute;s pagando.</p>
 
@@ -298,8 +270,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>La <strong>bonificaci&oacute;n fiscal</strong> del Gas&oacute;leo B frente al Gas&oacute;leo A supone un ahorro de m&aacute;s de 0,20 &euro;/litro en impuestos, lo que hace que la calefacci&oacute;n con gasoil siga siendo una opci&oacute;n competitiva para muchos hogares espa&ntilde;oles, especialmente en zonas sin acceso a gas natural.</p>
 
       <p>Consulta el <a href="/">precio actualizado del gasoil de calefacci&oacute;n</a> para ver c&oacute;mo estos factores se reflejan en el precio de hoy.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

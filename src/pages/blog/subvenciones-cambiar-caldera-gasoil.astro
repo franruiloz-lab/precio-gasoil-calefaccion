@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Subvenciones para Cambiar tu Caldera de Gasoil en 2026"
   description="Descubre todas las ayudas y subvenciones disponibles en 2026 para sustituir tu caldera de gasoil: Plan Renove, ayudas del IDAE, subvenciones autonómicas y cómo solicitarlas."
-  type="article"
+  slug="subvenciones-cambiar-caldera-gasoil"
+  category="Ahorro"
+  breadcrumbName="Subvenciones"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Subvenciones para Cambiar tu Caldera de Gasoil en 2026"
-    description="Descubre todas las ayudas y subvenciones disponibles en 2026 para sustituir tu caldera de gasoil: Plan Renove, ayudas del IDAE, subvenciones autonómicas y cómo solicitarlas."
-    url="https://calienteybarato.com/blog/subvenciones-cambiar-caldera-gasoil/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Subvenciones Cambiar Caldera', url: '/blog/subvenciones-cambiar-caldera-gasoil/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>Subvenciones Cambiar Caldera Gasoil</span>
-    </nav>
-
-    <article class="content">
-      <h1>Subvenciones para Cambiar tu Caldera de Gasoil en 2026</h1>
+  <h1 slot="title">Subvenciones para Cambiar tu Caldera de Gasoil en 2026</h1>
 
       <p>Si est&aacute;s pensando en sustituir tu caldera de gasoil por un sistema de calefacci&oacute;n m&aacute;s eficiente y respetuoso con el medio ambiente, <strong>2026 es un buen a&ntilde;o para hacerlo</strong>. Existen m&uacute;ltiples programas de ayudas y subvenciones, tanto estatales como auton&oacute;micos, que pueden cubrir una parte significativa del coste de la inversi&oacute;n. En este art&iacute;culo te explicamos todas las opciones disponibles, c&oacute;mo solicitar las ayudas y cu&aacute;l es el retorno de inversi&oacute;n esperado para cada alternativa.</p>
 
@@ -223,8 +195,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>Las subvenciones disponibles en 2026 hacen que el cambio de caldera de gasoil sea m&aacute;s asequible que nunca. Con ayudas que pueden cubrir entre el <strong>30% y el 65%</strong> del coste de la instalaci&oacute;n, el retorno de inversi&oacute;n se acorta significativamente. La <strong>aerotermia</strong> y la <strong>biomasa</strong> son las opciones que m&aacute;s subvenciones reciben y las que ofrecen mayor ahorro a largo plazo.</p>
 
       <p>Nuestro consejo: <strong>no esperes a que se agoten los fondos</strong>. Inf&oacute;rmate, solicita presupuestos y presenta tu solicitud cuanto antes. Y recuerda que, mientras tanto, puedes seguir ahorrando en tu calefacci&oacute;n actual consultando nuestras comparativas de <a href="/blog/gasoil-calefaccion-vs-aerotermia/">gasoil vs aerotermia</a>, <a href="/blog/gasoil-calefaccion-vs-pellets/">gasoil vs pellets</a> y <a href="/blog/gasoil-calefaccion-vs-gas-natural/">gasoil vs gas natural</a> para tomar la mejor decisi&oacute;n.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

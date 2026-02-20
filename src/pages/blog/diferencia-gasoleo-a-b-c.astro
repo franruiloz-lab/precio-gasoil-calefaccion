@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Diferencia entre Gasóleo A, B y C | Tipos de Gasóleo"
   description="Descubre las diferencias entre Gasóleo A, B y C: usos, impuestos, composición y cuál es el adecuado para calefacción. Guía completa actualizada en 2026."
-  type="article"
+  slug="diferencia-gasoleo-a-b-c"
+  category="Guías"
+  breadcrumbName="Diferencia Gasóleo A, B y C"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Diferencia entre Gasóleo A, B y C: Guía Completa de Tipos de Gasóleo"
-    description="Descubre las diferencias entre Gasóleo A, B y C: usos, impuestos, composición y cuál es el adecuado para calefacción. Guía completa actualizada en 2026."
-    url="https://calienteybarato.com/blog/diferencia-gasoleo-a-b-c/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Diferencia Gasóleo A, B y C', url: '/blog/diferencia-gasoleo-a-b-c/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>Diferencia entre Gas&oacute;leo A, B y C</span>
-    </nav>
-
-    <article class="content">
-      <h1>Diferencia entre Gas&oacute;leo A, B y C: Tipos de Gas&oacute;leo en Espa&ntilde;a</h1>
+  <h1 slot="title">Diferencia entre Gas&oacute;leo A, B y C: Tipos de Gas&oacute;leo en Espa&ntilde;a</h1>
 
       <p>Cuando hablamos de gas&oacute;leo en Espa&ntilde;a, no existe un &uacute;nico tipo. La legislaci&oacute;n espa&ntilde;ola distingue tres clases principales: <strong>Gas&oacute;leo A</strong>, <strong>Gas&oacute;leo B</strong> y <strong>Gas&oacute;leo C</strong>. Cada uno tiene una composici&oacute;n, fiscalidad y usos espec&iacute;ficos que es fundamental conocer para evitar problemas legales y optimizar el gasto energ&eacute;tico de tu hogar.</p>
 
@@ -231,8 +203,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>Si quieres optimizar tu gasto en calefacci&oacute;n, te recomendamos consultar nuestros art&iacute;culos sobre <a href="/blog/como-ahorrar-gasoil-calefaccion/">c&oacute;mo ahorrar en gasoil de calefacci&oacute;n</a> y comparar el gasoil con otras alternativas como el <a href="/blog/gasoil-calefaccion-vs-gas-natural/">gas natural</a>, la <a href="/blog/gasoil-calefaccion-vs-aerotermia/">aerotermia</a> o los <a href="/blog/gasoil-calefaccion-vs-pellets/">pellets de biomasa</a>.</p>
 
       <p>Consulta el <a href="/">precio del gasoil de calefacci&oacute;n de hoy</a> y utiliza nuestra <a href="/calculadora/">calculadora</a> para planificar tu pr&oacute;ximo pedido.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

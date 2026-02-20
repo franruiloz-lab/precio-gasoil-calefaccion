@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Gasoil de Calefacción vs Pellets de Biomasa: Comparativa 2026"
   description="Comparativa completa entre gasoil de calefacción y pellets de biomasa: coste por kWh, impacto medioambiental, espacio necesario y comodidad de uso. Guía actualizada 2026."
-  type="article"
+  slug="gasoil-calefaccion-vs-pellets"
+  category="Comparativas"
+  breadcrumbName="Gasoil vs Pellets"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Gasoil de Calefacción vs Pellets de Biomasa: Comparativa Completa 2026"
-    description="Comparativa completa entre gasoil de calefacción y pellets de biomasa: coste por kWh, impacto medioambiental, espacio necesario y comodidad de uso. Guía actualizada 2026."
-    url="https://calienteybarato.com/blog/gasoil-calefaccion-vs-pellets/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Gasoil vs Pellets', url: '/blog/gasoil-calefaccion-vs-pellets/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>Gasoil de Calefacci&oacute;n vs Pellets de Biomasa</span>
-    </nav>
-
-    <article class="content">
-      <h1>Gasoil de Calefacci&oacute;n vs Pellets de Biomasa: Comparativa Completa 2026</h1>
+  <h1 slot="title">Gasoil de Calefacci&oacute;n vs Pellets de Biomasa: Comparativa Completa 2026</h1>
 
       <p>Si est&aacute;s pensando en renovar tu sistema de calefacci&oacute;n o simplemente quieres saber si existe una alternativa m&aacute;s econ&oacute;mica y ecol&oacute;gica al <strong>gasoil de calefacci&oacute;n</strong>, los <strong>pellets de biomasa</strong> son una de las opciones que m&aacute;s han crecido en Espa&ntilde;a durante los &uacute;ltimos a&ntilde;os. En esta gu&iacute;a comparamos ambos combustibles en profundidad: coste por kWh, impacto medioambiental, requisitos de espacio, comodidad de uso y mucho m&aacute;s.</p>
 
@@ -320,8 +292,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>La decisi&oacute;n &oacute;ptima depende de tu situaci&oacute;n particular: presupuesto, espacio disponible, estado de tu caldera actual, zona geogr&aacute;fica y prioridades medioambientales. Si tu caldera de gasoil est&aacute; en buen estado, probablemente lo m&aacute;s sensato sea mantenerla y planificar el cambio para cuando necesite sustituci&oacute;n.</p>
 
       <p>Sea cual sea tu elecci&oacute;n, en nuestra <a href="/">p&aacute;gina principal</a> encontrar&aacute;s siempre el precio actualizado del gasoil de calefacci&oacute;n, y con la <a href="/calculadora/">calculadora</a> podr&aacute;s estimar tu gasto con precisi&oacute;n.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

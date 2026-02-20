@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Gasoil de Calefacción en Comunidad de Vecinos: Guía Completa"
   description="Todo sobre la calefacción central con gasoil en comunidades de vecinos: reparto de costes, compra colectiva, derechos y obligaciones, y cómo ahorrar en comunidad."
-  type="article"
+  slug="gasoil-calefaccion-comunidad-vecinos"
+  category="Guías"
+  breadcrumbName="Comunidad de Vecinos"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Gasoil de Calefacción en Comunidad de Vecinos: Guía Completa"
-    description="Todo sobre la calefacción central con gasoil en comunidades de vecinos: reparto de costes, compra colectiva, derechos y obligaciones, y cómo ahorrar en comunidad."
-    url="https://calienteybarato.com/blog/gasoil-calefaccion-comunidad-vecinos/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Gasoil Comunidad de Vecinos', url: '/blog/gasoil-calefaccion-comunidad-vecinos/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>Gasoil Calefacci&oacute;n Comunidad de Vecinos</span>
-    </nav>
-
-    <article class="content">
-      <h1>Gasoil de Calefacci&oacute;n en Comunidad de Vecinos: Gu&iacute;a Completa</h1>
+  <h1 slot="title">Gasoil de Calefacci&oacute;n en Comunidad de Vecinos: Gu&iacute;a Completa</h1>
 
       <p>La <strong>calefacci&oacute;n central con gasoil</strong> sigue siendo uno de los sistemas m&aacute;s extendidos en las comunidades de propietarios espa&ntilde;olas, especialmente en edificios construidos entre los a&ntilde;os 60 y 90. Si vives en un edificio con este sistema o eres administrador de una comunidad de vecinos, esta gu&iacute;a te ayudar&aacute; a entender c&oacute;mo funciona, c&oacute;mo se reparten los costes y c&oacute;mo optimizar el gasto para todos los propietarios.</p>
 
@@ -321,8 +293,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>Las claves para optimizar el gasto son: <strong>comprar gasoil en el momento adecuado</strong>, mantener la caldera en perfecto estado, instalar v&aacute;lvulas termost&aacute;ticas y considerar la contabilizaci&oacute;n individual de consumos. Con estas medidas, tu comunidad puede ahorrar cientos de euros cada temporada.</p>
 
       <p>Consulta el <a href="/">precio del gasoil de calefacci&oacute;n de hoy</a> y utiliza nuestra <a href="/calculadora/">calculadora de gasoil</a> para estimar el consumo y el coste de tu comunidad para esta temporada.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

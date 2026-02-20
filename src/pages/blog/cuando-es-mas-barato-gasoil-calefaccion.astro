@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="¿Cuándo es Más Barato el Gasoil de Calefacción? Mejor Momento para Comprar"
   description="Análisis mensual del precio del gasoil de calefacción en España: estacionalidad, mejores meses para comprar, factores del mercado del petróleo y tipo de cambio euro/dólar. Guía 2026."
-  type="article"
+  slug="cuando-es-mas-barato-gasoil-calefaccion"
+  category="Ahorro"
+  breadcrumbName="Cuándo es Más Barato"
 >
-  <SchemaArticle
-    slot="schema"
-    title="¿Cuándo es Más Barato el Gasoil de Calefacción? Guía de Estacionalidad y Ahorro"
-    description="Análisis mensual del precio del gasoil de calefacción en España: estacionalidad, mejores meses para comprar, factores del mercado del petróleo y tipo de cambio euro/dólar. Guía 2026."
-    url="https://calienteybarato.com/blog/cuando-es-mas-barato-gasoil-calefaccion/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Cuándo es más barato', url: '/blog/cuando-es-mas-barato-gasoil-calefaccion/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>&iquest;Cu&aacute;ndo es m&aacute;s barato el gasoil?</span>
-    </nav>
-
-    <article class="content">
-      <h1>&iquest;Cu&aacute;ndo es M&aacute;s Barato el Gasoil de Calefacci&oacute;n? Gu&iacute;a Completa de Estacionalidad y Ahorro</h1>
+  <h1 slot="title">&iquest;Cu&aacute;ndo es M&aacute;s Barato el Gasoil de Calefacci&oacute;n? Gu&iacute;a Completa de Estacionalidad y Ahorro</h1>
 
       <p>El <strong>gasoil de calefacci&oacute;n</strong> tiene una ventaja que otros combustibles no ofrecen: puedes elegir cu&aacute;ndo comprarlo. A diferencia del gas natural o la electricidad, donde pagas seg&uacute;n consumo continuo, el gas&oacute;leo C se adquiere en cantidades grandes y se almacena en tu dep&oacute;sito, lo que te da la posibilidad de <strong>comprar cuando el precio es m&aacute;s favorable</strong> y ahorrar una cantidad significativa de dinero cada a&ntilde;o.</p>
 
@@ -305,8 +277,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>La regla es sencilla: <strong>anticipa tu compra al verano, evita el invierno</strong>. Y si necesitas comprar en temporada alta, minimiza la cantidad y completa el dep&oacute;sito cuando los precios bajen.</p>
 
       <p>Recuerda consultar regularmente el <a href="/">precio del gasoil de calefacci&oacute;n</a>, seguir la <a href="/evolucion-precio/">evoluci&oacute;n hist&oacute;rica</a> y utilizar la <a href="/calculadora/">calculadora</a> para tomar siempre la decisi&oacute;n m&aacute;s informada.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

@@ -1,43 +1,15 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
-import SchemaArticle from '../../components/SchemaArticle.astro';
+import BlogLayout from '../../layouts/BlogLayout.astro';
 ---
 
-<BaseLayout
+<BlogLayout
   title="Normativa Depósitos Gasoil Calefacción 2026"
   description="Todo sobre la normativa de depósitos de gasoil para calefacción en España: MI-IP-03, capacidades máximas, requisitos legales y legalización de instalaciones."
-  type="article"
+  slug="normativa-deposito-gasoil"
+  category="Normativa"
+  breadcrumbName="Normativa Depósitos"
 >
-  <SchemaArticle
-    slot="schema"
-    title="Normativa de Depósitos de Gasoil para Calefacción en España"
-    description="Todo sobre la normativa de depósitos de gasoil para calefacción en España: MI-IP-03, capacidades máximas, requisitos legales y legalización de instalaciones."
-    url="https://calienteybarato.com/blog/normativa-deposito-gasoil/"
-    dateModified="2026-02-20"
-  />
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' },
-      { name: 'Normativa depósito gasoil', url: '/blog/normativa-deposito-gasoil/' }
-    ]}
-  />
-
-  <Header />
-
-  <main class="container">
-    <nav class="breadcrumbs">
-      <a href="/">Inicio</a> &raquo;
-      <a href="/blog/">Blog</a> &raquo;
-      <span>Normativa de dep&oacute;sitos de gasoil</span>
-    </nav>
-
-    <article class="content">
-      <h1>Normativa de Dep&oacute;sitos de Gasoil para Calefacci&oacute;n en Espa&ntilde;a</h1>
+  <h1 slot="title">Normativa de Dep&oacute;sitos de Gasoil para Calefacci&oacute;n en Espa&ntilde;a</h1>
 
       <p>Si utilizas <strong>gasoil de calefacci&oacute;n</strong> en tu hogar, es fundamental que conozcas la <strong>normativa que regula los dep&oacute;sitos de almacenamiento</strong>. El cumplimiento de estas normas no es solo una obligaci&oacute;n legal, sino tambi&eacute;n una garant&iacute;a de seguridad para tu familia y tu propiedad.</p>
 
@@ -248,8 +220,4 @@ import SchemaArticle from '../../components/SchemaArticle.astro';
       <p>Cumplir con la normativa de dep&oacute;sitos de gasoil no solo te protege de sanciones, sino que garantiza la <strong>seguridad</strong> de tu instalaci&oacute;n y protege el medio ambiente. Los dep&oacute;sitos de doble pared son la opci&oacute;n m&aacute;s sencilla para cumplir con los requisitos, y un instalador autorizado puede asesorarte sobre la mejor soluci&oacute;n para tu caso.</p>
 
       <p>Recuerda que un dep&oacute;sito bien dimensionado te permite <a href="/blog/como-ahorrar-gasoil-calefaccion/">ahorrar en gasoil</a> comprando en el momento &oacute;ptimo. Consulta la <a href="/evolucion-precio/">evoluci&oacute;n del precio</a> y planifica tu compra de forma inteligente.</p>
-    </article>
-  </main>
-
-  <Footer />
-</BaseLayout>
+</BlogLayout>

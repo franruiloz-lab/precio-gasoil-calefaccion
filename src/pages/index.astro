@@ -9,6 +9,7 @@ import PriceCalculator from '../components/PriceCalculator.astro';
 import PriceChart from '../components/PriceChart.astro';
 import FAQ from '../components/FAQ.astro';
 import SchemaArticle from '../components/SchemaArticle.astro';
+import SchemaBreadcrumb from '../components/SchemaBreadcrumb.astro';
 
 import precios from '../data/precios.json';
 import regiones from '../data/regiones.json';
@@ -77,6 +78,10 @@ const faqItems = [
     description={`Precio medio del gasoil de calefacción en España: ${formatPrice(precioNacional)} €/litro. Precios por comunidad autónoma, calculadora y evolución histórica.`}
     url={siteUrl}
     dateModified={precios.lastUpdated}
+  />
+  <SchemaBreadcrumb
+    slot="schema"
+    items={[{ name: 'Inicio', url: '/' }]}
   />
 
   <Header />

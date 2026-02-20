@@ -13,6 +13,7 @@ const direction = getTrendDirection(variacionMensual);
 const variacionCt = Math.abs(variacionMensual * 100).toFixed(1).replace('.', ',');
 const trendSymbol = direction === 'down' ? '\u2193' : direction === 'up' ? '\u2191' : '\u2192';
 const trendLabel = direction === 'down' ? `${trendSymbol} -${variacionCt} ct vs mes anterior` : direction === 'up' ? `${trendSymbol} +${variacionCt} ct vs mes anterior` : 'Sin cambios vs mes anterior';
+const ariaLabel = direction === 'down' ? `Precio bajando ${variacionCt} céntimos respecto al mes anterior` : direction === 'up' ? `Precio subiendo ${variacionCt} céntimos respecto al mes anterior` : 'Precio sin cambios respecto al mes anterior';
 ---
 
 <div class="price-hero">
@@ -23,7 +24,7 @@ const trendLabel = direction === 'down' ? `${trendSymbol} -${variacionCt} ct vs 
   <div class="price-big">
     {formatPrice(precio)} <span class="price-unit">&euro;/litro</span>
   </div>
-  <div class={`price-trend ${direction}`}>
+  <div class={`price-trend ${direction}`} role="status" aria-label={ariaLabel}>
     {trendLabel}
   </div>
 </div>

@@ -37,6 +37,9 @@ const ogImage = `${siteUrl}/og-image.jpg`;
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={ogImage}>
 
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
@@ -44,6 +47,19 @@ const ogImage = `${siteUrl}/og-image.jpg`;
   <style is:global>
     @import '../styles/global.css';
   </style>
+
+  <!-- WebSite Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Precio Gasoil Calefacción",
+    "url": siteUrl,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${siteUrl}/precio-gasoil-calefaccion/{search_term_string}/`,
+      "query-input": "required name=search_term_string"
+    }
+  })} />
 
   <!-- Schema slots -->
   <slot name="schema" />

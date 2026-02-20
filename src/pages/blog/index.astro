@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
+
+const articles = [
+  {
+    slug: 'diferencia-gasoleo-a-b-c',
+    title: 'Diferencia entre Gasóleo A, B y C',
+    description: 'Descubre las diferencias entre los tres tipos de gasóleo: usos, impuestos, composición y cuál usar para calefacción.',
+    category: 'Guías'
+  },
+  {
+    slug: 'gasoil-calefaccion-vs-gas-natural',
+    title: 'Gasoil de Calefacción vs Gas Natural',
+    description: 'Comparativa completa de precio, eficiencia, ventajas e inconvenientes entre gasoil y gas natural para calefacción.',
+    category: 'Comparativas'
+  },
+  {
+    slug: 'gasoil-calefaccion-vs-aerotermia',
+    title: 'Gasoil de Calefacción vs Aerotermia',
+    description: 'Análisis de inversión, ahorro y retorno entre caldera de gasoil y bomba de calor aerotérmica.',
+    category: 'Comparativas'
+  },
+  {
+    slug: 'gasoil-calefaccion-vs-pellets',
+    title: 'Gasoil de Calefacción vs Pellets de Biomasa',
+    description: 'Comparativa ecológica y económica entre gasóleo C y pellets para calentar tu hogar.',
+    category: 'Comparativas'
+  },
+  {
+    slug: 'cuando-es-mas-barato-gasoil-calefaccion',
+    title: '¿Cuándo es Más Barato el Gasoil de Calefacción?',
+    description: 'Análisis de la estacionalidad del precio del gasóleo C y el mejor momento para comprar.',
+    category: 'Ahorro'
+  },
+  {
+    slug: 'como-ahorrar-gasoil-calefaccion',
+    title: 'Cómo Ahorrar en Gasoil de Calefacción: 15 Consejos',
+    description: 'Guía práctica con 15 consejos para reducir el consumo y el gasto en gasoil de calefacción.',
+    category: 'Ahorro'
+  },
+  {
+    slug: 'consumo-caldera-gasoil',
+    title: '¿Cuánto Consume una Caldera de Gasoil?',
+    description: 'Consumo medio de una caldera de gasóleo por día, mes y año según el tamaño de la vivienda.',
+    category: 'Guías'
+  },
+  {
+    slug: 'mantenimiento-caldera-gasoil',
+    title: 'Mantenimiento de la Caldera de Gasoil: Guía Completa',
+    description: 'Todo sobre la revisión anual, limpieza, averías comunes y costes de mantenimiento de calderas de gasóleo.',
+    category: 'Guías'
+  },
+  {
+    slug: 'normativa-deposito-gasoil',
+    title: 'Normativa de Depósitos de Gasoil para Calefacción',
+    description: 'Requisitos legales, capacidad máxima, doble pared y normativa MI-IP-03 para depósitos de gasóleo C.',
+    category: 'Normativa'
+  },
+  {
+    slug: 'iva-impuestos-gasoil-calefaccion',
+    title: 'IVA e Impuestos del Gasoil de Calefacción',
+    description: 'Desglose fiscal del precio del gasóleo C: IVA, Impuesto de Hidrocarburos y composición del precio final.',
+    category: 'Normativa'
+  },
+  {
+    slug: 'subvenciones-cambiar-caldera-gasoil',
+    title: 'Subvenciones para Cambiar tu Caldera de Gasoil en 2026',
+    description: 'Ayudas del IDAE, Plan Renove y subvenciones autonómicas para sustituir calderas de gasóleo.',
+    category: 'Ahorro'
+  },
+  {
+    slug: 'gasoil-calefaccion-comunidad-vecinos',
+    title: 'Gasoil de Calefacción en Comunidad de Vecinos',
+    description: 'Gestión de la calefacción central con gasóleo C: costes, reparto, mantenimiento y compra agrupada.',
+    category: 'Guías'
+  }
+];
+
+const categories = [...new Set(articles.map(a => a.category))];
+---
+
+<BaseLayout
+  title="Blog sobre Gasoil de Calefacción - Guías, Consejos y Comparativas"
+  description="Artículos y guías sobre gasoil de calefacción: comparativas, consejos de ahorro, mantenimiento de calderas, normativa y subvenciones."
+>
+  <SchemaBreadcrumb
+    slot="schema"
+    items={[
+      { name: 'Inicio', url: '/' },
+      { name: 'Blog', url: '/blog/' }
+    ]}
+  />
+
+  <Header />
+
+  <main class="container">
+    <nav class="breadcrumbs">
+      <a href="/">Inicio</a> &raquo;
+      <span>Blog</span>
+    </nav>
+
+    <h1>Blog: Gu&iacute;as y Consejos sobre Gasoil de Calefacci&oacute;n</h1>
+    <p>
+      Art&iacute;culos, gu&iacute;as y comparativas para ayudarte a tomar las mejores decisiones
+      sobre tu sistema de calefacci&oacute;n con gas&oacute;leo C.
+    </p>
+
+    {categories.map(cat => (
+      <section style="margin-top:2rem;">
+        <h2>{cat}</h2>
+        <div class="region-grid">
+          {articles.filter(a => a.category === cat).map(article => (
+            <a href={`/blog/${article.slug}/`} class="region-card">
+              <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">{article.title}</h3>
+              <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">{article.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section style="margin-top:3rem;">
+      <h2>Herramientas &Uacute;tiles</h2>
+      <div class="region-grid">
+        <a href="/" class="region-card">
+          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">Precio del Gasoil Hoy</h3>
+          <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">Consulta el precio actualizado del gas&oacute;leo C en toda Espa&ntilde;a.</p>
+        </a>
+        <a href="/calculadora/" class="region-card">
+          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">Calculadora de Coste</h3>
+          <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">Calcula cu&aacute;nto te costar&aacute; llenar tu dep&oacute;sito.</p>
+        </a>
+        <a href="/evolucion-precio/" class="region-card">
+          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">Evoluci&oacute;n del Precio</h3>
+          <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">Gr&aacute;fico hist&oacute;rico de precios de los &uacute;ltimos 24 meses.</p>
+        </a>
+        <a href="/consumo-caldera-gasoil/" class="region-card">
+          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">Consumo de Caldera</h3>
+          <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">Calcula cu&aacute;nto consume tu caldera seg&uacute;n tu vivienda.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

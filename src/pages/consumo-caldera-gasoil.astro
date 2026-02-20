@@ -1,0 +1,359 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SchemaBreadcrumb from '../components/SchemaBreadcrumb.astro';
+import SchemaArticle from '../components/SchemaArticle.astro';
+import FAQ from '../components/FAQ.astro';
+import { formatPrice, calculateCost } from '../utils/format';
+import precios from '../data/precios.json';
+
+const precioNacional = precios.nacional.precioMedio;
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Calculadora Consumo Caldera', url: '/consumo-caldera-gasoil/' }
+];
+
+const faqItems = [
+  {
+    pregunta: '¿Cuántos litros de gasoil consume una caldera al día?',
+    respuesta: 'Una caldera de gasoil doméstica consume entre 5 y 15 litros al día en pleno invierno, dependiendo de la potencia de la caldera, el tamaño de la vivienda y el aislamiento térmico. Un piso de 80 m² consume unos 5-7 litros/día, mientras que un chalet de 200 m² puede llegar a 12-15 litros/día.'
+  },
+  {
+    pregunta: '¿Cuánto gasoil se gasta en un mes de invierno?',
+    respuesta: `En un mes de invierno típico (enero-febrero), una vivienda media consume entre 150 y 450 litros de gasoil. Al precio actual de ${formatPrice(precioNacional)} €/litro, esto supone un gasto de ${calculateCost(150, precioNacional)} € a ${calculateCost(450, precioNacional)} € mensuales.`
+  },
+  {
+    pregunta: '¿Cuántos litros de gasoil se gastan en toda la temporada?',
+    respuesta: 'La temporada de calefacción en España dura unos 6-7 meses (octubre a abril). El consumo total varía entre 1.000 y 3.000 litros según la zona climática y la vivienda. En zonas frías como Castilla y León o Aragón el consumo es mayor que en la costa mediterránea.'
+  },
+  {
+    pregunta: '¿Cómo puedo reducir el consumo de mi caldera de gasoil?',
+    respuesta: 'Las formas más efectivas de reducir el consumo son: mejorar el aislamiento térmico de la vivienda (ventanas, fachada, tejado), instalar un termostato programable, realizar el mantenimiento anual de la caldera, purgar los radiadores, y mantener la temperatura entre 19-21°C durante el día.'
+  }
+];
+---
+
+<BaseLayout
+  title="Calculadora de Consumo de Caldera de Gasoil - ¿Cuánto Gasta tu Caldera?"
+  description={`Calcula cuánto consume tu caldera de gasoil según el tamaño de tu vivienda, zona climática y horas de uso. Estimación en litros y euros al precio actual de ${formatPrice(precioNacional)} €/L.`}
+  type="article"
+>
+  <SchemaArticle
+    slot="schema"
+    title="Calculadora de Consumo de Caldera de Gasoil"
+    description={`Calcula el consumo de tu caldera de gasoil: litros diarios, mensuales y anuales según tu vivienda. Precio actual: ${formatPrice(precioNacional)} €/litro.`}
+    url="https://calienteybarato.com/consumo-caldera-gasoil/"
+    dateModified={precios.lastUpdated}
+  />
+  <SchemaBreadcrumb slot="schema" items={breadcrumbItems} />
+
+  <Header />
+
+  <main class="container">
+    <nav class="breadcrumbs">
+      <a href="/">Inicio</a> &raquo;
+      <span>Calculadora Consumo Caldera</span>
+    </nav>
+
+    <h1>Calculadora de Consumo de Caldera de Gasoil</h1>
+    <p>
+      Calcula cu&aacute;nto gasoil consume tu caldera de calefacci&oacute;n seg&uacute;n el tama&ntilde;o de tu
+      vivienda, la zona clim&aacute;tica y las horas de uso diario. Obt&eacute;n una estimaci&oacute;n del
+      gasto en litros y en euros al <a href="/">precio actual del gasoil de calefacci&oacute;n</a>.
+    </p>
+
+    <!-- Calculadora interactiva -->
+    <div class="calculator" id="consumo-calc">
+      <div class="form-group">
+        <label for="superficie">Superficie de la vivienda (m&sup2;)</label>
+        <div class="quick-buttons" role="group" aria-label="Superficie r&aacute;pida">
+          <button type="button" class="quick-btn" data-value="60">60 m&sup2;</button>
+          <button type="button" class="quick-btn" data-value="90">90 m&sup2;</button>
+          <button type="button" class="quick-btn active" data-value="120">120 m&sup2;</button>
+          <button type="button" class="quick-btn" data-value="180">180 m&sup2;</button>
+          <button type="button" class="quick-btn" data-value="250">250 m&sup2;</button>
+        </div>
+        <input type="number" id="superficie" value="120" min="30" max="500" inputmode="numeric" aria-label="Superficie en metros cuadrados">
+      </div>
+
+      <div class="form-group">
+        <label for="zona-climatica">Zona clim&aacute;tica</label>
+        <select id="zona-climatica">
+          <option value="suave">Suave (costa mediterr&aacute;nea, Canarias)</option>
+          <option value="moderado" selected>Moderado (interior centro-sur, costa atl&aacute;ntica)</option>
+          <option value="frio">Fr&iacute;o (meseta norte, monta&ntilde;a, Pirineo)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="aislamiento">Aislamiento t&eacute;rmico</label>
+        <select id="aislamiento">
+          <option value="malo">Malo (ventanas antiguas, sin aislamiento)</option>
+          <option value="medio" selected>Medio (ventanas dobles, algo de aislamiento)</option>
+          <option value="bueno">Bueno (ventanas eficientes, fachada aislada)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="horas">Horas de calefacci&oacute;n al d&iacute;a</label>
+        <div class="quick-buttons" role="group" aria-label="Horas de uso">
+          <button type="button" class="quick-btn-h" data-value="6">6h</button>
+          <button type="button" class="quick-btn-h active" data-value="10">10h</button>
+          <button type="button" class="quick-btn-h" data-value="14">14h</button>
+          <button type="button" class="quick-btn-h" data-value="18">18h</button>
+        </div>
+        <input type="number" id="horas" value="10" min="1" max="24" inputmode="numeric" aria-label="Horas de calefacci&oacute;n al d&iacute;a">
+      </div>
+
+      <div class="result" aria-live="polite">
+        <p style="font-size:0.9rem;color:var(--color-text-secondary);margin-bottom:0.5rem;">Consumo estimado</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;">
+          <div>
+            <div class="result-price" id="litros-dia">--</div>
+            <div style="font-size:0.85rem;color:var(--color-text-secondary);">litros/d&iacute;a</div>
+          </div>
+          <div>
+            <div class="result-price" id="litros-mes">--</div>
+            <div style="font-size:0.85rem;color:var(--color-text-secondary);">litros/mes</div>
+          </div>
+          <div>
+            <div class="result-price" id="litros-temp">--</div>
+            <div style="font-size:0.85rem;color:var(--color-text-secondary);">litros/temporada</div>
+          </div>
+        </div>
+        <hr style="margin:1rem 0;border:none;border-top:1px solid var(--color-border);">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;">
+          <div>
+            <div class="result-price" id="coste-mes" style="color:var(--color-accent);">--</div>
+            <div style="font-size:0.85rem;color:var(--color-text-secondary);">&euro;/mes</div>
+          </div>
+          <div>
+            <div class="result-price" id="coste-temp" style="color:var(--color-accent);">--</div>
+            <div style="font-size:0.85rem;color:var(--color-text-secondary);">&euro;/temporada</div>
+          </div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--color-text-secondary);margin-top:0.75rem;margin-bottom:0;">
+          Al precio medio de <strong id="precio-usado">--</strong> &euro;/litro
+        </p>
+      </div>
+    </div>
+
+    <!-- Tabla referencia -->
+    <section id="tabla-consumo">
+      <h2>Tabla de Consumo de Gasoil por Tipo de Vivienda</h2>
+      <p>
+        Consumo estimado de gasoil de calefacci&oacute;n seg&uacute;n el tipo de vivienda en zona clim&aacute;tica moderada,
+        con aislamiento medio y 10 horas de uso diario.
+      </p>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col">Tipo de vivienda</th>
+            <th scope="col">Litros/d&iacute;a</th>
+            <th scope="col">Litros/mes</th>
+            <th scope="col">Coste/mes</th>
+            <th scope="col">Coste/temporada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Piso 60 m&sup2;</strong></td>
+            <td>4,2 L</td>
+            <td>126 L</td>
+            <td class="price">{calculateCost(126, precioNacional)} &euro;</td>
+            <td class="price">{calculateCost(756, precioNacional)} &euro;</td>
+          </tr>
+          <tr>
+            <td><strong>Piso 90 m&sup2;</strong></td>
+            <td>6,3 L</td>
+            <td>189 L</td>
+            <td class="price">{calculateCost(189, precioNacional)} &euro;</td>
+            <td class="price">{calculateCost(1134, precioNacional)} &euro;</td>
+          </tr>
+          <tr>
+            <td><strong>Casa 120 m&sup2;</strong></td>
+            <td>8,4 L</td>
+            <td>252 L</td>
+            <td class="price">{calculateCost(252, precioNacional)} &euro;</td>
+            <td class="price">{calculateCost(1512, precioNacional)} &euro;</td>
+          </tr>
+          <tr>
+            <td><strong>Chalet 180 m&sup2;</strong></td>
+            <td>12,6 L</td>
+            <td>378 L</td>
+            <td class="price">{calculateCost(378, precioNacional)} &euro;</td>
+            <td class="price">{calculateCost(2268, precioNacional)} &euro;</td>
+          </tr>
+          <tr>
+            <td><strong>Casa grande 250 m&sup2;</strong></td>
+            <td>17,5 L</td>
+            <td>525 L</td>
+            <td class="price">{calculateCost(525, precioNacional)} &euro;</td>
+            <td class="price">{calculateCost(3150, precioNacional)} &euro;</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Factores que afectan al consumo -->
+    <section id="factores">
+      <h2>Factores que Afectan al Consumo de Gasoil de Calefacci&oacute;n</h2>
+      <div class="content">
+        <h3>Zona clim&aacute;tica</h3>
+        <p>
+          La ubicaci&oacute;n geogr&aacute;fica es el factor m&aacute;s determinante. Una vivienda en Burgos puede consumir
+          el doble de gasoil que la misma vivienda en M&aacute;laga. Las zonas m&aacute;s fr&iacute;as de Espa&ntilde;a
+          (meseta norte, Pirineos, zonas de monta&ntilde;a) requieren temporadas de calefacci&oacute;n m&aacute;s largas
+          e intensas.
+        </p>
+
+        <h3>Aislamiento t&eacute;rmico</h3>
+        <p>
+          Un buen <strong>aislamiento</strong> puede reducir el consumo entre un 30% y un 50%. Las principales mejoras incluyen:
+          ventanas de doble o triple acristalamiento, aislamiento de fachadas (SATE), aislamiento del tejado y
+          eliminaci&oacute;n de puentes t&eacute;rmicos. Consulta las <a href="/blog/subvenciones-cambiar-caldera-gasoil/">subvenciones disponibles</a>
+          para mejoras energ&eacute;ticas.
+        </p>
+
+        <h3>Estado de la caldera</h3>
+        <p>
+          Una caldera en buen estado consume significativamente menos. El <a href="/blog/mantenimiento-caldera-gasoil/">mantenimiento anual de la caldera</a>
+          es obligatorio por ley y puede mejorar la eficiencia entre un 10% y un 15%. Las calderas de condensaci&oacute;n
+          modernas alcanzan rendimientos del 98%, frente al 85-90% de las calderas antiguas.
+        </p>
+
+        <h3>Temperatura de consigna</h3>
+        <p>
+          Cada grado adicional de temperatura supone aproximadamente un <strong>7% m&aacute;s de consumo</strong>.
+          La temperatura recomendada es de 19-21&deg;C durante el d&iacute;a y 15-17&deg;C por la noche.
+          Un termostato programable puede ahorrar hasta un 20% en consumo.
+        </p>
+
+        <h3>Horas de uso</h3>
+        <p>
+          El n&uacute;mero de horas que la caldera est&aacute; en funcionamiento influye directamente en el consumo.
+          Programar la calefacci&oacute;n para que se encienda 30 minutos antes de llegar a casa y se apague
+          durante las horas de ausencia reduce significativamente el gasto.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="preguntas-frecuentes">
+      <h2>Preguntas Frecuentes sobre el Consumo de Calderas de Gasoil</h2>
+      <FAQ items={faqItems} />
+    </section>
+
+    <!-- Links relacionados -->
+    <section id="relacionados">
+      <h2>Herramientas y Gu&iacute;as Relacionadas</h2>
+      <div class="region-grid">
+        <a href="/calculadora/" class="region-card">
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:0.25rem;">Calculadora de Precio</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-secondary);margin:0;">Calcula el coste de tu pedido de gasoil</p>
+          </div>
+        </a>
+        <a href="/blog/como-ahorrar-gasoil-calefaccion/" class="region-card">
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:0.25rem;">15 Consejos para Ahorrar</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-secondary);margin:0;">Reduce tu gasto en gasoil de calefacci&oacute;n</p>
+          </div>
+        </a>
+        <a href="/blog/mantenimiento-caldera-gasoil/" class="region-card">
+          <div>
+            <h3 style="font-size:1rem;margin-bottom:0.25rem;">Mantenimiento de Caldera</h3>
+            <p style="font-size:0.85rem;color:var(--color-text-secondary);margin:0;">Gu&iacute;a completa de mantenimiento</p>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script is:inline define:vars={{ precioNacional }}>
+  (function() {
+    const supEl = document.getElementById('superficie');
+    const zonaEl = document.getElementById('zona-climatica');
+    const aislEl = document.getElementById('aislamiento');
+    const horasEl = document.getElementById('horas');
+
+    const zonaFactor = { suave: 0.6, moderado: 1.0, frio: 1.5 };
+    const aislFactor = { malo: 1.35, medio: 1.0, bueno: 0.7 };
+
+    function calcular() {
+      const sup = parseFloat(supEl.value) || 120;
+      const zona = zonaEl.value;
+      const aisl = aislEl.value;
+      const horas = parseFloat(horasEl.value) || 10;
+
+      // Base: 0.007 litros per m² per hour (typical 25kW boiler, ~2.5L/h for 120m²)
+      const base = sup * 0.007 * (horas / 10);
+      const litrosDia = base * zonaFactor[zona] * aislFactor[aisl];
+      const litrosMes = litrosDia * 30;
+      const mesesTemp = zona === 'frio' ? 7 : zona === 'moderado' ? 6 : 4.5;
+      const litrosTemp = litrosDia * 30 * mesesTemp;
+
+      const costeMes = litrosMes * precioNacional;
+      const costeTemp = litrosTemp * precioNacional;
+
+      document.getElementById('litros-dia').textContent = litrosDia.toFixed(1).replace('.', ',');
+      document.getElementById('litros-mes').textContent = Math.round(litrosMes).toLocaleString('es-ES');
+      document.getElementById('litros-temp').textContent = Math.round(litrosTemp).toLocaleString('es-ES');
+      document.getElementById('coste-mes').textContent = costeMes.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
+      document.getElementById('coste-temp').textContent = costeTemp.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
+      document.getElementById('precio-usado').textContent = precioNacional.toFixed(3).replace('.', ',');
+    }
+
+    // Quick buttons for superficie
+    document.querySelectorAll('.quick-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.quick-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        supEl.value = btn.dataset.value;
+        calcular();
+      });
+    });
+
+    // Quick buttons for horas
+    document.querySelectorAll('.quick-btn-h').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.quick-btn-h').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        horasEl.value = btn.dataset.value;
+        calcular();
+      });
+    });
+
+    supEl.addEventListener('input', calcular);
+    zonaEl.addEventListener('change', calcular);
+    aislEl.addEventListener('change', calcular);
+    horasEl.addEventListener('input', calcular);
+
+    calcular();
+  })();
+</script>
+
+<style>
+  .quick-btn-h {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s;
+  }
+  .quick-btn-h:hover,
+  .quick-btn-h.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+</style>

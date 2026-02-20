@@ -61,7 +61,7 @@
     },
     "la-rioja": {
       "precioMedio": 1.194,
-      "precioMin": 1.066,
+      "precioMin": 1.067,
       "precioMax": 1.277,
       "variacionSemanal": -0.002,
       "variacionMensual": 0.152
@@ -81,11 +81,11 @@
       "variacionMensual": 0.127
     },
     "asturias": {
-      "precioMedio": 1.212,
+      "precioMedio": 1.213,
       "precioMin": 1.082,
       "precioMax": 1.281,
-      "variacionSemanal": -0.001,
-      "variacionMensual": 0.13
+      "variacionSemanal": 0,
+      "variacionMensual": 0.131
     },
     "islas-baleares": {
       "precioMedio": 1.27,
@@ -95,11 +95,11 @@
       "variacionMensual": 0.12
     },
     "islas-canarias": {
-      "precioMedio": 0.962,
+      "precioMedio": 0.963,
       "precioMin": 0.884,
       "precioMax": 1.016,
-      "variacionSemanal": -0.001,
-      "variacionMensual": -0.148
+      "variacionSemanal": 0,
+      "variacionMensual": -0.147
     },
     "cantabria": {
       "precioMedio": 1.173,

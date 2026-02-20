@@ -7,12 +7,12 @@
  * Estrategia:
  * 1. Obtiene el precio real de Gasóleo C de las estaciones que lo venden (~11 estaciones)
  * 2. Obtiene precios de Gasóleo A de todas las estaciones (~12.000) para calcular variaciones regionales
- * 3. Aplica el ratio GOC/GOA a las medias regionales de GOA para estimar GOC por CCAA
+ * 3. Aplica el ratio GOC/GOA a las medias regionales y provinciales de GOA
  * 4. Calcula variaciones semanales y mensuales comparando con datos anteriores
- * 5. Actualiza precios.json e historico.json
+ * 5. Actualiza precios.json, precios-provincias.json e historico.json
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -43,7 +43,24 @@ const CCAA_MAP = {
   '17': 'la-rioja'
 };
 
+const PROVINCIA_MAP = {
+  '01': 'araba-alava', '02': 'albacete', '03': 'alicante', '04': 'almeria',
+  '05': 'avila', '06': 'badajoz', '07': 'islas-baleares', '08': 'barcelona',
+  '09': 'burgos', '10': 'caceres', '11': 'cadiz', '12': 'castellon',
+  '13': 'ciudad-real', '14': 'cordoba', '15': 'a-coruna', '16': 'cuenca',
+  '17': 'girona', '18': 'granada', '19': 'guadalajara', '20': 'gipuzkoa',
+  '21': 'huelva', '22': 'huesca', '23': 'jaen', '24': 'leon',
+  '25': 'lleida', '26': 'la-rioja', '27': 'lugo', '28': 'madrid',
+  '29': 'malaga', '30': 'murcia', '31': 'navarra', '32': 'ourense',
+  '33': 'asturias', '34': 'palencia', '35': 'las-palmas', '36': 'pontevedra',
+  '37': 'salamanca', '38': 'santa-cruz-de-tenerife', '39': 'cantabria',
+  '40': 'segovia', '41': 'sevilla', '42': 'soria', '43': 'tarragona',
+  '44': 'teruel', '45': 'toledo', '46': 'valencia', '47': 'valladolid',
+  '48': 'bizkaia', '49': 'zamora', '50': 'zaragoza'
+};
+
 const REGION_SLUGS = Object.values(CCAA_MAP);
+const PROVINCIA_SLUGS = Object.values(PROVINCIA_MAP);
 
 function round3(n) {
   return Math.round(n * 1000) / 1000;
@@ -86,119 +103,123 @@ async function fetchGasoleoCPrices() {
   return prices;
 }
 
-async function fetchGasoleoAByRegion() {
-  console.log('Fetching Gasóleo A prices (all stations)...');
+async function fetchAllStations() {
+  console.log('Fetching all stations...');
   const data = await fetchJSON(API_ALL);
   const stations = data.ListaEESSPrecio || [];
   console.log(`  Total stations: ${stations.length}`);
-
-  const byRegion = {};
-  for (const slug of REGION_SLUGS) {
-    byRegion[slug] = [];
-  }
-
-  for (const s of stations) {
-    const slug = CCAA_MAP[s.IDCCAA];
-    if (!slug) continue;
-    const price = parseSpanishFloat(s['Precio Gasoleo A']);
-    if (!isNaN(price) && price > 0) {
-      byRegion[slug].push(price);
-    }
-  }
-
-  return byRegion;
+  return stations;
 }
 
-function calculateRegionalPrices(gocStations, goaByRegion) {
-  // National GOC average from direct data
+function groupByRegionAndProvince(stations) {
+  const byRegion = {};
+  const byProvince = {};
+
+  for (const slug of REGION_SLUGS) byRegion[slug] = [];
+  for (const slug of PROVINCIA_SLUGS) byProvince[slug] = [];
+
+  for (const s of stations) {
+    const price = parseSpanishFloat(s['Precio Gasoleo A']);
+    if (isNaN(price) || price <= 0) continue;
+
+    const regionSlug = CCAA_MAP[s.IDCCAA];
+    if (regionSlug) byRegion[regionSlug].push(price);
+
+    const provSlug = PROVINCIA_MAP[s.IDProvincia];
+    if (provSlug) byProvince[provSlug].push(price);
+  }
+
+  return { byRegion, byProvince };
+}
+
+function calculatePricesFromGoA(goaPrices, ratio) {
+  if (goaPrices.length === 0) return null;
+
+  const avg = goaPrices.reduce((a, b) => a + b, 0) / goaPrices.length;
+  const sorted = [...goaPrices].sort((a, b) => a - b);
+  const p10 = sorted[Math.floor(sorted.length * 0.1)];
+  const p90 = sorted[Math.floor(sorted.length * 0.9)];
+
+  return {
+    precioMedio: round3(avg * ratio),
+    precioMin: round3(p10 * ratio),
+    precioMax: round3(p90 * ratio)
+  };
+}
+
+function calculateAllPrices(gocStations, byRegion, byProvince) {
   const gocPrices = gocStations.map(s => s.price);
   const gocNational = gocPrices.reduce((a, b) => a + b, 0) / gocPrices.length;
 
-  // National GOA average
-  const allGoaPrices = Object.values(goaByRegion).flat();
+  const allGoaPrices = Object.values(byRegion).flat();
   const goaNational = allGoaPrices.reduce((a, b) => a + b, 0) / allGoaPrices.length;
 
-  // Ratio GOC/GOA
   const ratio = gocNational / goaNational;
   console.log(`  GOC national avg: ${gocNational.toFixed(3)} €/L (${gocPrices.length} stations)`);
   console.log(`  GOA national avg: ${goaNational.toFixed(3)} €/L (${allGoaPrices.length} stations)`);
   console.log(`  Ratio GOC/GOA: ${ratio.toFixed(4)}`);
 
-  // Calculate regional GOC estimates
+  // Regional prices
   const regiones = {};
   for (const slug of REGION_SLUGS) {
-    const goaPrices = goaByRegion[slug];
-    if (goaPrices.length === 0) {
-      // Fallback to national average
-      regiones[slug] = {
-        precioMedio: round3(gocNational),
-        precioMin: round3(gocNational * 0.9),
-        precioMax: round3(gocNational * 1.1)
-      };
-      continue;
-    }
-
-    const goaRegionalAvg = goaPrices.reduce((a, b) => a + b, 0) / goaPrices.length;
-    const goaRegionalMin = Math.min(...goaPrices);
-    const goaRegionalMax = Math.max(...goaPrices);
-
-    // Use percentile 10 and 90 for min/max to avoid outliers
-    const sorted = [...goaPrices].sort((a, b) => a - b);
-    const p10 = sorted[Math.floor(sorted.length * 0.1)];
-    const p90 = sorted[Math.floor(sorted.length * 0.9)];
-
-    regiones[slug] = {
-      precioMedio: round3(goaRegionalAvg * ratio),
-      precioMin: round3(p10 * ratio),
-      precioMax: round3(p90 * ratio)
+    const result = calculatePricesFromGoA(byRegion[slug], ratio);
+    regiones[slug] = result || {
+      precioMedio: round3(gocNational),
+      precioMin: round3(gocNational * 0.9),
+      precioMax: round3(gocNational * 1.1)
     };
   }
 
-  // National stats using percentiles too
-  const sortedAll = [...allGoaPrices].sort((a, b) => a - b);
-  const p10All = sortedAll[Math.floor(sortedAll.length * 0.1)];
-  const p90All = sortedAll[Math.floor(sortedAll.length * 0.9)];
+  // Provincial prices
+  const provincias = {};
+  for (const slug of PROVINCIA_SLUGS) {
+    const result = calculatePricesFromGoA(byProvince[slug], ratio);
+    if (result) {
+      provincias[slug] = result;
+    }
+  }
 
+  // National
+  const sortedAll = [...allGoaPrices].sort((a, b) => a - b);
   const nacional = {
     precioMedio: round3(gocNational),
-    precioMin: round3(p10All * ratio),
-    precioMax: round3(p90All * ratio)
+    precioMin: round3(sortedAll[Math.floor(sortedAll.length * 0.1)] * ratio),
+    precioMax: round3(sortedAll[Math.floor(sortedAll.length * 0.9)] * ratio)
   };
 
-  return { nacional, regiones };
+  return { nacional, regiones, provincias, ratio };
 }
 
 function addVariations(newPrices, oldPrices, historico) {
-  const currentMonth = getCurrentMonth();
   const lastMonthDate = new Date();
   lastMonthDate.setMonth(lastMonthDate.getMonth() - 1);
   const lastMonth = `${lastMonthDate.getFullYear()}-${String(lastMonthDate.getMonth() + 1).padStart(2, '0')}`;
-
-  // Find last month's entry in historico
   const lastMonthEntry = historico.meses.find(m => m.fecha === lastMonth);
 
-  // Weekly variation = new price - old price (from precios.json)
-  // Monthly variation = new price - last month's historico entry
   const oldNacional = oldPrices?.nacional?.precioMedio;
   const lastMonthNacional = lastMonthEntry?.nacional;
 
   newPrices.nacional.variacionSemanal = oldNacional
-    ? round3(newPrices.nacional.precioMedio - oldNacional)
-    : 0;
+    ? round3(newPrices.nacional.precioMedio - oldNacional) : 0;
   newPrices.nacional.variacionMensual = lastMonthNacional
-    ? round3(newPrices.nacional.precioMedio - lastMonthNacional)
-    : 0;
+    ? round3(newPrices.nacional.precioMedio - lastMonthNacional) : 0;
 
   for (const slug of REGION_SLUGS) {
     const oldRegion = oldPrices?.regiones?.[slug]?.precioMedio;
     const lastMonthRegion = lastMonthEntry?.[slug];
-
     newPrices.regiones[slug].variacionSemanal = oldRegion
-      ? round3(newPrices.regiones[slug].precioMedio - oldRegion)
-      : 0;
+      ? round3(newPrices.regiones[slug].precioMedio - oldRegion) : 0;
     newPrices.regiones[slug].variacionMensual = lastMonthRegion
-      ? round3(newPrices.regiones[slug].precioMedio - lastMonthRegion)
-      : 0;
+      ? round3(newPrices.regiones[slug].precioMedio - lastMonthRegion) : 0;
+  }
+}
+
+function addProvinciaVariations(newProvincias, oldProvincias) {
+  for (const slug of PROVINCIA_SLUGS) {
+    if (!newProvincias[slug]) continue;
+    const oldPrice = oldProvincias?.[slug]?.precioMedio;
+    newProvincias[slug].variacionSemanal = oldPrice
+      ? round3(newProvincias[slug].precioMedio - oldPrice) : 0;
   }
 }
 
@@ -212,14 +233,11 @@ function updateHistorico(historico, newPrices) {
   }
 
   if (existingIdx >= 0) {
-    // Update existing month entry
     historico.meses[existingIdx] = entry;
   } else {
-    // Add new month
     historico.meses.push(entry);
   }
 
-  // Keep only last 24 months
   if (historico.meses.length > 24) {
     historico.meses = historico.meses.slice(-24);
   }
@@ -231,14 +249,18 @@ function updateHistorico(historico, newPrices) {
 async function main() {
   console.log(`\n=== Actualización de precios: ${getToday()} ===\n`);
 
-  // Load existing data
   const oldPrices = JSON.parse(readFileSync(join(DATA_DIR, 'precios.json'), 'utf-8'));
   const historico = JSON.parse(readFileSync(join(DATA_DIR, 'historico.json'), 'utf-8'));
 
-  // Fetch fresh data from MITECO API
-  const [gocStations, goaByRegion] = await Promise.all([
+  const oldProvPath = join(DATA_DIR, 'precios-provincias.json');
+  const oldProvincias = existsSync(oldProvPath)
+    ? JSON.parse(readFileSync(oldProvPath, 'utf-8')).provincias || {}
+    : {};
+
+  // Fetch fresh data
+  const [gocStations, allStations] = await Promise.all([
     fetchGasoleoCPrices(),
-    fetchGasoleoAByRegion()
+    fetchAllStations()
   ]);
 
   if (gocStations.length === 0) {
@@ -246,31 +268,40 @@ async function main() {
     process.exit(1);
   }
 
-  // Calculate new prices
-  console.log('\nCalculating regional prices...');
-  const newPrices = calculateRegionalPrices(gocStations, goaByRegion);
+  const { byRegion, byProvince } = groupByRegionAndProvince(allStations);
 
-  // Add variations comparing to old data
+  console.log('\nCalculating prices...');
+  const { nacional, regiones, provincias } = calculateAllPrices(gocStations, byRegion, byProvince);
+  const newPrices = { nacional, regiones };
+
   addVariations(newPrices, oldPrices, historico);
+  addProvinciaVariations(provincias, oldProvincias);
 
-  // Build final precios.json
-  const preciosOutput = {
-    lastUpdated: getToday(),
-    source: 'Ministerio para la Transición Ecológica y el Reto Demográfico',
-    sourceUrl: 'https://geoportalgasolineras.es',
-    nacional: newPrices.nacional,
-    regiones: newPrices.regiones
-  };
+  // Write precios.json
+  writeFileSync(
+    join(DATA_DIR, 'precios.json'),
+    JSON.stringify({
+      lastUpdated: getToday(),
+      source: 'Ministerio para la Transición Ecológica y el Reto Demográfico',
+      sourceUrl: 'https://geoportalgasolineras.es',
+      nacional: newPrices.nacional,
+      regiones: newPrices.regiones
+    }, null, 2) + '\n',
+    'utf-8'
+  );
+
+  // Write precios-provincias.json
+  writeFileSync(
+    join(DATA_DIR, 'precios-provincias.json'),
+    JSON.stringify({
+      lastUpdated: getToday(),
+      provincias
+    }, null, 2) + '\n',
+    'utf-8'
+  );
 
   // Update historico
   const updatedHistorico = updateHistorico(historico, newPrices);
-
-  // Write files
-  writeFileSync(
-    join(DATA_DIR, 'precios.json'),
-    JSON.stringify(preciosOutput, null, 2) + '\n',
-    'utf-8'
-  );
   writeFileSync(
     join(DATA_DIR, 'historico.json'),
     JSON.stringify(updatedHistorico, null, 2) + '\n',
@@ -278,12 +309,10 @@ async function main() {
   );
 
   console.log('\n=== Results ===');
-  console.log(`Nacional: ${newPrices.nacional.precioMedio} €/L (sem: ${newPrices.nacional.variacionSemanal >= 0 ? '+' : ''}${newPrices.nacional.variacionSemanal}, mes: ${newPrices.nacional.variacionMensual >= 0 ? '+' : ''}${newPrices.nacional.variacionMensual})`);
-  for (const slug of REGION_SLUGS) {
-    const r = newPrices.regiones[slug];
-    console.log(`  ${slug}: ${r.precioMedio} €/L`);
-  }
-  console.log('\nFiles updated: precios.json, historico.json');
+  console.log(`Nacional: ${nacional.precioMedio} €/L`);
+  console.log(`Regiones: ${Object.keys(regiones).length}`);
+  console.log(`Provincias: ${Object.keys(provincias).length}`);
+  console.log('\nFiles updated: precios.json, precios-provincias.json, historico.json');
 }
 
 main().catch(err => {

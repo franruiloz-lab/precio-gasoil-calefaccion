@@ -14,6 +14,8 @@ import FAQ from '../../components/FAQ.astro';
 
 import regiones from '../../data/regiones.json';
 import precios from '../../data/precios.json';
+import provincias from '../../data/provincias.json';
+import preciosProvincias from '../../data/precios-provincias.json';
 import { formatPrice, getCurrentMonthYear, calculateCost } from '../../utils/format';
 
 export function getStaticPaths() {
@@ -34,15 +36,17 @@ const breadcrumbItems = [
   { name: `Gasoil Calefacción en ${regionData.nombre}` }
 ];
 
-// Tabla de provincias (usando precio regional con variaciones simuladas)
-const provinciaRows = regionData.provincias.map((prov: string, i: number) => {
-  const offset = (i - Math.floor(regionData.provincias.length / 2)) * 0.012;
+// Build province rows with real data and links
+const ccaaProvincias = provincias.filter((p: any) => p.ccaaSlug === regionData.slug);
+const provinciaRows = ccaaProvincias.map((prov: any) => {
+  const provPrecios = (preciosProvincias.provincias as any)[prov.slug];
   return {
-    nombre: prov,
-    precioMin: Math.max(regionPrecios.precioMin + offset, regionPrecios.precioMin - 0.03),
-    precioMedio: regionPrecios.precioMedio + offset,
-    precioMax: Math.min(regionPrecios.precioMax + offset, regionPrecios.precioMax + 0.03),
-    linkable: false
+    nombre: prov.nombre,
+    slug: `provincia/${prov.slug}`,
+    precioMin: provPrecios?.precioMin || regionPrecios.precioMin,
+    precioMedio: provPrecios?.precioMedio || regionPrecios.precioMedio,
+    precioMax: provPrecios?.precioMax || regionPrecios.precioMax,
+    linkable: true
   };
 });
 
@@ -124,13 +128,24 @@ const diffText = diffVsNacional < 0
     </section>
 
     <!-- Precios por provincia -->
-    {regionData.provincias.length > 1 && (
+    {provinciaRows.length > 1 && (
       <section id="provincias">
-        <h2>Precio del Gasoil de Calefacción por Provincia en {regionData.nombre}</h2>
+        <h2>Precio del Gasoil de Calefacci&oacute;n por Provincia en {regionData.nombre}</h2>
         <p>
-          Desglose estimado del precio del gasoil de calefacción por cada provincia de {regionData.nombre}.
+          Precio del gasoil de calefacci&oacute;n en cada provincia de {regionData.nombre}.
+          Haz clic en cualquier provincia para ver m&aacute;s detalles, comparativas y consejos espec&iacute;ficos.
         </p>
         <PriceTable rows={provinciaRows} />
+      </section>
+    )}
+    {provinciaRows.length === 1 && (
+      <section id="provincias">
+        <h2>Precio del Gasoil de Calefacci&oacute;n en {provinciaRows[0].nombre}</h2>
+        <p>
+          <a href={`/precio-gasoil-calefaccion/provincia/${ccaaProvincias[0].slug}/`}>
+            Ver detalles del precio del gasoil en {provinciaRows[0].nombre}
+          </a>.
+        </p>
       </section>
     )}
 
@@ -162,18 +177,35 @@ const diffText = diffVsNacional < 0
 
     <!-- Contenido unico regional -->
     <section id="informacion">
-      <h2>Información sobre el Gasoil de Calefacción en {regionData.nombre}</h2>
+      <h2>Informaci&oacute;n sobre el Gasoil de Calefacci&oacute;n en {regionData.nombre}</h2>
       <div class="content">
         <p>{regionData.descripcion}</p>
         <p>
-          En {regionData.nombre} el gasoil de calefacción (gasóleo C) es distribuido por múltiples proveedores
-          que realizan entregas a domicilio mediante camiones cisterna. El pedido mínimo suele ser de 400-500 litros
+          En {regionData.nombre} el gasoil de calefacci&oacute;n (<a href="/blog/diferencia-gasoleo-a-b-c/">gas&oacute;leo C</a>) es distribuido por m&uacute;ltiples proveedores
+          que realizan entregas a domicilio mediante camiones cisterna. El pedido m&iacute;nimo suele ser de 400-500 litros
           y el precio por litro disminuye a medida que aumenta la cantidad solicitada.
         </p>
+
+        <h3>&iquest;Cu&aacute;nto cuesta el gasoil de calefacci&oacute;n en {regionData.nombre}?</h3>
+        <ul>
+          <li><strong>500 litros</strong>: {calculateCost(500, regionPrecios.precioMedio)} &euro;</li>
+          <li><strong>1.000 litros</strong>: {calculateCost(1000, regionPrecios.precioMedio)} &euro;</li>
+          <li><strong>1.500 litros</strong>: {calculateCost(1500, regionPrecios.precioMedio)} &euro;</li>
+          <li><strong>2.000 litros</strong>: {calculateCost(2000, regionPrecios.precioMedio)} &euro;</li>
+        </ul>
+
+        <h3>Consejos para ahorrar en {regionData.nombre}</h3>
+        <ul>
+          <li><a href="/blog/cuando-es-mas-barato-gasoil-calefaccion/">Compra en verano</a> cuando los precios son m&aacute;s bajos.</li>
+          <li>Pide mayor cantidad para reducir el precio por litro.</li>
+          <li>Compara al menos 3 distribuidores de la zona.</li>
+          <li>Considera la <a href="/blog/gasoil-calefaccion-comunidad-vecinos/">compra agrupada</a> con vecinos.</li>
+          <li>Revisa el <a href="/blog/mantenimiento-caldera-gasoil/">mantenimiento de tu caldera</a> para optimizar el consumo.</li>
+        </ul>
         <p>
-          Para obtener el mejor precio en {regionData.nombre}, se recomienda comparar presupuestos de varios
-          distribuidores, considerar la compra agrupada con vecinos y anticipar los pedidos a los meses de
-          menor demanda (verano).
+          Consulta tambi&eacute;n <a href="/blog/como-ahorrar-gasoil-calefaccion/">15 consejos para ahorrar</a>
+          o compara el gasoil con alternativas como el <a href="/blog/gasoil-calefaccion-vs-gas-natural/">gas natural</a>
+          o la <a href="/blog/gasoil-calefaccion-vs-aerotermia/">aerotermia</a>.
         </p>
       </div>
     </section>

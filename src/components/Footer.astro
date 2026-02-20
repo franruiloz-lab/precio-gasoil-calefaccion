@@ -1,6 +1,21 @@
 ---
 import regiones from '../data/regiones.json';
 import precios from '../data/precios.json';
+
+const blogArticles = [
+  { slug: 'diferencia-gasoleo-a-b-c', title: 'Diferencia Gas\u00f3leo A, B y C' },
+  { slug: 'cuando-es-mas-barato-gasoil-calefaccion', title: '\u00bfCu\u00e1ndo es m\u00e1s barato?' },
+  { slug: 'como-ahorrar-gasoil-calefaccion', title: 'C\u00f3mo ahorrar en gasoil' },
+  { slug: 'consumo-caldera-gasoil', title: 'Consumo de caldera' },
+  { slug: 'mantenimiento-caldera-gasoil', title: 'Mantenimiento caldera' },
+  { slug: 'gasoil-calefaccion-vs-gas-natural', title: 'Gasoil vs Gas Natural' },
+  { slug: 'gasoil-calefaccion-vs-aerotermia', title: 'Gasoil vs Aerotermia' },
+  { slug: 'gasoil-calefaccion-vs-pellets', title: 'Gasoil vs Pellets' },
+  { slug: 'normativa-deposito-gasoil', title: 'Normativa dep\u00f3sitos' },
+  { slug: 'iva-impuestos-gasoil-calefaccion', title: 'IVA e impuestos' },
+  { slug: 'subvenciones-cambiar-caldera-gasoil', title: 'Subvenciones 2026' },
+  { slug: 'gasoil-calefaccion-comunidad-vecinos', title: 'Comunidad de vecinos' },
+];
 ---
 
 <footer class="site-footer">
@@ -14,11 +29,19 @@ import precios from '../data/precios.json';
       ))}
     </div>
 
+    <h3 style="margin-top:1.5rem;">Gu&iacute;as y Art&iacute;culos</h3>
+    <div class="footer-regions">
+      {blogArticles.map(a => (
+        <a href={`/blog/${a.slug}/`}>{a.title}</a>
+      ))}
+    </div>
+
     <nav>
-      <ul class="site-nav" style="margin-bottom: 1rem;">
+      <ul class="site-nav" style="margin-bottom: 1rem; margin-top: 1.5rem;">
         <li><a href="/">Precios Hoy</a></li>
         <li><a href="/calculadora/">Calculadora</a></li>
         <li><a href="/evolucion-precio/">Evoluci&oacute;n del Precio</a></li>
+        <li><a href="/blog/">Blog</a></li>
       </ul>
     </nav>
 

@@ -1,0 +1,502 @@
+[
+  {
+    "id": "15",
+    "slug": "a-coruna",
+    "nombre": "A Coru\u00f1a",
+    "ccaaId": "12",
+    "ccaaSlug": "galicia",
+    "ccaaNombre": "Galicia",
+    "capital": "A Coru\u00f1a",
+    "descripcion": "El precio del gasoil de calefacci\u00f3n en A Coru\u00f1a var\u00eda seg\u00fan la zona, con mayor demanda en el interior que en la costa. Su clima oce\u00e1nico h\u00famedo, con inviernos suaves pero persistentes, hace que ciudades como Santiago de Compostela, Ferrol y Carballo dependan del gas\u00f3leo C durante gran parte del a\u00f1o. La buena red de distribuidores en la provincia permite precios competitivos."
+  },
+  {
+    "id": "01",
+    "slug": "araba-alava",
+    "nombre": "\u00c1lava",
+    "ccaaId": "16",
+    "ccaaSlug": "pais-vasco",
+    "ccaaNombre": "Pa\u00eds Vasco",
+    "capital": "Vitoria-Gasteiz",
+    "descripcion": "\u00c1lava tiene un clima continental m\u00e1s marcado que las otras provincias vascas, con inviernos fr\u00edos y frecuentes heladas. Vitoria-Gasteiz, Salvatierra y Amurrio registran un alto consumo de gasoil de calefacci\u00f3n. La llanada alavesa, expuesta a vientos fr\u00edos, hace del gas\u00f3leo C un combustible esencial para muchos hogares de la provincia."
+  },
+  {
+    "id": "02",
+    "slug": "albacete",
+    "nombre": "Albacete",
+    "ccaaId": "07",
+    "ccaaSlug": "castilla-la-mancha",
+    "ccaaNombre": "Castilla-La Mancha",
+    "capital": "Albacete",
+    "descripcion": "Albacete es una provincia de clima continental extremo, con inviernos fr\u00edos y ventosos que disparan la demanda de gasoil de calefacci\u00f3n. Localidades como Hellín, Almansa y la propia capital registran temperaturas bajo cero con frecuencia entre diciembre y febrero. Los precios del gas\u00f3leo C suelen estar por debajo de la media nacional gracias a la competencia entre distribuidores."
+  },
+  {
+    "id": "03",
+    "slug": "alicante",
+    "nombre": "Alicante",
+    "ccaaId": "10",
+    "ccaaSlug": "comunidad-valenciana",
+    "ccaaNombre": "Comunidad Valenciana",
+    "capital": "Alicante",
+    "descripcion": "Alicante disfruta de un clima mediterr\u00e1neo c\u00e1lido con inviernos suaves en la costa, lo que reduce la demanda de gasoil de calefacci\u00f3n respecto a otras provincias. Sin embargo, las comarcas del interior como Alcoy, Villena y el Alto Vinalop\u00f3 registran temperaturas fr\u00edas que incrementan el consumo de gas\u00f3leo C en los meses de invierno."
+  },
+  {
+    "id": "04",
+    "slug": "almeria",
+    "nombre": "Almer\u00eda",
+    "ccaaId": "01",
+    "ccaaSlug": "andalucia",
+    "ccaaNombre": "Andaluc\u00eda",
+    "capital": "Almer\u00eda",
+    "descripcion": "Almer\u00eda es una de las provincias m\u00e1s c\u00e1lidas de Espa\u00f1a, con baja demanda de gasoil de calefacci\u00f3n en la costa. No obstante, las zonas del interior y la comarca de Los V\u00e9lez, junto con localidades como Huércal-Overa y Purchena, experimentan inviernos fr\u00edos que requieren calefacci\u00f3n. Los precios del gas\u00f3leo C pueden ser algo superiores por la menor competencia de distribuidores."
+  },
+  {
+    "id": "33",
+    "slug": "asturias",
+    "nombre": "Asturias",
+    "ccaaId": "03",
+    "ccaaSlug": "asturias",
+    "ccaaNombre": "Asturias",
+    "capital": "Oviedo",
+    "descripcion": "Asturias, con su clima oce\u00e1nico h\u00famedo y fr\u00edo, es una de las comunidades con mayor consumo de gasoil de calefacci\u00f3n per c\u00e1pita. Ciudades como Oviedo, Gij\u00f3n y Avil\u00e9s necesitan calefacci\u00f3n durante gran parte del a\u00f1o. Las zonas rurales del interior, donde no llega la red de gas natural, dependen especialmente del gas\u00f3leo C."
+  },
+  {
+    "id": "05",
+    "slug": "avila",
+    "nombre": "\u00c1vila",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "\u00c1vila",
+    "descripcion": "\u00c1vila es una de las provincias m\u00e1s fr\u00edas de Espa\u00f1a, con inviernos largos y temperaturas que frecuentemente descienden por debajo de -10\u00b0C. Localidades como Arévalo, El Barco de \u00c1vila y la propia capital, situada a m\u00e1s de 1.100 metros de altitud, tienen una enorme demanda de gasoil de calefacci\u00f3n durante los meses de octubre a abril."
+  },
+  {
+    "id": "06",
+    "slug": "badajoz",
+    "nombre": "Badajoz",
+    "ccaaId": "11",
+    "ccaaSlug": "extremadura",
+    "ccaaNombre": "Extremadura",
+    "capital": "Badajoz",
+    "descripcion": "Badajoz tiene inviernos moderados pero con noches fr\u00edas, especialmente en las comarcas del norte y las sierras. Ciudades como Mérida, Don Benito y Villanueva de la Serena utilizan gasoil de calefacci\u00f3n en viviendas rurales y unifamiliares. La limitada extensi\u00f3n de la red de gas natural en muchos municipios hace del gas\u00f3leo C una opci\u00f3n frecuente."
+  },
+  {
+    "id": "08",
+    "slug": "barcelona",
+    "nombre": "Barcelona",
+    "ccaaId": "09",
+    "ccaaSlug": "cataluna",
+    "ccaaNombre": "Catalu\u00f1a",
+    "capital": "Barcelona",
+    "descripcion": "Barcelona presenta un clima mediterr\u00e1neo con inviernos suaves en la costa, pero las comarcas del interior y el prepirineo registran fr\u00edos considerables. Localidades como Manresa, Vic y Berga tienen una demanda significativa de gasoil de calefacci\u00f3n. La alta competencia entre distribuidores en la provincia favorece precios ajustados."
+  },
+  {
+    "id": "48",
+    "slug": "bizkaia",
+    "nombre": "Bizkaia",
+    "ccaaId": "16",
+    "ccaaSlug": "pais-vasco",
+    "ccaaNombre": "Pa\u00eds Vasco",
+    "capital": "Bilbao",
+    "descripcion": "Bizkaia tiene un clima oce\u00e1nico con inviernos h\u00famedos y moderadamente fr\u00edos que generan una demanda constante de calefacci\u00f3n. Bilbao, Durango y Gernika son algunas de las localidades con mayor consumo de gasoil de calefacci\u00f3n. Aunque la red de gas natural est\u00e1 extendida en los n\u00facleos urbanos, muchas viviendas en zonas rurales dependen del gas\u00f3leo C."
+  },
+  {
+    "id": "09",
+    "slug": "burgos",
+    "nombre": "Burgos",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "Burgos",
+    "descripcion": "Burgos es una de las provincias m\u00e1s fr\u00edas de Espa\u00f1a, con inviernos largos y crudos que hacen del gasoil de calefacci\u00f3n un combustible imprescindible. La capital, Aranda de Duero y Miranda de Ebro registran temperaturas bajo cero durante semanas. La alta demanda y la extensa red de distribuidores mantienen precios competitivos en la provincia."
+  },
+  {
+    "id": "10",
+    "slug": "caceres",
+    "nombre": "C\u00e1ceres",
+    "ccaaId": "11",
+    "ccaaSlug": "extremadura",
+    "ccaaNombre": "Extremadura",
+    "capital": "C\u00e1ceres",
+    "descripcion": "C\u00e1ceres tiene un clima mediterr\u00e1neo continentalizado con inviernos fr\u00edos, especialmente en las comarcas del norte como Las Hurdes y el Valle del Jerte. Ciudades como Plasencia, Navalmoral de la Mata y la propia capital consumen gasoil de calefacci\u00f3n en muchos hogares. La dispersi\u00f3n poblacional en zonas rurales hace que la red de gas natural sea limitada."
+  },
+  {
+    "id": "11",
+    "slug": "cadiz",
+    "nombre": "C\u00e1diz",
+    "ccaaId": "01",
+    "ccaaSlug": "andalucia",
+    "ccaaNombre": "Andaluc\u00eda",
+    "capital": "C\u00e1diz",
+    "descripcion": "C\u00e1diz tiene un clima atl\u00e1ntico con inviernos suaves, lo que reduce la demanda de gasoil de calefacci\u00f3n respecto a provincias del interior. No obstante, localidades serranas como Grazalema, Ubrique y Arcos de la Frontera experimentan temperaturas m\u00e1s fr\u00edas en invierno. El consumo de gas\u00f3leo C se concentra en viviendas rurales y urbanizaciones sin acceso a gas natural."
+  },
+  {
+    "id": "39",
+    "slug": "cantabria",
+    "nombre": "Cantabria",
+    "ccaaId": "06",
+    "ccaaSlug": "cantabria",
+    "ccaaNombre": "Cantabria",
+    "capital": "Santander",
+    "descripcion": "Cantabria, con su clima oce\u00e1nico, necesita calefacci\u00f3n durante gran parte del a\u00f1o, especialmente en los valles interiores y las zonas de monta\u00f1a. Santander, Torrelavega y Reinosa son los principales n\u00facleos de consumo de gasoil de calefacci\u00f3n. La comarca de Campoo, con inviernos muy fr\u00edos, registra una de las mayores demandas de gas\u00f3leo C de la regi\u00f3n."
+  },
+  {
+    "id": "12",
+    "slug": "castellon",
+    "nombre": "Castell\u00f3n",
+    "ccaaId": "10",
+    "ccaaSlug": "comunidad-valenciana",
+    "ccaaNombre": "Comunidad Valenciana",
+    "capital": "Castell\u00f3n de la Plana",
+    "descripcion": "Castell\u00f3n combina un litoral mediterr\u00e1neo de inviernos suaves con un interior monta\u00f1oso de temperaturas fr\u00edas. Las comarcas del Maestrazgo y Els Ports, junto con localidades como Morella y Villafranca del Cid, registran temperaturas bajo cero que impulsan el consumo de gasoil de calefacci\u00f3n. La capital y Vinar\u00f2s tienen una demanda menor al estar en la costa."
+  },
+  {
+    "id": "13",
+    "slug": "ciudad-real",
+    "nombre": "Ciudad Real",
+    "ccaaId": "07",
+    "ccaaSlug": "castilla-la-mancha",
+    "ccaaNombre": "Castilla-La Mancha",
+    "capital": "Ciudad Real",
+    "descripcion": "Ciudad Real tiene un clima continental con inviernos fr\u00edos y veranos calurosos, lo que genera demanda de gasoil de calefacci\u00f3n en los meses m\u00e1s fr\u00edos. Puertollano, Tomelloso y Valdepe\u00f1as son algunos de los principales n\u00facleos de consumo. Los precios del gas\u00f3leo C en la provincia suelen ser de los m\u00e1s competitivos de Espa\u00f1a."
+  },
+  {
+    "id": "14",
+    "slug": "cordoba",
+    "nombre": "C\u00f3rdoba",
+    "ccaaId": "01",
+    "ccaaSlug": "andalucia",
+    "ccaaNombre": "Andaluc\u00eda",
+    "capital": "C\u00f3rdoba",
+    "descripcion": "C\u00f3rdoba tiene un clima mediterr\u00e1neo continentalizado con inviernos moderadamente fr\u00edos, especialmente en la sierra y las subb\u00e9ticas. Localidades como Lucena, Priego de C\u00f3rdoba y Pozoblanco utilizan gasoil de calefacci\u00f3n en viviendas sin acceso a gas natural. Las noches invernales en la campi\u00f1a cordobesa pueden ser sorprendentemente fr\u00edas."
+  },
+  {
+    "id": "16",
+    "slug": "cuenca",
+    "nombre": "Cuenca",
+    "ccaaId": "07",
+    "ccaaSlug": "castilla-la-mancha",
+    "ccaaNombre": "Castilla-La Mancha",
+    "capital": "Cuenca",
+    "descripcion": "Cuenca es una de las provincias m\u00e1s fr\u00edas de Castilla-La Mancha, con inviernos rigurosos en la serran\u00eda y el altiplano. La capital, Tar\u00e1ncón y Motilla del Palancar dependen del gasoil de calefacci\u00f3n, especialmente en las zonas rurales donde la red de gas natural no llega. La baja densidad de poblaci\u00f3n puede incrementar los costes de distribuci\u00f3n."
+  },
+  {
+    "id": "20",
+    "slug": "gipuzkoa",
+    "nombre": "Gipuzkoa",
+    "ccaaId": "16",
+    "ccaaSlug": "pais-vasco",
+    "ccaaNombre": "Pa\u00eds Vasco",
+    "capital": "Donostia-San Sebasti\u00e1n",
+    "descripcion": "Gipuzkoa tiene un clima oce\u00e1nico con abundantes lluvias e inviernos frescos que requieren calefacci\u00f3n constante. San Sebasti\u00e1n, Eibar y Tolosa son los principales puntos de consumo de gasoil de calefacci\u00f3n. Aunque la red de gas natural cubre buena parte del territorio, muchas viviendas antiguas y caser\u00edos rurales siguen dependiendo del gas\u00f3leo C."
+  },
+  {
+    "id": "17",
+    "slug": "girona",
+    "nombre": "Girona",
+    "ccaaId": "09",
+    "ccaaSlug": "cataluna",
+    "ccaaNombre": "Catalu\u00f1a",
+    "capital": "Girona",
+    "descripcion": "Girona ofrece un contraste clim\u00e1tico entre la Costa Brava y el Pirineo. Las comarcas de la Cerdanya, el Ripoll\u00e8s y la Garrotxa registran inviernos muy fr\u00edos con gran demanda de gasoil de calefacci\u00f3n. Figueres, Olot y la propia capital tambi\u00e9n presentan un consumo significativo de gas\u00f3leo C durante los meses de invierno."
+  },
+  {
+    "id": "18",
+    "slug": "granada",
+    "nombre": "Granada",
+    "ccaaId": "01",
+    "ccaaSlug": "andalucia",
+    "ccaaNombre": "Andaluc\u00eda",
+    "capital": "Granada",
+    "descripcion": "Granada es la provincia andaluza con mayor demanda de gasoil de calefacci\u00f3n, gracias a sus inviernos fr\u00edos influidos por la altitud y la proximidad a Sierra Nevada. La capital, Guadix y Baza registran temperaturas bajo cero en invierno. La combinaci\u00f3n de altitud elevada y clima continental hace del gas\u00f3leo C un combustible muy demandado."
+  },
+  {
+    "id": "19",
+    "slug": "guadalajara",
+    "nombre": "Guadalajara",
+    "ccaaId": "07",
+    "ccaaSlug": "castilla-la-mancha",
+    "ccaaNombre": "Castilla-La Mancha",
+    "capital": "Guadalajara",
+    "descripcion": "Guadalajara tiene inviernos fr\u00edos y secos, especialmente en las comarcas serranas del norte como Sig\u00fcenza y Molina de Arag\u00f3n, una de las zonas m\u00e1s fr\u00edas de Espa\u00f1a. La capital y Azuqueca de Henares tambi\u00e9n registran un consumo notable de gasoil de calefacci\u00f3n. La baja densidad de poblaci\u00f3n en muchas comarcas puede encarecer la distribuci\u00f3n."
+  },
+  {
+    "id": "21",
+    "slug": "huelva",
+    "nombre": "Huelva",
+    "ccaaId": "01",
+    "ccaaSlug": "andalucia",
+    "ccaaNombre": "Andaluc\u00eda",
+    "capital": "Huelva",
+    "descripcion": "Huelva tiene un clima atl\u00e1ntico-mediterr\u00e1neo con inviernos suaves en la costa, aunque la sierra de Aracena registra temperaturas m\u00e1s fr\u00edas. Localidades como Aracena, Nerva y Valverde del Camino consumen gasoil de calefacci\u00f3n en los meses de invierno. La demanda general es baja comparada con las provincias del norte de Espa\u00f1a."
+  },
+  {
+    "id": "22",
+    "slug": "huesca",
+    "nombre": "Huesca",
+    "ccaaId": "02",
+    "ccaaSlug": "aragon",
+    "ccaaNombre": "Arag\u00f3n",
+    "capital": "Huesca",
+    "descripcion": "Huesca es una de las provincias con mayor consumo de gasoil de calefacci\u00f3n de Espa\u00f1a, con inviernos muy fr\u00edos en el Pirineo y el prepirineo. Jaca, Barbastro y la capital necesitan calefacci\u00f3n durante muchos meses al a\u00f1o. La dispersi\u00f3n de la poblaci\u00f3n en zonas de monta\u00f1a puede incrementar los costes log\u00edsticos del gas\u00f3leo C."
+  },
+  {
+    "id": "07",
+    "slug": "islas-baleares",
+    "nombre": "Islas Baleares",
+    "ccaaId": "04",
+    "ccaaSlug": "islas-baleares",
+    "ccaaNombre": "Islas Baleares",
+    "capital": "Palma de Mallorca",
+    "descripcion": "Las Islas Baleares suelen registrar los precios m\u00e1s altos de gasoil de calefacci\u00f3n de Espa\u00f1a debido a los costes del transporte mar\u00edtimo. Aunque los inviernos son suaves, muchas viviendas en Palma, Inca y Mah\u00f3n dependen del gas\u00f3leo C al no disponer de gas natural canalizado. La insularidad es el principal factor que encarece el combustible."
+  },
+  {
+    "id": "23",
+    "slug": "jaen",
+    "nombre": "Ja\u00e9n",
+    "ccaaId": "01",
+    "ccaaSlug": "andalucia",
+    "ccaaNombre": "Andaluc\u00eda",
+    "capital": "Ja\u00e9n",
+    "descripcion": "Ja\u00e9n tiene un clima continental mediterr\u00e1neo con inviernos fr\u00edos, especialmente en las comarcas de cazorla y las sierras del sur. Linares, \u00dabeda y Baeza son localidades con consumo significativo de gasoil de calefacci\u00f3n. La altitud media de la provincia y la extensi\u00f3n de zonas rurales hacen del gas\u00f3leo C una fuente de calor habitual."
+  },
+  {
+    "id": "26",
+    "slug": "la-rioja",
+    "nombre": "La Rioja",
+    "ccaaId": "17",
+    "ccaaSlug": "la-rioja",
+    "ccaaNombre": "La Rioja",
+    "capital": "Logro\u00f1o",
+    "descripcion": "La Rioja, peque\u00f1a pero con inviernos fr\u00edos, registra un consumo per c\u00e1pita elevado de gasoil de calefacci\u00f3n. Logro\u00f1o, Calahorra y Haro son los principales puntos de consumo. Su ubicaci\u00f3n estrat\u00e9gica entre las principales rutas log\u00edsticas del norte de Espa\u00f1a contribuye a mantener precios competitivos del gas\u00f3leo C."
+  },
+  {
+    "id": "35",
+    "slug": "las-palmas",
+    "nombre": "Las Palmas",
+    "ccaaId": "05",
+    "ccaaSlug": "islas-canarias",
+    "ccaaNombre": "Islas Canarias",
+    "capital": "Las Palmas de Gran Canaria",
+    "descripcion": "Las Palmas, con su clima subtropical, tiene una de las menores demandas de gasoil de calefacci\u00f3n de Espa\u00f1a. Sin embargo, las zonas de mayor altitud en Gran Canaria, Lanzarote y Fuerteventura utilizan puntualmente calefacci\u00f3n. Los precios del gas\u00f3leo C pueden verse afectados por los costes del transporte mar\u00edtimo insular."
+  },
+  {
+    "id": "24",
+    "slug": "leon",
+    "nombre": "Le\u00f3n",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "Le\u00f3n",
+    "descripcion": "Le\u00f3n tiene inviernos muy fr\u00edos y prolongados, con abundantes nevadas en las zonas de monta\u00f1a, lo que genera una alta demanda de gasoil de calefacci\u00f3n. La capital, Ponferrada y Astorga son los principales n\u00facleos de consumo. El Bierzo y la monta\u00f1a leonesa dependen intensamente del gas\u00f3leo C para calentar sus hogares."
+  },
+  {
+    "id": "25",
+    "slug": "lleida",
+    "nombre": "Lleida",
+    "ccaaId": "09",
+    "ccaaSlug": "cataluna",
+    "ccaaNombre": "Catalu\u00f1a",
+    "capital": "Lleida",
+    "descripcion": "Lleida es la provincia catalana con mayor consumo de gasoil de calefacci\u00f3n, con inviernos extremadamente fr\u00edos en el Pirineo y el prepirineo. La Vall d'Aran, La Seu d'Urgell y la propia capital registran temperaturas muy bajas. La dispersi\u00f3n de pueblos de monta\u00f1a hace del gas\u00f3leo C un combustible esencial en gran parte de la provincia."
+  },
+  {
+    "id": "27",
+    "slug": "lugo",
+    "nombre": "Lugo",
+    "ccaaId": "12",
+    "ccaaSlug": "galicia",
+    "ccaaNombre": "Galicia",
+    "capital": "Lugo",
+    "descripcion": "Lugo es la provincia gallega con mayor demanda de gasoil de calefacci\u00f3n, con un clima oce\u00e1nico continental que produce inviernos fr\u00edos y h\u00famedos. La capital, Monforte de Lemos y Sarria son los principales puntos de consumo. La extensa zona rural de la provincia, con escasa penetraci\u00f3n de gas natural, depende intensamente del gas\u00f3leo C."
+  },
+  {
+    "id": "28",
+    "slug": "madrid",
+    "nombre": "Madrid",
+    "ccaaId": "13",
+    "ccaaSlug": "madrid",
+    "ccaaNombre": "Madrid",
+    "capital": "Madrid",
+    "descripcion": "Madrid tiene inviernos fr\u00edos y secos con temperaturas que frecuentemente bajan de 0\u00b0C. Aunque la capital cuenta con una extensa red de gas natural, muchas viviendas unifamiliares en la Sierra Norte, Collado Villalba y las urbanizaciones del oeste utilizan gasoil de calefacci\u00f3n. La alta competencia entre distribuidores favorece precios competitivos."
+  },
+  {
+    "id": "29",
+    "slug": "malaga",
+    "nombre": "M\u00e1laga",
+    "ccaaId": "01",
+    "ccaaSlug": "andalucia",
+    "ccaaNombre": "Andaluc\u00eda",
+    "capital": "M\u00e1laga",
+    "descripcion": "M\u00e1laga goza de uno de los climas m\u00e1s c\u00e1lidos de la pen\u00ednsula, con baja demanda de gasoil de calefacci\u00f3n en la costa. Sin embargo, las comarcas del interior como Ronda, Antequera y Archidona experimentan inviernos moderadamente fr\u00edos. El consumo de gas\u00f3leo C se concentra en viviendas rurales y urbanizaciones sin acceso a gas natural."
+  },
+  {
+    "id": "30",
+    "slug": "murcia",
+    "nombre": "Murcia",
+    "ccaaId": "14",
+    "ccaaSlug": "murcia",
+    "ccaaNombre": "Murcia",
+    "capital": "Murcia",
+    "descripcion": "La Regi\u00f3n de Murcia tiene un clima semiárido con inviernos suaves, lo que la sit\u00faa entre las provincias con menor demanda de gasoil de calefacci\u00f3n. No obstante, las zonas del noroeste como Caravaca de la Cruz, Moratalla y Ceheg\u00edn registran temperaturas m\u00e1s fr\u00edas. El consumo de gas\u00f3leo C es puntual y se concentra en viviendas rurales del interior."
+  },
+  {
+    "id": "31",
+    "slug": "navarra",
+    "nombre": "Navarra",
+    "ccaaId": "15",
+    "ccaaSlug": "navarra",
+    "ccaaNombre": "Navarra",
+    "capital": "Pamplona",
+    "descripcion": "Navarra tiene inviernos fr\u00edos, especialmente en los valles pirenaicos del norte y la zona media. Pamplona, Tudela y Estella son los principales n\u00facleos de consumo de gasoil de calefacci\u00f3n. La diversidad clim\u00e1tica de la provincia, desde el Pirineo hasta la Ribera, genera una demanda variable pero significativa de gas\u00f3leo C."
+  },
+  {
+    "id": "32",
+    "slug": "ourense",
+    "nombre": "Ourense",
+    "ccaaId": "12",
+    "ccaaSlug": "galicia",
+    "ccaaNombre": "Galicia",
+    "capital": "Ourense",
+    "descripcion": "Ourense tiene el clima m\u00e1s continental de Galicia, con inviernos fr\u00edos y veranos calurosos. La capital, Verín y O Barco de Valdeorras registran temperaturas bajo cero en invierno, generando una alta demanda de gasoil de calefacci\u00f3n. La dispersi\u00f3n rural y la limitada red de gas natural hacen del gas\u00f3leo C el combustible de calefacci\u00f3n predominante."
+  },
+  {
+    "id": "34",
+    "slug": "palencia",
+    "nombre": "Palencia",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "Palencia",
+    "descripcion": "Palencia sufre inviernos largos y fr\u00edos, con heladas frecuentes en la meseta y nevadas en la monta\u00f1a palentina. La capital, Guardo y Aguilar de Campoo son localidades con alto consumo de gasoil de calefacci\u00f3n. La baja densidad de poblaci\u00f3n y la extensa zona rural hacen que muchos hogares dependan del gas\u00f3leo C como principal fuente de calor."
+  },
+  {
+    "id": "36",
+    "slug": "pontevedra",
+    "nombre": "Pontevedra",
+    "ccaaId": "12",
+    "ccaaSlug": "galicia",
+    "ccaaNombre": "Galicia",
+    "capital": "Pontevedra",
+    "descripcion": "Pontevedra tiene un clima oce\u00e1nico con inviernos suaves y h\u00famedos, lo que genera una demanda moderada de gasoil de calefacci\u00f3n. Vigo, Pontevedra y Vilagarcía de Arousa son los principales n\u00facleos de consumo. Aunque la demanda es menor que en las provincias interiores gallegas, la humedad ambiental incrementa la necesidad de calefacci\u00f3n."
+  },
+  {
+    "id": "37",
+    "slug": "salamanca",
+    "nombre": "Salamanca",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "Salamanca",
+    "descripcion": "Salamanca tiene inviernos fr\u00edos y secos, con heladas habituales entre noviembre y marzo. La capital, B\u00e9jar y Ciudad Rodrigo son localidades con demanda elevada de gasoil de calefacci\u00f3n. Las sierras del sur de la provincia registran las temperaturas m\u00e1s bajas, haciendo del gas\u00f3leo C un combustible fundamental para miles de hogares."
+  },
+  {
+    "id": "38",
+    "slug": "santa-cruz-de-tenerife",
+    "nombre": "Santa Cruz de Tenerife",
+    "ccaaId": "05",
+    "ccaaSlug": "islas-canarias",
+    "ccaaNombre": "Islas Canarias",
+    "capital": "Santa Cruz de Tenerife",
+    "descripcion": "Santa Cruz de Tenerife, con su clima subtropical, tiene una demanda muy baja de gasoil de calefacci\u00f3n. Solo las zonas de mayor altitud en Tenerife, La Palma y El Hierro requieren calefacci\u00f3n puntual en invierno. Los precios del gas\u00f3leo C pueden ser superiores a la media peninsular por los costes del transporte mar\u00edtimo."
+  },
+  {
+    "id": "40",
+    "slug": "segovia",
+    "nombre": "Segovia",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "Segovia",
+    "descripcion": "Segovia tiene inviernos fr\u00edos y secos, con la sierra de Guadarrama acumulando nieve durante meses. La capital, Cu\u00e9llar y El Espinar son los principales n\u00facleos de consumo de gasoil de calefacci\u00f3n. La proximidad a Madrid genera cierta competencia entre distribuidores que beneficia a los consumidores de gas\u00f3leo C en la provincia."
+  },
+  {
+    "id": "41",
+    "slug": "sevilla",
+    "nombre": "Sevilla",
+    "ccaaId": "01",
+    "ccaaSlug": "andalucia",
+    "ccaaNombre": "Andaluc\u00eda",
+    "capital": "Sevilla",
+    "descripcion": "Sevilla tiene inviernos cortos y suaves, lo que sit\u00faa a la provincia entre las de menor consumo de gasoil de calefacci\u00f3n de Espa\u00f1a. No obstante, localidades de la sierra norte como Cazalla de la Sierra, Constantina y El Pedroso utilizan gas\u00f3leo C en los meses m\u00e1s fr\u00edos. La demanda principal se concentra en viviendas rurales sin acceso a gas canalizado."
+  },
+  {
+    "id": "42",
+    "slug": "soria",
+    "nombre": "Soria",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "Soria",
+    "descripcion": "Soria es una de las provincias m\u00e1s fr\u00edas de Espa\u00f1a, con temperaturas que alcanzan los -15\u00b0C en invierno y una de las menores densidades de poblaci\u00f3n del pa\u00eds. La capital, Almazán y El Burgo de Osma dependen enormemente del gasoil de calefacci\u00f3n. La dispersi\u00f3n rural puede encarecer la distribuci\u00f3n, pero la alta demanda mantiene un mercado activo."
+  },
+  {
+    "id": "43",
+    "slug": "tarragona",
+    "nombre": "Tarragona",
+    "ccaaId": "09",
+    "ccaaSlug": "cataluna",
+    "ccaaNombre": "Catalu\u00f1a",
+    "capital": "Tarragona",
+    "descripcion": "Tarragona tiene un clima mediterr\u00e1neo con inviernos suaves en la costa, pero las comarcas del interior como la Terra Alta y el Priorat registran fr\u00edos notables. Reus, Tortosa y la capital consumen gasoil de calefacci\u00f3n en menor medida que otras provincias catalanas. La cercan\u00eda a refiner\u00edas puede favorecer precios competitivos del gas\u00f3leo C."
+  },
+  {
+    "id": "44",
+    "slug": "teruel",
+    "nombre": "Teruel",
+    "ccaaId": "02",
+    "ccaaSlug": "aragon",
+    "ccaaNombre": "Arag\u00f3n",
+    "capital": "Teruel",
+    "descripcion": "Teruel es una de las provincias m\u00e1s fr\u00edas de Espa\u00f1a, con temperaturas que pueden descender por debajo de -20\u00b0C en localidades como Calamocha y Molina de Arag\u00f3n. La capital, Alcañiz y Andorra registran una demanda muy alta de gasoil de calefacci\u00f3n. La baja densidad de poblaci\u00f3n y las grandes distancias pueden encarecer la distribuci\u00f3n del gas\u00f3leo C."
+  },
+  {
+    "id": "45",
+    "slug": "toledo",
+    "nombre": "Toledo",
+    "ccaaId": "07",
+    "ccaaSlug": "castilla-la-mancha",
+    "ccaaNombre": "Castilla-La Mancha",
+    "capital": "Toledo",
+    "descripcion": "Toledo tiene un clima continental mediterr\u00e1neo con inviernos fr\u00edos, especialmente en la zona de los Montes de Toledo y la sierra de San Vicente. Talavera de la Reina, Illescas y la capital son los principales n\u00facleos de consumo de gasoil de calefacci\u00f3n. La buena conexi\u00f3n log\u00edstica con Madrid favorece precios competitivos del gas\u00f3leo C."
+  },
+  {
+    "id": "46",
+    "slug": "valencia",
+    "nombre": "Valencia",
+    "ccaaId": "10",
+    "ccaaSlug": "comunidad-valenciana",
+    "ccaaNombre": "Comunidad Valenciana",
+    "capital": "Valencia",
+    "descripcion": "Valencia tiene un clima mediterr\u00e1neo con inviernos suaves en la costa, pero las comarcas del interior como Requena-Utiel y los Serranos registran fr\u00edos intensos. La capital, Xàtiva y Ontinyent son los principales puntos de consumo de gasoil de calefacci\u00f3n. La demanda es menor que en el norte, pero sigue siendo relevante en zonas rurales del interior."
+  },
+  {
+    "id": "47",
+    "slug": "valladolid",
+    "nombre": "Valladolid",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "Valladolid",
+    "descripcion": "Valladolid tiene inviernos fr\u00edos y con nieblas frecuentes en la meseta castellana. La capital, Medina del Campo y Tordesillas consumen cantidades significativas de gasoil de calefacci\u00f3n. Aunque la red de gas natural est\u00e1 bien extendida en la capital, muchos municipios y viviendas unifamiliares de la provincia dependen del gas\u00f3leo C."
+  },
+  {
+    "id": "49",
+    "slug": "zamora",
+    "nombre": "Zamora",
+    "ccaaId": "08",
+    "ccaaSlug": "castilla-y-leon",
+    "ccaaNombre": "Castilla y Le\u00f3n",
+    "capital": "Zamora",
+    "descripcion": "Zamora tiene inviernos fr\u00edos con heladas frecuentes, especialmente en la comarca de Sanabria y las tierras altas del norte. La capital, Benavente y Toro son los principales n\u00facleos de consumo de gasoil de calefacci\u00f3n. La baja densidad de poblaci\u00f3n y la extensa zona rural hacen que el gas\u00f3leo C sea el combustible de calefacci\u00f3n m\u00e1s utilizado."
+  },
+  {
+    "id": "50",
+    "slug": "zaragoza",
+    "nombre": "Zaragoza",
+    "ccaaId": "02",
+    "ccaaSlug": "aragon",
+    "ccaaNombre": "Arag\u00f3n",
+    "capital": "Zaragoza",
+    "descripcion": "Zaragoza tiene un clima continental semiárido con inviernos fr\u00edos intensificados por el cierzo, el viento caracter\u00edstico del valle del Ebro. La capital, Calatayud y Ejea de los Caballeros son los principales consumidores de gasoil de calefacci\u00f3n. La buena red de distribuidores y la ubicaci\u00f3n log\u00edstica estrat\u00e9gica favorecen precios competitivos del gas\u00f3leo C."
+  }
+]

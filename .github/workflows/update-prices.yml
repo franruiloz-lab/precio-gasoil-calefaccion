@@ -38,6 +38,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/precios.json src/data/historico.json
+          git add src/data/precios.json src/data/precios-provincias.json src/data/historico.json
           git commit -m "Actualizar precios $(date +%Y-%m-%d)"
           git push

@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import SchemaBreadcrumb from '../../../components/SchemaBreadcrumb.astro';
+import SchemaArticle from '../../../components/SchemaArticle.astro';
+import PriceHero from '../../../components/PriceHero.astro';
+import PriceCalculator from '../../../components/PriceCalculator.astro';
+import PriceChart from '../../../components/PriceChart.astro';
+import RegionGrid from '../../../components/RegionGrid.astro';
+
+import provincias from '../../../data/provincias.json';
+import precios from '../../../data/precios.json';
+import preciosProvincias from '../../../data/precios-provincias.json';
+import { formatPrice, getCurrentMonthYear, calculateCost } from '../../../utils/format';
+
+export function getStaticPaths() {
+  return provincias.map(p => ({
+    params: { provincia: p.slug },
+    props: { provData: p }
+  }));
+}
+
+const { provData } = Astro.props;
+const monthYear = getCurrentMonthYear();
+const siteUrl = 'https://calienteybarato.com';
+
+const provPrecios = (preciosProvincias.provincias as any)[provData.slug] || null;
+const ccaaPrecios = (precios.regiones as any)[provData.ccaaSlug] || precios.nacional;
+const nacionalPrecios = precios.nacional;
+
+// Use provincial price if available, otherwise estimate from CCAA
+const precioMedio = provPrecios?.precioMedio || ccaaPrecios.precioMedio;
+const precioMin = provPrecios?.precioMin || ccaaPrecios.precioMin;
+const precioMax = provPrecios?.precioMax || ccaaPrecios.precioMax;
+const variacion = provPrecios?.variacionSemanal || ccaaPrecios.variacionMensual || 0;
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: provData.ccaaNombre, url: `/precio-gasoil-calefaccion/${provData.ccaaSlug}/` },
+  { name: provData.nombre, url: `/precio-gasoil-calefaccion/provincia/${provData.slug}/` }
+];
+
+const diffVsNacional = precioMedio - nacionalPrecios.precioMedio;
+const diffText = diffVsNacional < -0.001
+  ? `${Math.abs(diffVsNacional * 100).toFixed(1).replace('.', ',')} c\u00e9ntimos por debajo`
+  : diffVsNacional > 0.001
+  ? `${(diffVsNacional * 100).toFixed(1).replace('.', ',')} c\u00e9ntimos por encima`
+  : 'igual';
+
+const diffVsCcaa = precioMedio - ccaaPrecios.precioMedio;
+const diffCcaaText = diffVsCcaa < -0.001
+  ? `${Math.abs(diffVsCcaa * 100).toFixed(1).replace('.', ',')} c\u00e9ntimos m\u00e1s barato`
+  : diffVsCcaa > 0.001
+  ? `${(diffVsCcaa * 100).toFixed(1).replace('.', ',')} c\u00e9ntimos m\u00e1s caro`
+  : 'igual';
+
+// Other provinces in same CCAA
+const otherProvs = provincias.filter(p => p.ccaaSlug === provData.ccaaSlug && p.slug !== provData.slug);
+
+const pageTitle = `Precio Gasoil Calefacci\u00f3n en ${provData.nombre} Hoy [${formatPrice(precioMedio)} \u20ac/L] - ${monthYear}`;
+const pageDesc = `Precio del gasoil de calefacci\u00f3n en ${provData.nombre} hoy: ${formatPrice(precioMedio)} \u20ac/litro. Comparativa con ${provData.ccaaNombre} y media nacional. Actualizado ${precios.lastUpdated}.`;
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} type="article">
+  <Fragment slot="schema">
+    <SchemaBreadcrumb items={breadcrumbItems} />
+    <SchemaArticle
+      title={pageTitle}
+      description={pageDesc}
+      url={`${siteUrl}/precio-gasoil-calefaccion/provincia/${provData.slug}/`}
+      dateModified={precios.lastUpdated}
+    />
+  </Fragment>
+
+  <Header />
+
+  <main class="container">
+    <nav class="breadcrumbs">
+      <a href="/">Inicio</a> &raquo;
+      <a href={`/precio-gasoil-calefaccion/${provData.ccaaSlug}/`}>{provData.ccaaNombre}</a> &raquo;
+      <span>{provData.nombre}</span>
+    </nav>
+
+    <PriceHero
+      precio={precioMedio}
+      variacionMensual={variacion}
+      lastUpdated={precios.lastUpdated}
+      regionName={provData.nombre}
+    />
+
+    <!-- Comparativa -->
+    <section id="comparativa">
+      <h2>Precio del Gasoil de Calefacci&oacute;n en {provData.nombre} vs Media Nacional</h2>
+      <p>
+        El precio medio del gasoil de calefacci&oacute;n en <strong>{provData.nombre}</strong> es de
+        <strong>{formatPrice(precioMedio)} &euro;/litro</strong>, lo que se sit&uacute;a
+        <strong>{diffText}</strong> de la media nacional ({formatPrice(nacionalPrecios.precioMedio)} &euro;/L)
+        y <strong>{diffCcaaText}</strong> que la media de {provData.ccaaNombre} ({formatPrice(ccaaPrecios.precioMedio)} &euro;/L).
+      </p>
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">M&iacute;nimo</th>
+            <th scope="col">Precio Medio</th>
+            <th scope="col">M&aacute;ximo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>{provData.nombre}</strong></td>
+            <td class="price price-low">{formatPrice(precioMin)} &euro;</td>
+            <td class="price">{formatPrice(precioMedio)} &euro;</td>
+            <td class="price price-high">{formatPrice(precioMax)} &euro;</td>
+          </tr>
+          <tr>
+            <td><a href={`/precio-gasoil-calefaccion/${provData.ccaaSlug}/`}><strong>{provData.ccaaNombre}</strong></a></td>
+            <td class="price price-low">{formatPrice(ccaaPrecios.precioMin)} &euro;</td>
+            <td class="price">{formatPrice(ccaaPrecios.precioMedio)} &euro;</td>
+            <td class="price price-high">{formatPrice(ccaaPrecios.precioMax)} &euro;</td>
+          </tr>
+          <tr>
+            <td><a href="/"><strong>Media Nacional</strong></a></td>
+            <td class="price price-low">{formatPrice(nacionalPrecios.precioMin)} &euro;</td>
+            <td class="price">{formatPrice(nacionalPrecios.precioMedio)} &euro;</td>
+            <td class="price price-high">{formatPrice(nacionalPrecios.precioMax)} &euro;</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Calculadora -->
+    <section id="calculadora">
+      <h2>Calculadora de Gasoil de Calefacci&oacute;n en {provData.nombre}</h2>
+      <p>
+        Calcula cu&aacute;nto te costar&aacute; llenar tu dep&oacute;sito en {provData.nombre}.
+        Al precio medio actual, 1.000 litros cuestan aproximadamente <strong>{calculateCost(1000, precioMedio)} &euro;</strong>.
+      </p>
+      <PriceCalculator selectedRegion={provData.ccaaSlug} />
+    </section>
+
+    <!-- Gr&aacute;fico de evoluci&oacute;n (usa datos de la CCAA) -->
+    <section id="evolucion">
+      <h2>Evoluci&oacute;n del Precio del Gasoil en {provData.nombre} ({provData.ccaaNombre})</h2>
+      <p>
+        Evoluci&oacute;n del precio del gasoil de calefacci&oacute;n en {provData.ccaaNombre}
+        (incluyendo {provData.nombre}) comparado con la media nacional durante los &uacute;ltimos 24 meses.
+      </p>
+      <PriceChart regionId={provData.ccaaSlug} regionName={provData.ccaaNombre} />
+    </section>
+
+    <!-- Informaci&oacute;n provincial -->
+    <section id="informacion">
+      <h2>Gasoil de Calefacci&oacute;n en {provData.nombre}: Informaci&oacute;n</h2>
+      <div class="content">
+        <p>{provData.descripcion}</p>
+        <p>
+          El gasoil de calefacci&oacute;n (gas&oacute;leo C) en {provData.nombre} se distribuye mediante
+          camiones cisterna a domicilio. El pedido m&iacute;nimo habitual es de 400-500 litros y el precio
+          por litro disminuye con cantidades mayores. Para obtener el mejor precio, compara presupuestos
+          de varios distribuidores y considera la <a href="/blog/cuando-es-mas-barato-gasoil-calefaccion/">compra anticipada en verano</a>,
+          cuando la demanda es menor y los precios m&aacute;s bajos.
+        </p>
+
+        <h3>&iquest;Cu&aacute;nto cuesta el gasoil de calefacci&oacute;n en {provData.nombre}?</h3>
+        <ul>
+          <li><strong>500 litros</strong>: {calculateCost(500, precioMedio)} &euro;</li>
+          <li><strong>1.000 litros</strong>: {calculateCost(1000, precioMedio)} &euro;</li>
+          <li><strong>1.500 litros</strong>: {calculateCost(1500, precioMedio)} &euro;</li>
+          <li><strong>2.000 litros</strong>: {calculateCost(2000, precioMedio)} &euro;</li>
+        </ul>
+
+        <h3>Consejos para ahorrar en {provData.nombre}</h3>
+        <ul>
+          <li><a href="/blog/cuando-es-mas-barato-gasoil-calefaccion/">Compra en verano</a> cuando los precios son m&aacute;s bajos.</li>
+          <li>Pide mayor cantidad para reducir el precio por litro.</li>
+          <li>Compara al menos 3 distribuidores de la zona.</li>
+          <li>Considera la <a href="/blog/gasoil-calefaccion-comunidad-vecinos/">compra agrupada</a> con vecinos.</li>
+          <li>Revisa el <a href="/blog/mantenimiento-caldera-gasoil/">mantenimiento de tu caldera</a> para optimizar el consumo.</li>
+        </ul>
+
+        <p>
+          Consulta tambi&eacute;n los precios en la comunidad aut&oacute;noma de
+          <a href={`/precio-gasoil-calefaccion/${provData.ccaaSlug}/`}>{provData.ccaaNombre}</a>
+          o la <a href="/">media nacional del gasoil de calefacci&oacute;n</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Otras provincias de la CCAA -->
+    {otherProvs.length > 0 && (
+      <section id="otras-provincias">
+        <h2>Precio del Gasoil en Otras Provincias de {provData.ccaaNombre}</h2>
+        <div class="region-grid">
+          {otherProvs.map(op => {
+            const opPrecios = (preciosProvincias.provincias as any)[op.slug];
+            const opPrecio = opPrecios?.precioMedio || ccaaPrecios.precioMedio;
+            return (
+              <a href={`/precio-gasoil-calefaccion/provincia/${op.slug}/`} class="region-card">
+                <h3>{op.nombre}</h3>
+                <span class="region-price">{formatPrice(opPrecio)} &euro;/L</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    <!-- Comunidades aut&oacute;nomas -->
+    <section id="comunidades">
+      <h2>Precio del Gasoil por Comunidad Aut&oacute;noma</h2>
+      <RegionGrid excludeSlug={provData.ccaaSlug} />
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

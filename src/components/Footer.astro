@@ -1,53 +1,42 @@
 ---
-import regiones from '../data/regiones.json';
 import precios from '../data/precios.json';
-
-const blogArticles = [
-  { slug: 'diferencia-gasoleo-a-b-c', title: 'Diferencia Gas\u00f3leo A, B y C' },
-  { slug: 'cuando-es-mas-barato-gasoil-calefaccion', title: '\u00bfCu\u00e1ndo es m\u00e1s barato?' },
-  { slug: 'como-ahorrar-gasoil-calefaccion', title: 'C\u00f3mo ahorrar en gasoil' },
-  { slug: 'consumo-caldera-gasoil', title: 'Consumo de caldera' },
-  { slug: 'mantenimiento-caldera-gasoil', title: 'Mantenimiento caldera' },
-  { slug: 'gasoil-calefaccion-vs-gas-natural', title: 'Gasoil vs Gas Natural' },
-  { slug: 'gasoil-calefaccion-vs-aerotermia', title: 'Gasoil vs Aerotermia' },
-  { slug: 'gasoil-calefaccion-vs-pellets', title: 'Gasoil vs Pellets' },
-  { slug: 'normativa-deposito-gasoil', title: 'Normativa dep\u00f3sitos' },
-  { slug: 'iva-impuestos-gasoil-calefaccion', title: 'IVA e impuestos' },
-  { slug: 'subvenciones-cambiar-caldera-gasoil', title: 'Subvenciones 2026' },
-  { slug: 'gasoil-calefaccion-comunidad-vecinos', title: 'Comunidad de vecinos' },
-];
 ---
 
 <footer class="site-footer">
   <div class="container">
-    <h3>Precio del gasoil de calefacci&oacute;n por Comunidad Aut&oacute;noma</h3>
-    <div class="footer-regions">
-      {regiones.map(r => (
-        <a href={`/precio-gasoil-calefaccion/${r.slug}/`}>
-          Gasoil calefacci&oacute;n en {r.nombre}
-        </a>
-      ))}
+    <div class="footer-grid">
+      <div>
+        <h4>Herramientas</h4>
+        <ul>
+          <li><a href="/">Precios Hoy</a></li>
+          <li><a href="/calculadora/">Calculadora</a></li>
+          <li><a href="/evolucion-precio/">Evoluci&oacute;n del Precio</a></li>
+          <li><a href="/consumo-caldera-gasoil/">Consumo de Caldera</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Gu&iacute;as</h4>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/blog/diferencia-gasoleo-a-b-c/">Tipos de Gas&oacute;leo</a></li>
+          <li><a href="/blog/como-ahorrar-gasoil-calefaccion/">C&oacute;mo Ahorrar</a></li>
+          <li><a href="/blog/mantenimiento-caldera-gasoil/">Mantenimiento Caldera</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Comparativas</h4>
+        <ul>
+          <li><a href="/blog/gasoil-calefaccion-vs-gas-natural/">Gasoil vs Gas Natural</a></li>
+          <li><a href="/blog/gasoil-calefaccion-vs-aerotermia/">Gasoil vs Aerotermia</a></li>
+          <li><a href="/blog/gasoil-calefaccion-vs-pellets/">Gasoil vs Pellets</a></li>
+          <li><a href="/blog/subvenciones-cambiar-caldera-gasoil/">Subvenciones 2026</a></li>
+        </ul>
+      </div>
     </div>
-
-    <h3 style="margin-top:1.5rem;">Gu&iacute;as y Art&iacute;culos</h3>
-    <div class="footer-regions">
-      {blogArticles.map(a => (
-        <a href={`/blog/${a.slug}/`}>{a.title}</a>
-      ))}
-    </div>
-
-    <nav>
-      <ul class="site-nav" style="margin-bottom: 1rem; margin-top: 1.5rem;">
-        <li><a href="/">Precios Hoy</a></li>
-        <li><a href="/calculadora/">Calculadora</a></li>
-        <li><a href="/evolucion-precio/">Evoluci&oacute;n del Precio</a></li>
-        <li><a href="/blog/">Blog</a></li>
-      </ul>
-    </nav>
 
     <div class="footer-meta">
       <p>Datos obtenidos de <a href="https://geoportalgasolineras.es" target="_blank" rel="noopener">geoportalgasolineras.es</a> ({precios.source}).</p>
-      <p>&copy; {new Date().getFullYear()} Precio Gasoil Calefacci&oacute;n. Todos los derechos reservados.</p>
+      <p>&copy; {new Date().getFullYear()} Caliente y Barato. Todos los derechos reservados.</p>
       <p>Los precios son orientativos y pueden variar seg&uacute;n el distribuidor. &Uacute;ltima actualizaci&oacute;n: {precios.lastUpdated}.</p>
     </div>
   </div>

@@ -79,6 +79,13 @@ const articles = [
   }
 ];
 
+const categoryConfig: Record<string, { icon: string; cssClass: string }> = {
+  'Guías': { icon: '\ud83d\udcd6', cssClass: 'guias' },
+  'Comparativas': { icon: '\u2696\ufe0f', cssClass: 'comparativas' },
+  'Ahorro': { icon: '\ud83d\udcb0', cssClass: 'ahorro' },
+  'Normativa': { icon: '\ud83d\udccb', cssClass: 'normativa' },
+};
+
 const categories = [...new Set(articles.map(a => a.category))];
 ---
 
@@ -102,44 +109,64 @@ const categories = [...new Set(articles.map(a => a.category))];
       <span>Blog</span>
     </nav>
 
-    <h1>Blog: Gu&iacute;as y Consejos sobre Gasoil de Calefacci&oacute;n</h1>
-    <p>
-      Art&iacute;culos, gu&iacute;as y comparativas para ayudarte a tomar las mejores decisiones
-      sobre tu sistema de calefacci&oacute;n con gas&oacute;leo C.
-    </p>
+    <div class="blog-hero">
+      <h1>Gu&iacute;as y Consejos sobre Gasoil de Calefacci&oacute;n</h1>
+      <p>
+        Todo lo que necesitas saber sobre gas&oacute;leo C: comparativas con otras energ&iacute;as,
+        consejos de ahorro, mantenimiento de calderas, normativa y subvenciones.
+      </p>
+    </div>
 
-    {categories.map(cat => (
-      <section style="margin-top:2rem;">
-        <h2>{cat}</h2>
-        <div class="region-grid">
-          {articles.filter(a => a.category === cat).map(article => (
-            <a href={`/blog/${article.slug}/`} class="region-card">
-              <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">{article.title}</h3>
-              <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">{article.description}</p>
-            </a>
-          ))}
-        </div>
-      </section>
-    ))}
+    {categories.map(cat => {
+      const cfg = categoryConfig[cat];
+      return (
+        <section>
+          <div class="blog-section-title">
+            <div class={`blog-section-icon blog-section-icon--${cfg.cssClass}`}>{cfg.icon}</div>
+            <h2 style="margin:0;">{cat}</h2>
+          </div>
+          <div class="blog-grid">
+            {articles.filter(a => a.category === cat).map(article => {
+              const acfg = categoryConfig[article.category];
+              return (
+                <a href={`/blog/${article.slug}/`} class={`blog-card blog-card--${acfg.cssClass}`}>
+                  <div class={`blog-category-label blog-category-label--${acfg.cssClass}`}>{article.category}</div>
+                  <h3>{article.title}</h3>
+                  <p>{article.description}</p>
+                  <span class="blog-card-arrow">Leer art&iacute;culo &rarr;</span>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      );
+    })}
 
     <section style="margin-top:3rem;">
-      <h2>Herramientas &Uacute;tiles</h2>
-      <div class="region-grid">
-        <a href="/" class="region-card">
-          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">Precio del Gasoil Hoy</h3>
-          <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">Consulta el precio actualizado del gas&oacute;leo C en toda Espa&ntilde;a.</p>
+      <div class="blog-section-title">
+        <div class="blog-section-icon" style="background:linear-gradient(135deg,#eff6ff,#f0fdf4);">&wrench;</div>
+        <h2 style="margin:0;">Herramientas</h2>
+      </div>
+      <div class="tools-grid">
+        <a href="/" class="tool-card">
+          <div class="tool-card-icon">&euro;</div>
+          <h3>Precio del Gasoil Hoy</h3>
+          <p>Precio actualizado por CCAA y provincia</p>
         </a>
-        <a href="/calculadora/" class="region-card">
-          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">Calculadora de Coste</h3>
-          <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">Calcula cu&aacute;nto te costar&aacute; llenar tu dep&oacute;sito.</p>
+        <a href="/calculadora/" class="tool-card">
+          <div class="tool-card-icon">&sum;</div>
+          <h3>Calculadora de Coste</h3>
+          <p>Calcula cu&aacute;nto te costar&aacute; tu pedido</p>
         </a>
-        <a href="/evolucion-precio/" class="region-card">
-          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">Evoluci&oacute;n del Precio</h3>
-          <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">Gr&aacute;fico hist&oacute;rico de precios de los &uacute;ltimos 24 meses.</p>
+        <a href="/evolucion-precio/" class="tool-card">
+          <div class="tool-card-icon">&nearr;</div>
+          <h3>Evoluci&oacute;n del Precio</h3>
+          <p>Gr&aacute;fico de los &uacute;ltimos 24 meses</p>
         </a>
-        <a href="/consumo-caldera-gasoil/" class="region-card">
-          <h3 style="font-size:1.05rem;margin-bottom:0.5rem;">Consumo de Caldera</h3>
-          <p style="font-size:0.9rem;color:var(--color-text-secondary);margin:0;">Calcula cu&aacute;nto consume tu caldera seg&uacute;n tu vivienda.</p>
+        <a href="/consumo-caldera-gasoil/" class="tool-card">
+          <div class="tool-card-icon">&there4;</div>
+          <h3>Consumo de Caldera</h3>
+          <p>Calcula el gasto seg&uacute;n tu vivienda</p>
         </a>
       </div>
     </section>

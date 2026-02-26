@@ -487,7 +487,7 @@
     {
       "fecha": "2026-02",
       "nacional": 1.171,
-      "comunidad-valenciana": 1.173,
+      "comunidad-valenciana": 1.174,
       "extremadura": 1.183,
       "galicia": 1.197,
       "madrid": 1.184,
@@ -503,7 +503,7 @@
       "cantabria": 1.173,
       "castilla-la-mancha": 1.172,
       "castilla-y-leon": 1.19,
-      "cataluna": 1.17
+      "cataluna": 1.171
     }
   ]
 }

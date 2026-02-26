@@ -492,18 +492,18 @@
       "galicia": 1.197,
       "madrid": 1.184,
       "murcia": 1.162,
-      "navarra": 1.161,
-      "pais-vasco": 1.199,
-      "la-rioja": 1.193,
+      "navarra": 1.16,
+      "pais-vasco": 1.198,
+      "la-rioja": 1.192,
       "andalucia": 1.173,
       "aragon": 1.183,
       "asturias": 1.21,
-      "islas-baleares": 1.273,
-      "islas-canarias": 0.964,
+      "islas-baleares": 1.272,
+      "islas-canarias": 0.963,
       "cantabria": 1.173,
       "castilla-la-mancha": 1.172,
       "castilla-y-leon": 1.19,
-      "cataluna": 1.171
+      "cataluna": 1.17
     }
   ]
 }

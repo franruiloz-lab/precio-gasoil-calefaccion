@@ -14,7 +14,7 @@
       "precioMedio": 1.174,
       "precioMin": 1.054,
       "precioMax": 1.283,
-      "variacionSemanal": -0.001,
+      "variacionSemanal": 0,
       "variacionMensual": 0
     },
     "extremadura": {
@@ -34,7 +34,7 @@
     "madrid": {
       "precioMedio": 1.186,
       "precioMin": 1.054,
-      "precioMax": 1.277,
+      "precioMax": 1.279,
       "variacionSemanal": 0,
       "variacionMensual": 0.001
     },
@@ -63,7 +63,7 @@
       "precioMedio": 1.195,
       "precioMin": 1.07,
       "precioMax": 1.283,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": 0.002
     },
     "andalucia": {
@@ -109,11 +109,11 @@
       "variacionMensual": 0.001
     },
     "castilla-la-mancha": {
-      "precioMedio": 1.172,
+      "precioMedio": 1.173,
       "precioMin": 1.061,
       "precioMax": 1.271,
-      "variacionSemanal": -0.001,
-      "variacionMensual": 0
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.001
     },
     "castilla-y-leon": {
       "precioMedio": 1.192,

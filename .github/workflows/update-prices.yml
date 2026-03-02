@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   update:
@@ -41,3 +42,9 @@ jobs:
           git add src/data/precios.json src/data/precios-provincias.json src/data/historico.json
           git commit -m "Actualizar precios $(date +%Y-%m-%d)"
           git push
+
+      - name: Trigger deploy
+        if: steps.changes.outputs.changed == 'true'
+        run: gh workflow run deploy.yml
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -5,12 +5,98 @@ import Footer from '../../components/Footer.astro';
 import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
 
 const articles = [
+  // Guías
   {
     slug: 'diferencia-gasoleo-a-b-c',
     title: 'Diferencia entre Gasóleo A, B y C',
     description: 'Descubre las diferencias entre los tres tipos de gasóleo: usos, impuestos, composición y cuál usar para calefacción.',
     category: 'Guías'
   },
+  {
+    slug: 'consumo-caldera-gasoil',
+    title: '¿Cuánto Consume una Caldera de Gasoil?',
+    description: 'Consumo medio de una caldera de gasóleo por día, mes y año según el tamaño de la vivienda.',
+    category: 'Guías'
+  },
+  {
+    slug: 'cuanto-gasoil-necesito-al-ano',
+    title: '¿Cuánto Gasoil de Calefacción Necesito al Año? Cálculo por m²',
+    description: 'Calcula cuántos litros de gasoil necesitas al año según los m² de tu vivienda, zona climática y tipo de caldera.',
+    category: 'Guías'
+  },
+  {
+    slug: 'mantenimiento-caldera-gasoil',
+    title: 'Mantenimiento de la Caldera de Gasoil: Guía Completa',
+    description: 'Todo sobre la revisión anual, limpieza, averías comunes y costes de mantenimiento de calderas de gasóleo.',
+    category: 'Guías'
+  },
+  {
+    slug: 'como-purgar-caldera-gasoil',
+    title: 'Cómo Purgar una Caldera de Gasoil: Guía Paso a Paso',
+    description: 'Aprende a purgar tu caldera y radiadores paso a paso. Cuándo hacerlo, herramientas necesarias y cómo reponer la presión.',
+    category: 'Guías'
+  },
+  {
+    slug: 'caldera-gasoil-condensacion',
+    title: 'Calderas de Gasoil de Condensación: Guía Completa y Comparativa',
+    description: '¿Vale la pena una caldera de condensación de gasoil? Comparamos rendimiento, precio, ahorro y requisitos técnicos.',
+    category: 'Guías'
+  },
+  {
+    slug: 'averia-caldera-gasoil',
+    title: 'Averías Más Comunes de la Caldera de Gasoil: Causas y Soluciones',
+    description: 'Guía completa de averías de calderas de gasoil: códigos de error, causas frecuentes y cuándo llamar al técnico.',
+    category: 'Guías'
+  },
+  {
+    slug: 'caldera-gasoil-no-enciende',
+    title: 'Caldera de Gasoil No Enciende: Causas y Soluciones Paso a Paso',
+    description: '¿Tu caldera de gasoil no enciende? Descubre las 8 causas más comunes y cómo solucionarlas antes de llamar al técnico.',
+    category: 'Guías'
+  },
+  {
+    slug: 'tipos-deposito-gasoil-calefaccion',
+    title: 'Tipos de Depósito de Gasoil para Calefacción: Cuál Elegir',
+    description: 'Guía completa sobre depósitos de gasoil: aéreo, soterrado, IBC. Capacidades, precios, normativa y cuál se adapta a tu vivienda.',
+    category: 'Guías'
+  },
+  {
+    slug: 'limpiar-deposito-gasoil',
+    title: 'Limpiar un Depósito de Gasoil: Cuándo y Cómo Hacerlo',
+    description: 'Descubre cuándo y cómo limpiar el depósito de gasoil de tu calefacción. Señales de contaminación, proceso y costes.',
+    category: 'Guías'
+  },
+  {
+    slug: 'gasoil-calefaccion-comunidad-vecinos',
+    title: 'Gasoil de Calefacción en Comunidad de Vecinos',
+    description: 'Gestión de la calefacción central con gasóleo C: costes, reparto, mantenimiento y compra agrupada.',
+    category: 'Guías'
+  },
+  {
+    slug: 'gasoil-calefaccion-segunda-residencia',
+    title: 'Gasoil de Calefacción para Segunda Residencia: Guía Práctica',
+    description: 'Todo sobre el gasoil en tu segunda residencia: depósito, uso esporádico, problemas frecuentes y cómo no quedarte sin combustible.',
+    category: 'Guías'
+  },
+  {
+    slug: 'gasoil-calefaccion-zona-rural',
+    title: 'Gasoil de Calefacción en Zonas Rurales: La Alternativa sin Gas Natural',
+    description: 'El gasoil es la opción más extendida en zonas rurales sin gas natural. Distribuidores, depósitos, costes y alternativas.',
+    category: 'Guías'
+  },
+  {
+    slug: 'precio-gasoil-calefaccion-europa',
+    title: 'Precio del Gasoil de Calefacción en Europa: Comparativa por Países',
+    description: '¿Es caro el gasoil en España comparado con Europa? Comparamos precios en Alemania, Francia, Italia, Bélgica y más países.',
+    category: 'Guías'
+  },
+  {
+    slug: 'evolucion-historica-precio-gasoil',
+    title: 'Evolución Histórica del Precio del Gasoil de Calefacción (2000-2026)',
+    description: 'Análisis completo del precio del gasoil desde 2000: crisis del petróleo, COVID, guerra de Ucrania y perspectivas futuras.',
+    category: 'Guías'
+  },
+  // Comparativas
   {
     slug: 'gasoil-calefaccion-vs-gas-natural',
     title: 'Gasoil de Calefacción vs Gas Natural',
@@ -30,6 +116,19 @@ const articles = [
     category: 'Comparativas'
   },
   {
+    slug: 'gasoil-calefaccion-vs-bomba-de-calor',
+    title: 'Gasoil de Calefacción vs Bomba de Calor: ¿Cuál Sale más Barato?',
+    description: 'Comparativa completa entre gasoil y bomba de calor: instalación, gasto anual, eficiencia y cuál conviene según tu caso.',
+    category: 'Comparativas'
+  },
+  {
+    slug: 'gasoil-calefaccion-vs-lena',
+    title: 'Gasoil vs Leña para Calefacción: Comparativa Completa',
+    description: 'Gasoil de calefacción vs leña: comparamos precio por kWh, comodidad, emisiones y cuál es mejor según tu situación.',
+    category: 'Comparativas'
+  },
+  // Ahorro
+  {
     slug: 'cuando-es-mas-barato-gasoil-calefaccion',
     title: '¿Cuándo es Más Barato el Gasoil de Calefacción?',
     description: 'Análisis de la estacionalidad del precio del gasóleo C y el mejor momento para comprar.',
@@ -42,17 +141,24 @@ const articles = [
     category: 'Ahorro'
   },
   {
-    slug: 'consumo-caldera-gasoil',
-    title: '¿Cuánto Consume una Caldera de Gasoil?',
-    description: 'Consumo medio de una caldera de gasóleo por día, mes y año según el tamaño de la vivienda.',
-    category: 'Guías'
+    slug: 'subvenciones-cambiar-caldera-gasoil',
+    title: 'Subvenciones para Cambiar tu Caldera de Gasoil en 2026',
+    description: 'Ayudas del IDAE, Plan Renove y subvenciones autonómicas para sustituir calderas de gasóleo.',
+    category: 'Ahorro'
   },
   {
-    slug: 'mantenimiento-caldera-gasoil',
-    title: 'Mantenimiento de la Caldera de Gasoil: Guía Completa',
-    description: 'Todo sobre la revisión anual, limpieza, averías comunes y costes de mantenimiento de calderas de gasóleo.',
-    category: 'Guías'
+    slug: 'como-pedir-gasoil-calefaccion',
+    title: 'Cómo Pedir Gasoil de Calefacción: Guía para el Mejor Precio',
+    description: 'Todo sobre cómo pedir gasoil: pedido mínimo, comparar distribuidores, formas de pago y cómo negociar el mejor precio.',
+    category: 'Ahorro'
   },
+  {
+    slug: 'grupo-compra-gasoil-calefaccion',
+    title: 'Grupo de Compra de Gasoil: Cómo Organizarlo y Ahorrar',
+    description: 'Descubre cómo organizar un grupo de compra de gasoil con vecinos. Ahorra hasta un 10% comprando en volumen.',
+    category: 'Ahorro'
+  },
+  // Normativa
   {
     slug: 'normativa-deposito-gasoil',
     title: 'Normativa de Depósitos de Gasoil para Calefacción',
@@ -66,17 +172,11 @@ const articles = [
     category: 'Normativa'
   },
   {
-    slug: 'subvenciones-cambiar-caldera-gasoil',
-    title: 'Subvenciones para Cambiar tu Caldera de Gasoil en 2026',
-    description: 'Ayudas del IDAE, Plan Renove y subvenciones autonómicas para sustituir calderas de gasóleo.',
-    category: 'Ahorro'
+    slug: 'instalar-deposito-gasoil',
+    title: 'Instalar un Depósito de Gasoil: Requisitos, Normativa y Costes',
+    description: 'Todo sobre la instalación de un depósito de gasoil: normativa ITC-MI-IP04, distancias de seguridad y permisos necesarios.',
+    category: 'Normativa'
   },
-  {
-    slug: 'gasoil-calefaccion-comunidad-vecinos',
-    title: 'Gasoil de Calefacción en Comunidad de Vecinos',
-    description: 'Gestión de la calefacción central con gasóleo C: costes, reparto, mantenimiento y compra agrupada.',
-    category: 'Guías'
-  }
 ];
 
 const categoryConfig: Record<string, { icon: string; cssClass: string }> = {

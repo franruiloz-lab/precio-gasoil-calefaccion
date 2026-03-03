@@ -303,6 +303,11 @@ section { margin-bottom: 3rem; }
   border-top: 1px solid var(--color-border);
 }
 
+.footer-legal { margin-top: 0.5rem; }
+.footer-legal a { color: var(--color-text-secondary); text-decoration: underline; text-underline-offset: 2px; }
+.footer-legal a:hover { color: var(--color-primary); }
+.footer-legal span { margin: 0 0.4rem; opacity: 0.5; }
+
 /* === UPDATED BADGE === */
 .updated-badge {
   display: inline-flex;

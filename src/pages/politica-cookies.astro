@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Política de Cookies' }
+];
+---
+
+<BaseLayout
+  title="Política de Cookies - Caliente y Barato"
+  description="Política de cookies de calienteybarato.com. Información sobre qué cookies utilizamos y cómo puedes gestionarlas, conforme a la LSSI-CE y el RGPD."
+>
+  <Header />
+
+  <main class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article>
+      <div class="article-header">
+        <h1>Política de Cookies</h1>
+        <p class="article-meta" style="color: var(--color-text-muted); font-size: 0.9rem;">
+          Última actualización: marzo de 2026
+        </p>
+      </div>
+
+      <div class="content">
+
+        <p>
+          En cumplimiento del artículo 22.2 de la Ley 34/2002, de Servicios de la Sociedad de la
+          Información y del Comercio Electrónico (LSSI-CE), y del Reglamento (UE) 2016/679 (RGPD),
+          te informamos sobre el uso de cookies en <strong>calienteybarato.com</strong>.
+        </p>
+
+        <h2>1. ¿Qué es una cookie?</h2>
+        <p>
+          Una cookie es un pequeño fichero de texto que un sitio web almacena en tu navegador o
+          dispositivo cuando lo visitas. Las cookies permiten que el sitio recuerde tus acciones
+          y preferencias durante un tiempo determinado, para que no tengas que volver a introducirlas.
+        </p>
+
+        <h2>2. Cookies que utilizamos</h2>
+
+        <h3>Cookies técnicas (exentas de consentimiento)</h3>
+        <p>
+          Son estrictamente necesarias para el funcionamiento del sitio. Sin ellas, el sitio no
+          puede prestar correctamente sus servicios. Actualmente, <strong>Caliente y Barato no
+          instala cookies técnicas propias</strong>. El sitio es estático y no requiere sesión
+          de usuario ni preferencias almacenadas.
+        </p>
+
+        <h3>Cookies analíticas (requieren consentimiento)</h3>
+        <p>
+          Utilizamos o podemos utilizar <strong>Google Analytics</strong> para obtener estadísticas
+          anónimas sobre el uso del sitio (páginas más visitadas, tiempo de sesión, origen del
+          tráfico, etc.). Esta información nos ayuda a mejorar los contenidos y la experiencia
+          de usuario. Los datos se recogen de forma anonimizada y no permiten identificar
+          a ningún usuario concreto.
+        </p>
+        <div class="cookie-table-wrapper" style="overflow-x: auto; margin: 1rem 0;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+            <thead>
+              <tr style="background:var(--color-surface); border-bottom:2px solid var(--color-border);">
+                <th style="padding:0.6rem 0.8rem; text-align:left;">Cookie</th>
+                <th style="padding:0.6rem 0.8rem; text-align:left;">Proveedor</th>
+                <th style="padding:0.6rem 0.8rem; text-align:left;">Finalidad</th>
+                <th style="padding:0.6rem 0.8rem; text-align:left;">Duración</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--color-border-light);">
+                <td style="padding:0.6rem 0.8rem;"><code>_ga</code></td>
+                <td style="padding:0.6rem 0.8rem;">Google Analytics</td>
+                <td style="padding:0.6rem 0.8rem;">Distinguir usuarios únicos</td>
+                <td style="padding:0.6rem 0.8rem;">2 años</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--color-border-light);">
+                <td style="padding:0.6rem 0.8rem;"><code>_ga_*</code></td>
+                <td style="padding:0.6rem 0.8rem;">Google Analytics</td>
+                <td style="padding:0.6rem 0.8rem;">Persistencia del estado de sesión</td>
+                <td style="padding:0.6rem 0.8rem;">2 años</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Cookies publicitarias (requieren consentimiento)</h3>
+        <p>
+          Utilizamos o podemos utilizar <strong>Google AdSense</strong> para mostrar anuncios
+          relevantes. Google puede emplear cookies para personalizar los anuncios en función
+          de las visitas anteriores a este u otros sitios web. Puedes consultar la política de
+          privacidad de Google en
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.
+        </p>
+        <div class="cookie-table-wrapper" style="overflow-x: auto; margin: 1rem 0;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+            <thead>
+              <tr style="background:var(--color-surface); border-bottom:2px solid var(--color-border);">
+                <th style="padding:0.6rem 0.8rem; text-align:left;">Cookie</th>
+                <th style="padding:0.6rem 0.8rem; text-align:left;">Proveedor</th>
+                <th style="padding:0.6rem 0.8rem; text-align:left;">Finalidad</th>
+                <th style="padding:0.6rem 0.8rem; text-align:left;">Duración</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--color-border-light);">
+                <td style="padding:0.6rem 0.8rem;"><code>IDE</code></td>
+                <td style="padding:0.6rem 0.8rem;">Google / DoubleClick</td>
+                <td style="padding:0.6rem 0.8rem;">Publicidad personalizada</td>
+                <td style="padding:0.6rem 0.8rem;">1 año</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--color-border-light);">
+                <td style="padding:0.6rem 0.8rem;"><code>DSID</code></td>
+                <td style="padding:0.6rem 0.8rem;">Google / DoubleClick</td>
+                <td style="padding:0.6rem 0.8rem;">Identificación de usuario en anuncios</td>
+                <td style="padding:0.6rem 0.8rem;">2 semanas</td>
+              </tr>
+              <tr>
+                <td style="padding:0.6rem 0.8rem;"><code>test_cookie</code></td>
+                <td style="padding:0.6rem 0.8rem;">Google / DoubleClick</td>
+                <td style="padding:0.6rem 0.8rem;">Verificar soporte de cookies</td>
+                <td style="padding:0.6rem 0.8rem;">Sesión</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>3. Cómo gestionar o desactivar las cookies</h2>
+        <p>
+          Puedes retirar tu consentimiento en cualquier momento a través del panel de configuración
+          de cookies accesible desde el enlace que aparece en el pie de página de este sitio.
+        </p>
+        <p>
+          También puedes gestionar las cookies directamente desde tu navegador:
+        </p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+          <li><a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+          <li><a href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+        </ul>
+        <p>
+          Además, puedes optar por excluirte del seguimiento de Google Analytics mediante el
+          <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">complemento de inhabilitación de Google Analytics</a>
+          y gestionar las preferencias de anuncios de Google en
+          <a href="https://myadcenter.google.com" target="_blank" rel="noopener noreferrer">Mi Centro de Anuncios</a>.
+        </p>
+
+        <h2>4. Actualizaciones de esta política</h2>
+        <p>
+          Esta política puede modificarse cuando se incorporen nuevos servicios o cambie la
+          normativa aplicable. La versión vigente siempre estará disponible en esta página con
+          la fecha de última actualización. Si los cambios son significativos, se informará
+          mediante el banner de cookies en la próxima visita.
+        </p>
+
+        <h2>5. Más información</h2>
+        <p>
+          Para cualquier consulta sobre el uso de cookies o el tratamiento de tus datos, puedes
+          contactar con nosotros en <a href="mailto:franruiloz@gmail.com">franruiloz@gmail.com</a>.
+          Para información adicional sobre protección de datos, consulta nuestra
+          <a href="/politica-privacidad/">Política de Privacidad</a>.
+        </p>
+
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

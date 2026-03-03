@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Política de Privacidad' }
+];
+---
+
+<BaseLayout
+  title="Política de Privacidad - Caliente y Barato"
+  description="Política de privacidad de calienteybarato.com. Información sobre el tratamiento de datos personales conforme al Reglamento General de Protección de Datos (RGPD)."
+>
+  <Header />
+
+  <main class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article>
+      <div class="article-header">
+        <h1>Política de Privacidad</h1>
+        <p class="article-meta" style="color: var(--color-text-muted); font-size: 0.9rem;">
+          Última actualización: marzo de 2026
+        </p>
+      </div>
+
+      <div class="content">
+
+        <p>
+          En <strong>Caliente y Barato</strong> (calienteybarato.com) respetamos tu privacidad y nos
+          comprometemos a proteger tus datos personales conforme al Reglamento (UE) 2016/679 del
+          Parlamento Europeo (RGPD) y a la Ley Orgánica 3/2018, de 5 de diciembre, de Protección
+          de Datos Personales y Garantía de los Derechos Digitales (LOPDGDD).
+        </p>
+
+        <h2>1. Responsable del tratamiento</h2>
+        <ul>
+          <li><strong>Identidad:</strong> Francisco Ruiz Lozano</li>
+          <li><strong>NIF:</strong> 26596211T</li>
+          <li><strong>Domicilio:</strong> Jaén (España)</li>
+          <li><strong>Correo electrónico:</strong> <a href="mailto:franruiloz@gmail.com">franruiloz@gmail.com</a></li>
+        </ul>
+
+        <h2>2. Datos que recogemos y cómo los usamos</h2>
+        <p>
+          <strong>Caliente y Barato es un sitio web puramente informativo.</strong> No dispone de
+          formularios de registro, área de usuarios ni formularios de contacto. Por tanto, no
+          recogemos ni tratamos datos personales directamente a través de la navegación ordinaria.
+        </p>
+        <p>
+          No obstante, podemos utilizar herramientas de análisis de audiencia (como Google Analytics)
+          y servicios publicitarios (como Google AdSense) que, de forma automatizada, pueden recoger
+          información técnica de navegación de forma anonimizada o pseudonimizada. Esta información
+          puede incluir:
+        </p>
+        <ul>
+          <li>Dirección IP (anonimizada)</li>
+          <li>Tipo de navegador y sistema operativo</li>
+          <li>Páginas visitadas y tiempo de permanencia</li>
+          <li>País o región de acceso</li>
+          <li>Fuente de tráfico (búsqueda orgánica, directa, etc.)</li>
+        </ul>
+        <p>
+          Cuando estos servicios estén activos, se informará de ello en la <a href="/politica-cookies/">Política de Cookies</a>
+          y se solicitará tu consentimiento mediante el banner correspondiente.
+        </p>
+
+        <h2>3. Base jurídica del tratamiento</h2>
+        <p>
+          En los casos en que se traten datos de navegación a través de herramientas de análisis
+          o publicidad, la base jurídica será el <strong>consentimiento del usuario</strong>
+          (art. 6.1.a RGPD), prestado de forma libre e inequívoca a través del panel de gestión
+          de cookies.
+        </p>
+
+        <h2>4. Comunicación a terceros</h2>
+        <p>
+          No cedemos datos personales a terceros, salvo obligación legal o en el marco de los
+          servicios de terceros utilizados (Google LLC como encargado del tratamiento para Analytics
+          y AdSense), con los que se mantienen los acuerdos de tratamiento de datos exigidos
+          por el RGPD. Google puede tratar datos en servidores ubicados fuera del Espacio
+          Económico Europeo bajo las garantías de las Cláusulas Contractuales Tipo aprobadas
+          por la Comisión Europea.
+        </p>
+
+        <h2>5. Conservación de los datos</h2>
+        <p>
+          Los datos de navegación recogidos por herramientas de analítica se conservan durante
+          el período establecido por cada servicio (Google Analytics aplica por defecto una
+          retención de 14 meses). Los datos publicitarios se gestionan conforme a las políticas
+          de Google AdSense.
+        </p>
+
+        <h2>6. Tus derechos</h2>
+        <p>
+          Tienes derecho a <strong>acceder, rectificar, suprimir, oponerte, limitar</strong> el
+          tratamiento y a la <strong>portabilidad</strong> de tus datos. Puedes ejercer estos
+          derechos escribiendo a <a href="mailto:franruiloz@gmail.com">franruiloz@gmail.com</a>
+          indicando el derecho que deseas ejercitar y adjuntando copia de tu documento de identidad.
+        </p>
+        <p>
+          También tienes derecho a presentar una reclamación ante la
+          <strong>Agencia Española de Protección de Datos</strong> (AEPD) a través de
+          <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>
+          si consideras que el tratamiento de tus datos no es conforme a la normativa.
+        </p>
+
+        <h2>7. Cambios en esta política</h2>
+        <p>
+          Esta política puede actualizarse cuando se incorporen nuevos servicios o cuando la
+          normativa así lo exija. La versión vigente siempre estará disponible en esta página
+          con la fecha de última actualización indicada al inicio del documento.
+        </p>
+
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

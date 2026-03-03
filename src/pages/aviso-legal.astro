@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { name: 'Inicio', url: '/' },
+  { name: 'Aviso Legal' }
+];
+---
+
+<BaseLayout
+  title="Aviso Legal - Caliente y Barato"
+  description="Aviso legal e información sobre el titular del sitio web calienteybarato.com, conforme a la Ley 34/2002 de Servicios de la Sociedad de la Información."
+>
+  <Header />
+
+  <main class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article>
+      <div class="article-header">
+        <h1>Aviso Legal</h1>
+        <p class="article-meta" style="color: var(--color-text-muted); font-size: 0.9rem;">
+          Última actualización: marzo de 2026
+        </p>
+      </div>
+
+      <div class="content">
+
+        <h2>1. Datos del titular</h2>
+        <p>
+          En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la
+          Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se facilitan los
+          siguientes datos identificativos:
+        </p>
+        <ul>
+          <li><strong>Titular:</strong> Francisco Ruiz Lozano</li>
+          <li><strong>NIF:</strong> 26596211T</li>
+          <li><strong>Domicilio:</strong> Jaén (España)</li>
+          <li><strong>Correo electrónico:</strong> <a href="mailto:franruiloz@gmail.com">franruiloz@gmail.com</a></li>
+          <li><strong>Dominio:</strong> calienteybarato.com</li>
+        </ul>
+
+        <h2>2. Objeto y finalidad del sitio web</h2>
+        <p>
+          <strong>Caliente y Barato</strong> es un sitio web de carácter informativo que ofrece datos
+          orientativos sobre el precio del gasóleo de calefacción (Gasóleo C) en España. La información
+          publicada se obtiene de la API pública del Ministerio para la Transición Ecológica y el Reto
+          Demográfico a través del portal <a href="https://geoportalgasolineras.es" target="_blank" rel="noopener noreferrer">geoportalgasolineras.es</a>.
+        </p>
+        <p>
+          Los precios mostrados son <strong>orientativos</strong> y no constituyen una oferta de venta.
+          El precio final puede variar según el distribuidor, la cantidad solicitada, la zona geográfica
+          y las condiciones de mercado en el momento del pedido.
+        </p>
+
+        <h2>3. Propiedad intelectual e industrial</h2>
+        <p>
+          Los contenidos del sitio web (textos, gráficos, logotipos, diseño y código fuente) son
+          titularidad de Francisco Ruiz Lozano o están licenciados para su uso. Queda prohibida su
+          reproducción, distribución, comunicación pública o transformación sin autorización expresa
+          del titular, salvo los datos de precio que proceden de una fuente pública del Ministerio.
+        </p>
+        <p>
+          El acceso y uso del sitio web no supone cesión de ningún derecho de propiedad intelectual
+          o industrial sobre sus contenidos.
+        </p>
+
+        <h2>4. Exclusión de responsabilidad</h2>
+        <p>
+          El titular no garantiza la exactitud, exhaustividad ni actualidad de la información publicada.
+          Los precios son estimaciones basadas en datos oficiales y pueden no reflejar el precio exacto
+          que cualquier distribuidor particular aplique en un momento dado.
+        </p>
+        <p>
+          El titular no se hace responsable de los daños o perjuicios que pudieran derivarse del uso
+          de la información contenida en este sitio, de la indisponibilidad temporal del servicio,
+          ni de la existencia de virus u otros elementos dañinos en los contenidos de terceros enlazados.
+        </p>
+        <p>
+          Los enlaces a sitios web externos se facilitan como referencia informativa. El titular no
+          controla ni asume responsabilidad sobre el contenido de dichos sitios.
+        </p>
+
+        <h2>5. Ley aplicable y jurisdicción</h2>
+        <p>
+          Este aviso legal se rige por la legislación española vigente. Para la resolución de
+          cualquier conflicto derivado del acceso o uso de este sitio web, las partes se someten
+          a los juzgados y tribunales de la ciudad de Jaén, con renuncia expresa a cualquier
+          otro fuero que pudiera corresponderles, salvo que la normativa aplicable establezca
+          un fuero imperativo distinto.
+        </p>
+
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>

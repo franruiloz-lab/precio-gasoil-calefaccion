@@ -4,8 +4,8 @@
   "sourceUrl": "https://geoportalgasolineras.es",
   "nacional": {
     "precioMedio": 1.441,
-    "precioMin": 1.344,
-    "precioMax": 1.525,
+    "precioMin": 1.346,
+    "precioMax": 1.527,
     "variacionSemanal": 0,
     "variacionMensual": 0
   },
@@ -18,39 +18,39 @@
       "variacionMensual": 0
     },
     "extremadura": {
-      "precioMedio": 1.453,
-      "precioMin": 1.358,
-      "precioMax": 1.523,
-      "variacionSemanal": 0,
-      "variacionMensual": 0
+      "precioMedio": 1.454,
+      "precioMin": 1.359,
+      "precioMax": 1.525,
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.001
     },
     "galicia": {
       "precioMedio": 1.463,
       "precioMin": 1.371,
       "precioMax": 1.52,
-      "variacionSemanal": 0.001,
-      "variacionMensual": 0.001
+      "variacionSemanal": 0,
+      "variacionMensual": 0
     },
     "madrid": {
       "precioMedio": 1.451,
       "precioMin": 1.358,
-      "precioMax": 1.514,
+      "precioMax": 1.516,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
     "murcia": {
       "precioMedio": 1.443,
-      "precioMin": 1.357,
-      "precioMax": 1.516,
-      "variacionSemanal": 0.001,
-      "variacionMensual": 0.001
-    },
-    "navarra": {
-      "precioMedio": 1.429,
-      "precioMin": 1.35,
-      "precioMax": 1.52,
+      "precioMin": 1.358,
+      "precioMax": 1.515,
       "variacionSemanal": 0,
       "variacionMensual": 0
+    },
+    "navarra": {
+      "precioMedio": 1.428,
+      "precioMin": 1.342,
+      "precioMax": 1.52,
+      "variacionSemanal": -0.001,
+      "variacionMensual": -0.001
     },
     "pais-vasco": {
       "precioMedio": 1.467,
@@ -61,57 +61,57 @@
     },
     "la-rioja": {
       "precioMedio": 1.448,
-      "precioMin": 1.351,
-      "precioMax": 1.517,
-      "variacionSemanal": -0.002,
-      "variacionMensual": -0.002
+      "precioMin": 1.35,
+      "precioMax": 1.516,
+      "variacionSemanal": 0,
+      "variacionMensual": 0
     },
     "andalucia": {
       "precioMedio": 1.449,
       "precioMin": 1.358,
       "precioMax": 1.528,
-      "variacionSemanal": -0.001,
-      "variacionMensual": -0.001
+      "variacionSemanal": 0,
+      "variacionMensual": 0
     },
     "aragon": {
       "precioMedio": 1.436,
-      "precioMin": 1.327,
-      "precioMax": 1.497,
+      "precioMin": 1.326,
+      "precioMax": 1.499,
+      "variacionSemanal": 0,
+      "variacionMensual": 0
+    },
+    "asturias": {
+      "precioMedio": 1.474,
+      "precioMin": 1.374,
+      "precioMax": 1.523,
       "variacionSemanal": 0.001,
       "variacionMensual": 0.001
     },
-    "asturias": {
-      "precioMedio": 1.473,
-      "precioMin": 1.382,
-      "precioMax": 1.522,
-      "variacionSemanal": -0.001,
-      "variacionMensual": -0.001
-    },
     "islas-baleares": {
-      "precioMedio": 1.518,
+      "precioMedio": 1.517,
       "precioMin": 1.431,
       "precioMax": 1.568,
       "variacionSemanal": -0.001,
       "variacionMensual": -0.001
     },
     "islas-canarias": {
-      "precioMedio": 1.219,
-      "precioMin": 1.132,
-      "precioMax": 1.269,
-      "variacionSemanal": 0.002,
-      "variacionMensual": 0.002
+      "precioMedio": 1.222,
+      "precioMin": 1.148,
+      "precioMax": 1.27,
+      "variacionSemanal": 0.003,
+      "variacionMensual": 0.003
     },
     "cantabria": {
       "precioMedio": 1.453,
       "precioMin": 1.358,
-      "precioMax": 1.525,
-      "variacionSemanal": -0.002,
-      "variacionMensual": -0.002
+      "precioMax": 1.528,
+      "variacionSemanal": 0,
+      "variacionMensual": 0
     },
     "castilla-la-mancha": {
       "precioMedio": 1.446,
       "precioMin": 1.35,
-      "precioMax": 1.533,
+      "precioMax": 1.532,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
@@ -124,8 +124,8 @@
     },
     "cataluna": {
       "precioMedio": 1.438,
-      "precioMin": 1.335,
-      "precioMax": 1.512,
+      "precioMin": 1.334,
+      "precioMax": 1.511,
       "variacionSemanal": 0,
       "variacionMensual": 0
     }

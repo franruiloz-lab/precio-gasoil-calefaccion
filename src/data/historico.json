@@ -488,11 +488,11 @@
       "fecha": "2026-04",
       "nacional": 1.472,
       "comunidad-valenciana": 1.477,
-      "extremadura": 1.483,
+      "extremadura": 1.484,
       "galicia": 1.495,
-      "madrid": 1.487,
+      "madrid": 1.486,
       "murcia": 1.472,
-      "navarra": 1.447,
+      "navarra": 1.446,
       "pais-vasco": 1.5,
       "la-rioja": 1.475,
       "andalucia": 1.476,
@@ -501,7 +501,7 @@
       "islas-baleares": 1.558,
       "islas-canarias": 1.251,
       "cantabria": 1.487,
-      "castilla-la-mancha": 1.475,
+      "castilla-la-mancha": 1.476,
       "castilla-y-leon": 1.497,
       "cataluna": 1.469
     }

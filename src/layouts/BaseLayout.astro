@@ -1,4 +1,6 @@
 ---
+import CookieBanner from '../components/CookieBanner.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -66,5 +68,6 @@ const ogImage = `${siteUrl}/og-image.jpg`;
 </head>
 <body>
   <slot />
+  <CookieBanner />
 </body>
 </html>

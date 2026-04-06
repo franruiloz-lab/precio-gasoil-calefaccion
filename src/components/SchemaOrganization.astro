@@ -1,0 +1,17 @@
+---
+const siteUrl = 'https://calienteybarato.com';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Caliente y Barato",
+  "url": siteUrl,
+  "description": "Portal de referencia con precios actualizados del gasoil de calefacción en España por comunidad autónoma y provincia.",
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/favicon.svg`
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

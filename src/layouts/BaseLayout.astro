@@ -1,5 +1,6 @@
 ---
 import CookieBanner from '../components/CookieBanner.astro';
+import SchemaOrganization from '../components/SchemaOrganization.astro';
 
 interface Props {
   title: string;
@@ -62,6 +63,9 @@ const ogImage = `${siteUrl}/og-image.jpg`;
       "query-input": "required name=search_term_string"
     }
   })} />
+
+  <!-- Organization (global) -->
+  <SchemaOrganization />
 
   <!-- Schema slots -->
   <slot name="schema" />

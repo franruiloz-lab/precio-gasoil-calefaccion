@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import SchemaBreadcrumb from '../../components/SchemaBreadcrumb.astro';
+import SchemaCollectionPage from '../../components/SchemaCollectionPage.astro';
 
 const articles = [
   // Guías
@@ -193,13 +194,24 @@ const categories = [...new Set(articles.map(a => a.category))];
   title="Blog sobre Gasoil de Calefacción - Guías, Consejos y Comparativas"
   description="Artículos y guías sobre gasoil de calefacción: comparativas, consejos de ahorro, mantenimiento de calderas, normativa y subvenciones."
 >
-  <SchemaBreadcrumb
-    slot="schema"
-    items={[
-      { name: 'Inicio', url: '/' },
-      { name: 'Blog', url: '/blog/' }
-    ]}
-  />
+  <Fragment slot="schema">
+    <SchemaBreadcrumb
+      items={[
+        { name: 'Inicio', url: '/' },
+        { name: 'Blog', url: '/blog/' }
+      ]}
+    />
+    <SchemaCollectionPage
+      name="Blog sobre Gasoil de Calefacción"
+      description="Artículos y guías sobre gasoil de calefacción: comparativas, consejos de ahorro, mantenimiento de calderas, normativa y subvenciones."
+      url="/blog/"
+      items={articles.map(a => ({
+        name: a.title,
+        url: `/blog/${a.slug}/`,
+        description: a.description,
+      }))}
+    />
+  </Fragment>
 
   <Header />
 

@@ -11,10 +11,11 @@ interface Props {
   slug: string;
   category: 'Guías' | 'Comparativas' | 'Ahorro' | 'Normativa';
   breadcrumbName: string;
+  datePublished?: string;
   dateModified?: string;
 }
 
-const { title, description, slug, category, breadcrumbName, dateModified = '2026-02-20' } = Astro.props;
+const { title, description, slug, category, breadcrumbName, datePublished = '2026-02-01', dateModified = '2026-02-20' } = Astro.props;
 
 const categoryConfig: Record<string, { cssClass: string; icon: string }> = {
   'Guías': { cssClass: 'guias', icon: '\ud83d\udcd6' },
@@ -67,6 +68,7 @@ const related = allArticles.filter(a => a.slug !== slug).slice(0, 4);
     title={title}
     description={description}
     url={fullUrl}
+    datePublished={datePublished}
     dateModified={dateModified}
   />
   <SchemaBreadcrumb

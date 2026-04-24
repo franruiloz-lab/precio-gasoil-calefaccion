@@ -488,22 +488,22 @@
       "fecha": "2026-04",
       "nacional": 1.448,
       "comunidad-valenciana": 1.445,
-      "extremadura": 1.462,
+      "extremadura": 1.463,
       "galicia": 1.442,
       "madrid": 1.443,
-      "murcia": 1.449,
-      "navarra": 1.416,
-      "pais-vasco": 1.454,
-      "la-rioja": 1.436,
-      "andalucia": 1.464,
-      "aragon": 1.444,
-      "asturias": 1.475,
+      "murcia": 1.45,
+      "navarra": 1.415,
+      "pais-vasco": 1.453,
+      "la-rioja": 1.435,
+      "andalucia": 1.463,
+      "aragon": 1.443,
+      "asturias": 1.476,
       "islas-baleares": 1.515,
       "islas-canarias": 1.37,
       "cantabria": 1.458,
-      "castilla-la-mancha": 1.459,
-      "castilla-y-leon": 1.454,
-      "cataluna": 1.436
+      "castilla-la-mancha": 1.458,
+      "castilla-y-leon": 1.455,
+      "cataluna": 1.437
     }
   ]
 }

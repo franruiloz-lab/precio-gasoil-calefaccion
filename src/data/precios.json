@@ -18,11 +18,11 @@
       "variacionMensual": 0.003
     },
     "extremadura": {
-      "precioMedio": 1.463,
+      "precioMedio": 1.462,
       "precioMin": 1.38,
       "precioMax": 1.521,
-      "variacionSemanal": 0.001,
-      "variacionMensual": 0.009
+      "variacionSemanal": -0.001,
+      "variacionMensual": 0.008
     },
     "galicia": {
       "precioMedio": 1.442,
@@ -42,14 +42,14 @@
       "precioMedio": 1.45,
       "precioMin": 1.375,
       "precioMax": 1.504,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": 0.007
     },
     "navarra": {
       "precioMedio": 1.416,
       "precioMin": 1.33,
       "precioMax": 1.501,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.012
     },
     "pais-vasco": {
@@ -68,7 +68,7 @@
     },
     "andalucia": {
       "precioMedio": 1.463,
-      "precioMin": 1.384,
+      "precioMin": 1.383,
       "precioMax": 1.523,
       "variacionSemanal": 0,
       "variacionMensual": 0.014
@@ -81,22 +81,22 @@
       "variacionMensual": 0.008
     },
     "asturias": {
-      "precioMedio": 1.474,
+      "precioMedio": 1.475,
       "precioMin": 1.401,
       "precioMax": 1.518,
-      "variacionSemanal": 0,
-      "variacionMensual": 0
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.001
     },
     "islas-baleares": {
-      "precioMedio": 1.514,
-      "precioMin": 1.442,
+      "precioMedio": 1.513,
+      "precioMin": 1.443,
       "precioMax": 1.552,
-      "variacionSemanal": 0.001,
-      "variacionMensual": -0.003
+      "variacionSemanal": -0.001,
+      "variacionMensual": -0.004
     },
     "islas-canarias": {
       "precioMedio": 1.37,
-      "precioMin": 1.296,
+      "precioMin": 1.297,
       "precioMax": 1.417,
       "variacionSemanal": 0,
       "variacionMensual": 0.148
@@ -105,7 +105,7 @@
       "precioMedio": 1.458,
       "precioMin": 1.325,
       "precioMax": 1.526,
-      "variacionSemanal": -0.001,
+      "variacionSemanal": 0,
       "variacionMensual": 0.005
     },
     "castilla-la-mancha": {

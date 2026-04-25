@@ -4,72 +4,72 @@
   "sourceUrl": "https://geoportalgasolineras.es",
   "nacional": {
     "precioMedio": 1.448,
-    "precioMin": 1.358,
-    "precioMax": 1.514,
+    "precioMin": 1.359,
+    "precioMax": 1.512,
     "variacionSemanal": 0,
     "variacionMensual": 0.007
   },
   "regiones": {
     "comunidad-valenciana": {
       "precioMedio": 1.445,
-      "precioMin": 1.358,
-      "precioMax": 1.509,
+      "precioMin": 1.359,
+      "precioMax": 1.51,
       "variacionSemanal": 0,
       "variacionMensual": 0.003
     },
     "extremadura": {
-      "precioMedio": 1.462,
+      "precioMedio": 1.463,
       "precioMin": 1.38,
       "precioMax": 1.521,
-      "variacionSemanal": -0.001,
-      "variacionMensual": 0.008
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.009
     },
     "galicia": {
       "precioMedio": 1.442,
-      "precioMin": 1.348,
-      "precioMax": 1.506,
+      "precioMin": 1.349,
+      "precioMax": 1.505,
       "variacionSemanal": 0,
       "variacionMensual": -0.021
     },
     "madrid": {
       "precioMedio": 1.444,
       "precioMin": 1.367,
-      "precioMax": 1.497,
-      "variacionSemanal": 0.001,
+      "precioMax": 1.498,
+      "variacionSemanal": 0,
       "variacionMensual": -0.007
     },
     "murcia": {
-      "precioMedio": 1.449,
-      "precioMin": 1.374,
-      "precioMax": 1.506,
-      "variacionSemanal": -0.001,
-      "variacionMensual": 0.006
+      "precioMedio": 1.45,
+      "precioMin": 1.375,
+      "precioMax": 1.504,
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.007
     },
     "navarra": {
-      "precioMedio": 1.415,
-      "precioMin": 1.325,
-      "precioMax": 1.503,
-      "variacionSemanal": 0,
-      "variacionMensual": -0.013
+      "precioMedio": 1.416,
+      "precioMin": 1.33,
+      "precioMax": 1.501,
+      "variacionSemanal": 0.001,
+      "variacionMensual": -0.012
     },
     "pais-vasco": {
       "precioMedio": 1.454,
       "precioMin": 1.34,
       "precioMax": 1.518,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.013
     },
     "la-rioja": {
       "precioMedio": 1.437,
-      "precioMin": 1.341,
-      "precioMax": 1.492,
-      "variacionSemanal": 0.002,
+      "precioMin": 1.342,
+      "precioMax": 1.493,
+      "variacionSemanal": 0,
       "variacionMensual": -0.011
     },
     "andalucia": {
       "precioMedio": 1.463,
-      "precioMin": 1.383,
-      "precioMax": 1.525,
+      "precioMin": 1.384,
+      "precioMax": 1.523,
       "variacionSemanal": 0,
       "variacionMensual": 0.014
     },
@@ -77,22 +77,22 @@
       "precioMedio": 1.444,
       "precioMin": 1.359,
       "precioMax": 1.501,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": 0.008
     },
     "asturias": {
       "precioMedio": 1.474,
-      "precioMin": 1.4,
+      "precioMin": 1.401,
       "precioMax": 1.518,
-      "variacionSemanal": -0.002,
+      "variacionSemanal": 0,
       "variacionMensual": 0
     },
     "islas-baleares": {
-      "precioMedio": 1.513,
+      "precioMedio": 1.514,
       "precioMin": 1.442,
-      "precioMax": 1.551,
-      "variacionSemanal": -0.002,
-      "variacionMensual": -0.004
+      "precioMax": 1.552,
+      "variacionSemanal": 0.001,
+      "variacionMensual": -0.003
     },
     "islas-canarias": {
       "precioMedio": 1.37,
@@ -102,11 +102,11 @@
       "variacionMensual": 0.148
     },
     "cantabria": {
-      "precioMedio": 1.459,
+      "precioMedio": 1.458,
       "precioMin": 1.325,
       "precioMax": 1.526,
-      "variacionSemanal": 0.001,
-      "variacionMensual": 0.006
+      "variacionSemanal": -0.001,
+      "variacionMensual": 0.005
     },
     "castilla-la-mancha": {
       "precioMedio": 1.458,
@@ -117,9 +117,9 @@
     },
     "castilla-y-leon": {
       "precioMedio": 1.456,
-      "precioMin": 1.358,
+      "precioMin": 1.359,
       "precioMax": 1.518,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.007
     },
     "cataluna": {

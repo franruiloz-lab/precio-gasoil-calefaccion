@@ -67,11 +67,11 @@
       "variacionMensual": -0.028
     },
     "andalucia": {
-      "precioMedio": 1.44,
+      "precioMedio": 1.441,
       "precioMin": 1.351,
       "precioMax": 1.505,
-      "variacionSemanal": 0,
-      "variacionMensual": -0.036
+      "variacionSemanal": 0.001,
+      "variacionMensual": -0.035
     },
     "aragon": {
       "precioMedio": 1.411,
@@ -90,8 +90,8 @@
     "islas-baleares": {
       "precioMedio": 1.501,
       "precioMin": 1.421,
-      "precioMax": 1.543,
-      "variacionSemanal": 0.001,
+      "precioMax": 1.539,
+      "variacionSemanal": 0,
       "variacionMensual": -0.027
     },
     "islas-canarias": {

@@ -27,15 +27,24 @@ jobs:
           node-version: 20
 
       - name: Update prices from MITECO API
+        id: update
+        continue-on-error: true
         run: node scripts/update-prices.js
+
+      - name: Warn if API was unavailable
+        if: steps.update.outcome == 'failure'
+        run: |
+          echo "::warning::La API del MITECO no respondió. Los precios no se han actualizado."
+          exit 0
 
       - name: Check for changes
         id: changes
+        if: steps.update.outcome == 'success'
         run: |
           git diff --quiet src/data/precios.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.update.outcome == 'success' && steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -44,7 +53,7 @@ jobs:
           git push
 
       - name: Trigger deploy
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.update.outcome == 'success' && steps.changes.outputs.changed == 'true'
         run: gh workflow run deploy.yml
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

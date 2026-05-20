@@ -272,8 +272,8 @@ async function main() {
   ]);
 
   if (gocStations.length === 0) {
-    console.warn('WARNING: No Gasóleo C stations found. API might be down. Skipping update.');
-    process.exit(0);
+    console.error('ERROR: No Gasóleo C stations found. API might be down. Skipping update.');
+    process.exit(1);
   }
 
   const { byRegion, byProvince } = groupByRegionAndProvince(allStations);
@@ -325,7 +325,5 @@ async function main() {
 
 main().catch(err => {
   console.error('Fatal error:', err);
-  // Exit 0 on API availability errors so the workflow doesn't show as failed
-  const isApiDown = err.message && /HTTP 5\d\d/.test(err.message);
-  process.exit(isApiDown ? 0 : 1);
+  process.exit(1);
 });

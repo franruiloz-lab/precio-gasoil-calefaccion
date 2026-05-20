@@ -80,10 +80,18 @@ function getCurrentMonth() {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
 }
 
-async function fetchJSON(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-  return res.json();
+async function fetchJSON(url, retries = 3, delayMs = 5000) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    const res = await fetch(url);
+    if (res.ok) return res.json();
+    const isServerError = res.status >= 500 && res.status < 600;
+    if (isServerError && attempt < retries) {
+      console.warn(`  HTTP ${res.status} on attempt ${attempt}/${retries}, retrying in ${delayMs / 1000}s...`);
+      await new Promise(r => setTimeout(r, delayMs));
+      continue;
+    }
+    throw new Error(`HTTP ${res.status} fetching ${url}`);
+  }
 }
 
 async function fetchGasoleoCPrices() {
@@ -264,8 +272,8 @@ async function main() {
   ]);
 
   if (gocStations.length === 0) {
-    console.error('ERROR: No Gasóleo C stations found. API might be down. Skipping update.');
-    process.exit(1);
+    console.warn('WARNING: No Gasóleo C stations found. API might be down. Skipping update.');
+    process.exit(0);
   }
 
   const { byRegion, byProvince } = groupByRegionAndProvince(allStations);
@@ -317,5 +325,7 @@ async function main() {
 
 main().catch(err => {
   console.error('Fatal error:', err);
-  process.exit(1);
+  // Exit 0 on API availability errors so the workflow doesn't show as failed
+  const isApiDown = err.message && /HTTP 5\d\d/.test(err.message);
+  process.exit(isApiDown ? 0 : 1);
 });

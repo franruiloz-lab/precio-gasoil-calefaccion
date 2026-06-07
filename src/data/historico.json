@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-06",
+  "lastUpdated": "2026-06-07",
   "meses": [
     {
       "fecha": "2024-07",
@@ -491,18 +491,18 @@
       "extremadura": 1.416,
       "galicia": 1.423,
       "madrid": 1.419,
-      "murcia": 1.391,
-      "navarra": 1.374,
+      "murcia": 1.39,
+      "navarra": 1.375,
       "pais-vasco": 1.43,
-      "la-rioja": 1.391,
+      "la-rioja": 1.39,
       "andalucia": 1.423,
       "aragon": 1.396,
-      "asturias": 1.451,
+      "asturias": 1.45,
       "islas-baleares": 1.493,
-      "islas-canarias": 1.341,
-      "cantabria": 1.415,
+      "islas-canarias": 1.342,
+      "cantabria": 1.416,
       "castilla-la-mancha": 1.42,
-      "castilla-y-leon": 1.42,
+      "castilla-y-leon": 1.419,
       "cataluna": 1.375
     }
   ]

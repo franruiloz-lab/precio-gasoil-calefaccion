@@ -35,7 +35,7 @@
       "precioMedio": 1.401,
       "precioMin": 1.314,
       "precioMax": 1.464,
-      "variacionSemanal": -0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.02
     },
     "murcia": {
@@ -46,24 +46,24 @@
       "variacionMensual": -0.022
     },
     "navarra": {
-      "precioMedio": 1.366,
+      "precioMedio": 1.365,
       "precioMin": 1.272,
-      "precioMax": 1.461,
-      "variacionSemanal": 0.001,
-      "variacionMensual": -0.006
+      "precioMax": 1.456,
+      "variacionSemanal": -0.001,
+      "variacionMensual": -0.007
     },
     "pais-vasco": {
-      "precioMedio": 1.42,
+      "precioMedio": 1.419,
       "precioMin": 1.298,
       "precioMax": 1.487,
-      "variacionSemanal": 0,
-      "variacionMensual": -0.009
+      "variacionSemanal": -0.001,
+      "variacionMensual": -0.01
     },
     "la-rioja": {
       "precioMedio": 1.379,
       "precioMin": 1.27,
       "precioMax": 1.464,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.02
     },
     "andalucia": {
@@ -84,29 +84,29 @@
       "precioMedio": 1.439,
       "precioMin": 1.338,
       "precioMax": 1.496,
-      "variacionSemanal": -0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.015
     },
     "islas-baleares": {
-      "precioMedio": 1.48,
+      "precioMedio": 1.479,
       "precioMin": 1.403,
       "precioMax": 1.526,
-      "variacionSemanal": 0,
-      "variacionMensual": -0.013
+      "variacionSemanal": -0.001,
+      "variacionMensual": -0.014
     },
     "islas-canarias": {
       "precioMedio": 1.342,
       "precioMin": 1.254,
       "precioMax": 1.394,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": 0.007
     },
     "cantabria": {
-      "precioMedio": 1.407,
+      "precioMedio": 1.406,
       "precioMin": 1.28,
       "precioMax": 1.482,
-      "variacionSemanal": 0,
-      "variacionMensual": -0.012
+      "variacionSemanal": -0.001,
+      "variacionMensual": -0.013
     },
     "castilla-la-mancha": {
       "precioMedio": 1.409,

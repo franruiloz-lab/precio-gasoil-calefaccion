@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-10",
+  "lastUpdated": "2026-07-11",
   "meses": [
     {
       "fecha": "2024-08",
@@ -486,24 +486,24 @@
     },
     {
       "fecha": "2026-07",
-      "nacional": 1.391,
-      "comunidad-valenciana": 1.373,
-      "extremadura": 1.411,
-      "galicia": 1.411,
-      "madrid": 1.403,
-      "murcia": 1.371,
-      "navarra": 1.358,
-      "pais-vasco": 1.412,
-      "la-rioja": 1.372,
-      "andalucia": 1.403,
-      "aragon": 1.39,
-      "asturias": 1.446,
-      "islas-baleares": 1.493,
-      "islas-canarias": 1.285,
-      "cantabria": 1.405,
-      "castilla-la-mancha": 1.402,
-      "castilla-y-leon": 1.41,
-      "cataluna": 1.369
+      "nacional": 1.395,
+      "comunidad-valenciana": 1.377,
+      "extremadura": 1.414,
+      "galicia": 1.412,
+      "madrid": 1.409,
+      "murcia": 1.376,
+      "navarra": 1.36,
+      "pais-vasco": 1.415,
+      "la-rioja": 1.375,
+      "andalucia": 1.406,
+      "aragon": 1.394,
+      "asturias": 1.451,
+      "islas-baleares": 1.495,
+      "islas-canarias": 1.287,
+      "cantabria": 1.409,
+      "castilla-la-mancha": 1.406,
+      "castilla-y-leon": 1.413,
+      "cataluna": 1.373
     }
   ]
 }

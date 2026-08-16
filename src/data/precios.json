@@ -20,8 +20,8 @@
     "extremadura": {
       "precioMedio": 1.567,
       "precioMin": 1.458,
-      "precioMax": 1.652,
-      "variacionSemanal": 0.001,
+      "precioMax": 1.656,
+      "variacionSemanal": 0,
       "variacionMensual": 0.04
     },
     "galicia": {
@@ -46,11 +46,11 @@
       "variacionMensual": 0.044
     },
     "navarra": {
-      "precioMedio": 1.516,
+      "precioMedio": 1.515,
       "precioMin": 1.422,
       "precioMax": 1.618,
-      "variacionSemanal": 0,
-      "variacionMensual": 0.046
+      "variacionSemanal": -0.001,
+      "variacionMensual": 0.045
     },
     "pais-vasco": {
       "precioMedio": 1.568,
@@ -60,11 +60,11 @@
       "variacionMensual": 0.042
     },
     "la-rioja": {
-      "precioMedio": 1.531,
+      "precioMedio": 1.53,
       "precioMin": 1.426,
       "precioMax": 1.61,
-      "variacionSemanal": 0.001,
-      "variacionMensual": 0.043
+      "variacionSemanal": -0.001,
+      "variacionMensual": 0.042
     },
     "andalucia": {
       "precioMedio": 1.561,
@@ -118,7 +118,7 @@
     "castilla-y-leon": {
       "precioMedio": 1.567,
       "precioMin": 1.441,
-      "precioMax": 1.649,
+      "precioMax": 1.652,
       "variacionSemanal": 0,
       "variacionMensual": 0.038
     },

@@ -18,16 +18,16 @@
       "variacionMensual": 0.048
     },
     "extremadura": {
-      "precioMedio": 1.574,
+      "precioMedio": 1.573,
       "precioMin": 1.468,
-      "precioMax": 1.66,
-      "variacionSemanal": 0.001,
-      "variacionMensual": 0.047
+      "precioMax": 1.661,
+      "variacionSemanal": -0.001,
+      "variacionMensual": 0.046
     },
     "galicia": {
       "precioMedio": 1.567,
       "precioMin": 1.443,
-      "precioMax": 1.64,
+      "precioMax": 1.635,
       "variacionSemanal": 0,
       "variacionMensual": 0.045
     },
@@ -81,16 +81,16 @@
       "variacionMensual": 0.05
     },
     "asturias": {
-      "precioMedio": 1.6,
-      "precioMin": 1.494,
-      "precioMax": 1.66,
-      "variacionSemanal": 0,
-      "variacionMensual": 0.051
+      "precioMedio": 1.601,
+      "precioMin": 1.502,
+      "precioMax": 1.661,
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.052
     },
     "islas-baleares": {
       "precioMedio": 1.645,
       "precioMin": 1.56,
-      "precioMax": 1.692,
+      "precioMax": 1.69,
       "variacionSemanal": 0,
       "variacionMensual": 0.04
     },
@@ -126,7 +126,7 @@
       "precioMedio": 1.544,
       "precioMin": 1.422,
       "precioMax": 1.64,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": 0.048
     }
   }

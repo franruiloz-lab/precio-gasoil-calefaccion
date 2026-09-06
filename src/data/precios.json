@@ -21,15 +21,15 @@
       "precioMedio": 1.575,
       "precioMin": 1.462,
       "precioMax": 1.659,
-      "variacionSemanal": -0.001,
+      "variacionSemanal": 0,
       "variacionMensual": 0.011
     },
     "galicia": {
-      "precioMedio": 1.58,
+      "precioMedio": 1.581,
       "precioMin": 1.474,
-      "precioMax": 1.645,
-      "variacionSemanal": 0,
-      "variacionMensual": 0.023
+      "precioMax": 1.646,
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.024
     },
     "madrid": {
       "precioMedio": 1.574,
@@ -53,11 +53,11 @@
       "variacionMensual": 0.03
     },
     "pais-vasco": {
-      "precioMedio": 1.58,
+      "precioMedio": 1.579,
       "precioMin": 1.465,
       "precioMax": 1.655,
-      "variacionSemanal": 0.001,
-      "variacionMensual": 0.012
+      "variacionSemanal": -0.001,
+      "variacionMensual": 0.011
     },
     "la-rioja": {
       "precioMedio": 1.553,
@@ -83,35 +83,35 @@
     "asturias": {
       "precioMedio": 1.604,
       "precioMin": 1.517,
-      "precioMax": 1.669,
-      "variacionSemanal": -0.001,
+      "precioMax": 1.664,
+      "variacionSemanal": 0,
       "variacionMensual": 0.01
     },
     "islas-baleares": {
       "precioMedio": 1.644,
-      "precioMin": 1.551,
-      "precioMax": 1.686,
-      "variacionSemanal": 0.001,
+      "precioMin": 1.552,
+      "precioMax": 1.69,
+      "variacionSemanal": 0,
       "variacionMensual": 0.017
     },
     "islas-canarias": {
       "precioMedio": 1.364,
       "precioMin": 1.284,
-      "precioMax": 1.413,
+      "precioMax": 1.414,
       "variacionSemanal": 0,
       "variacionMensual": 0.062
     },
     "cantabria": {
       "precioMedio": 1.573,
       "precioMin": 1.438,
-      "precioMax": 1.664,
+      "precioMax": 1.66,
       "variacionSemanal": 0,
       "variacionMensual": 0.008
     },
     "castilla-la-mancha": {
       "precioMedio": 1.575,
       "precioMin": 1.465,
-      "precioMax": 1.66,
+      "precioMax": 1.658,
       "variacionSemanal": 0,
       "variacionMensual": 0.012
     },

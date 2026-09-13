@@ -5,7 +5,7 @@
   "nacional": {
     "precioMedio": 1.638,
     "precioMin": 1.506,
-    "precioMax": 1.756,
+    "precioMax": 1.752,
     "variacionSemanal": 0,
     "variacionMensual": 0.097
   },
@@ -18,11 +18,11 @@
       "variacionMensual": 0.09
     },
     "extremadura": {
-      "precioMedio": 1.654,
+      "precioMedio": 1.655,
       "precioMin": 1.53,
       "precioMax": 1.765,
-      "variacionSemanal": -0.001,
-      "variacionMensual": 0.09
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.091
     },
     "galicia": {
       "precioMedio": 1.67,
@@ -55,30 +55,30 @@
     "pais-vasco": {
       "precioMedio": 1.665,
       "precioMin": 1.53,
-      "precioMax": 1.765,
+      "precioMax": 1.76,
       "variacionSemanal": 0,
       "variacionMensual": 0.097
     },
     "la-rioja": {
       "precioMedio": 1.644,
       "precioMin": 1.525,
-      "precioMax": 1.734,
+      "precioMax": 1.735,
       "variacionSemanal": 0,
       "variacionMensual": 0.112
     },
     "andalucia": {
       "precioMedio": 1.65,
       "precioMin": 1.543,
-      "precioMax": 1.751,
+      "precioMax": 1.747,
       "variacionSemanal": 0,
       "variacionMensual": 0.091
     },
     "aragon": {
-      "precioMedio": 1.638,
+      "precioMedio": 1.637,
       "precioMin": 1.506,
       "precioMax": 1.729,
-      "variacionSemanal": 0,
-      "variacionMensual": 0.098
+      "variacionSemanal": -0.001,
+      "variacionMensual": 0.097
     },
     "asturias": {
       "precioMedio": 1.696,
@@ -111,7 +111,7 @@
     "castilla-la-mancha": {
       "precioMedio": 1.655,
       "precioMin": 1.523,
-      "precioMax": 1.761,
+      "precioMax": 1.756,
       "variacionSemanal": 0,
       "variacionMensual": 0.092
     },
@@ -123,11 +123,11 @@
       "variacionMensual": 0.101
     },
     "cataluna": {
-      "precioMedio": 1.62,
+      "precioMedio": 1.621,
       "precioMin": 1.481,
       "precioMax": 1.751,
-      "variacionSemanal": 0,
-      "variacionMensual": 0.088
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.089
     }
   }
 }

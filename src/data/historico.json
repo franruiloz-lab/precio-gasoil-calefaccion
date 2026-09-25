@@ -493,8 +493,8 @@
       "madrid": 1.73,
       "murcia": 1.699,
       "navarra": 1.684,
-      "pais-vasco": 1.729,
-      "la-rioja": 1.711,
+      "pais-vasco": 1.73,
+      "la-rioja": 1.71,
       "andalucia": 1.724,
       "aragon": 1.706,
       "asturias": 1.762,
@@ -503,7 +503,7 @@
       "cantabria": 1.735,
       "castilla-la-mancha": 1.725,
       "castilla-y-leon": 1.734,
-      "cataluna": 1.699
+      "cataluna": 1.698
     }
   ]
 }

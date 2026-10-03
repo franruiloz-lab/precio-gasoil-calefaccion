@@ -13,13 +13,13 @@
     "comunidad-valenciana": {
       "precioMedio": 1.72,
       "precioMin": 1.608,
-      "precioMax": 1.81,
+      "precioMax": 1.811,
       "variacionSemanal": 0,
       "variacionMensual": 0.012
     },
     "extremadura": {
       "precioMedio": 1.753,
-      "precioMin": 1.647,
+      "precioMin": 1.648,
       "precioMax": 1.838,
       "variacionSemanal": 0,
       "variacionMensual": 0.011
@@ -33,7 +33,7 @@
     },
     "madrid": {
       "precioMedio": 1.754,
-      "precioMin": 1.647,
+      "precioMin": 1.648,
       "precioMax": 1.829,
       "variacionSemanal": 0,
       "variacionMensual": 0.01
@@ -62,35 +62,35 @@
     "la-rioja": {
       "precioMedio": 1.731,
       "precioMin": 1.611,
-      "precioMax": 1.81,
+      "precioMax": 1.811,
       "variacionSemanal": 0,
       "variacionMensual": 0.005
     },
     "andalucia": {
       "precioMedio": 1.751,
-      "precioMin": 1.653,
+      "precioMin": 1.648,
       "precioMax": 1.838,
       "variacionSemanal": 0,
       "variacionMensual": 0.012
     },
     "aragon": {
-      "precioMedio": 1.725,
+      "precioMedio": 1.726,
       "precioMin": 1.593,
-      "precioMax": 1.81,
-      "variacionSemanal": 0,
-      "variacionMensual": 0.01
+      "precioMax": 1.811,
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.011
     },
     "asturias": {
       "precioMedio": 1.784,
       "precioMin": 1.666,
-      "precioMax": 1.852,
+      "precioMax": 1.856,
       "variacionSemanal": 0,
       "variacionMensual": 0.008
     },
     "islas-baleares": {
       "precioMedio": 1.826,
       "precioMin": 1.72,
-      "precioMax": 1.874,
+      "precioMax": 1.87,
       "variacionSemanal": 0,
       "variacionMensual": 0.003
     },
@@ -111,7 +111,7 @@
     "castilla-la-mancha": {
       "precioMedio": 1.751,
       "precioMin": 1.629,
-      "precioMax": 1.834,
+      "precioMax": 1.829,
       "variacionSemanal": 0,
       "variacionMensual": 0.011
     },
@@ -124,7 +124,7 @@
     },
     "cataluna": {
       "precioMedio": 1.713,
-      "precioMin": 1.571,
+      "precioMin": 1.572,
       "precioMax": 1.829,
       "variacionSemanal": 0,
       "variacionMensual": 0.009

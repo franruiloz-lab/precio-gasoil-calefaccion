@@ -12,15 +12,15 @@
   "regiones": {
     "comunidad-valenciana": {
       "precioMedio": 1.731,
-      "precioMin": 1.603,
+      "precioMin": 1.604,
       "precioMax": 1.826,
       "variacionSemanal": 0,
       "variacionMensual": 0.023
     },
     "extremadura": {
       "precioMedio": 1.775,
-      "precioMin": 1.655,
-      "precioMax": 1.878,
+      "precioMin": 1.656,
+      "precioMax": 1.873,
       "variacionSemanal": 0,
       "variacionMensual": 0.033
     },
@@ -55,16 +55,16 @@
     "pais-vasco": {
       "precioMedio": 1.786,
       "precioMin": 1.664,
-      "precioMax": 1.872,
+      "precioMax": 1.873,
       "variacionSemanal": 0,
       "variacionMensual": 0.042
     },
     "la-rioja": {
-      "precioMedio": 1.755,
-      "precioMin": 1.64,
-      "precioMax": 1.831,
-      "variacionSemanal": 0,
-      "variacionMensual": 0.029
+      "precioMedio": 1.756,
+      "precioMin": 1.641,
+      "precioMax": 1.826,
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.03
     },
     "andalucia": {
       "precioMedio": 1.763,
@@ -75,7 +75,7 @@
     },
     "aragon": {
       "precioMedio": 1.748,
-      "precioMin": 1.622,
+      "precioMin": 1.62,
       "precioMax": 1.826,
       "variacionSemanal": 0,
       "variacionMensual": 0.033
@@ -88,11 +88,11 @@
       "variacionMensual": 0.029
     },
     "islas-baleares": {
-      "precioMedio": 1.846,
+      "precioMedio": 1.847,
       "precioMin": 1.761,
-      "precioMax": 1.9,
-      "variacionSemanal": -0.001,
-      "variacionMensual": 0.023
+      "precioMax": 1.891,
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.024
     },
     "islas-canarias": {
       "precioMedio": 1.583,
@@ -110,7 +110,7 @@
     },
     "castilla-la-mancha": {
       "precioMedio": 1.762,
-      "precioMin": 1.64,
+      "precioMin": 1.641,
       "precioMax": 1.85,
       "variacionSemanal": 0,
       "variacionMensual": 0.022
@@ -124,8 +124,8 @@
     },
     "cataluna": {
       "precioMedio": 1.727,
-      "precioMin": 1.59,
-      "precioMax": 1.835,
+      "precioMin": 1.591,
+      "precioMax": 1.832,
       "variacionSemanal": 0,
       "variacionMensual": 0.023
     }

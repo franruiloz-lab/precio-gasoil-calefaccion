@@ -489,11 +489,11 @@
       "nacional": 1.761,
       "comunidad-valenciana": 1.744,
       "extremadura": 1.788,
-      "galicia": 1.79,
+      "galicia": 1.789,
       "madrid": 1.774,
       "murcia": 1.739,
       "navarra": 1.741,
-      "pais-vasco": 1.8,
+      "pais-vasco": 1.799,
       "la-rioja": 1.766,
       "andalucia": 1.774,
       "aragon": 1.761,
@@ -503,7 +503,7 @@
       "cantabria": 1.792,
       "castilla-la-mancha": 1.771,
       "castilla-y-leon": 1.786,
-      "cataluna": 1.741
+      "cataluna": 1.742
     }
   ]
 }

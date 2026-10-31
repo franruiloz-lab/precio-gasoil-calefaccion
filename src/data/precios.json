@@ -4,7 +4,7 @@
   "sourceUrl": "https://geoportalgasolineras.es",
   "nacional": {
     "precioMedio": 1.761,
-    "precioMin": 1.613,
+    "precioMin": 1.614,
     "precioMax": 1.873,
     "variacionSemanal": 0,
     "variacionMensual": 0
@@ -13,28 +13,28 @@
     "comunidad-valenciana": {
       "precioMedio": 1.742,
       "precioMin": 1.604,
-      "precioMax": 1.845,
+      "precioMax": 1.846,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
     "extremadura": {
-      "precioMedio": 1.788,
+      "precioMedio": 1.789,
       "precioMin": 1.666,
-      "precioMax": 1.897,
-      "variacionSemanal": 0,
-      "variacionMensual": 0
+      "precioMax": 1.898,
+      "variacionSemanal": 0.001,
+      "variacionMensual": 0.001
     },
     "galicia": {
       "precioMedio": 1.788,
       "precioMin": 1.66,
-      "precioMax": 1.869,
+      "precioMax": 1.87,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
     "madrid": {
       "precioMedio": 1.776,
       "precioMin": 1.632,
-      "precioMax": 1.882,
+      "precioMax": 1.879,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
@@ -48,7 +48,7 @@
     "navarra": {
       "precioMedio": 1.746,
       "precioMin": 1.651,
-      "precioMax": 1.845,
+      "precioMax": 1.846,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
@@ -76,7 +76,7 @@
     "aragon": {
       "precioMedio": 1.759,
       "precioMin": 1.632,
-      "precioMax": 1.845,
+      "precioMax": 1.842,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
@@ -111,21 +111,21 @@
     "castilla-la-mancha": {
       "precioMedio": 1.774,
       "precioMin": 1.641,
-      "precioMax": 1.869,
+      "precioMax": 1.864,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
     "castilla-y-leon": {
       "precioMedio": 1.785,
       "precioMin": 1.641,
-      "precioMax": 1.879,
+      "precioMax": 1.873,
       "variacionSemanal": 0,
       "variacionMensual": 0
     },
     "cataluna": {
       "precioMedio": 1.738,
       "precioMin": 1.604,
-      "precioMax": 1.845,
+      "precioMax": 1.846,
       "variacionSemanal": 0,
       "variacionMensual": 0
     }

@@ -4,7 +4,7 @@
   "sourceUrl": "https://geoportalgasolineras.es",
   "nacional": {
     "precioMedio": 1.743,
-    "precioMin": 1.606,
+    "precioMin": 1.607,
     "precioMax": 1.848,
     "variacionSemanal": 0,
     "variacionMensual": -0.018
@@ -33,14 +33,14 @@
     },
     "madrid": {
       "precioMedio": 1.758,
-      "precioMin": 1.621,
+      "precioMin": 1.62,
       "precioMax": 1.857,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.018
     },
     "murcia": {
       "precioMedio": 1.72,
-      "precioMin": 1.606,
+      "precioMin": 1.604,
       "precioMax": 1.811,
       "variacionSemanal": 0,
       "variacionMensual": -0.018
@@ -49,7 +49,7 @@
       "precioMedio": 1.72,
       "precioMin": 1.634,
       "precioMax": 1.82,
-      "variacionSemanal": -0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.026
     },
     "pais-vasco": {
@@ -62,14 +62,14 @@
     "la-rioja": {
       "precioMedio": 1.745,
       "precioMin": 1.634,
-      "precioMax": 1.828,
+      "precioMax": 1.829,
       "variacionSemanal": 0,
       "variacionMensual": -0.019
     },
     "andalucia": {
       "precioMedio": 1.754,
       "precioMin": 1.634,
-      "precioMax": 1.856,
+      "precioMax": 1.857,
       "variacionSemanal": 0,
       "variacionMensual": -0.019
     },
@@ -91,7 +91,7 @@
       "precioMedio": 1.84,
       "precioMin": 1.746,
       "precioMax": 1.904,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.021
     },
     "islas-canarias": {
@@ -112,7 +112,7 @@
       "precioMedio": 1.753,
       "precioMin": 1.625,
       "precioMax": 1.844,
-      "variacionSemanal": 0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.021
     },
     "castilla-y-leon": {
@@ -126,7 +126,7 @@
       "precioMedio": 1.724,
       "precioMin": 1.579,
       "precioMax": 1.835,
-      "variacionSemanal": -0.001,
+      "variacionSemanal": 0,
       "variacionMensual": -0.014
     }
   }

@@ -487,7 +487,7 @@
     {
       "fecha": "2026-11",
       "nacional": 1.741,
-      "comunidad-valenciana": 1.722,
+      "comunidad-valenciana": 1.721,
       "extremadura": 1.772,
       "galicia": 1.767,
       "madrid": 1.755,
@@ -500,9 +500,9 @@
       "asturias": 1.796,
       "islas-baleares": 1.837,
       "islas-canarias": 1.588,
-      "cantabria": 1.766,
+      "cantabria": 1.767,
       "castilla-la-mancha": 1.752,
-      "castilla-y-leon": 1.758,
+      "castilla-y-leon": 1.759,
       "cataluna": 1.721
     }
   ]

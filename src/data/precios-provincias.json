@@ -2,304 +2,304 @@
   "lastUpdated": "2026-11-18",
   "provincias": {
     "caceres": {
-      "precioMedio": 1.745,
-      "precioMin": 1.606,
-      "precioMax": 1.826,
+      "precioMedio": 1.744,
+      "precioMin": 1.607,
+      "precioMax": 1.827,
       "variacionSemanal": -0.001
     },
     "cadiz": {
-      "precioMedio": 1.701,
-      "precioMin": 1.596,
-      "precioMax": 1.788,
-      "variacionSemanal": 0
+      "precioMedio": 1.7,
+      "precioMin": 1.597,
+      "precioMax": 1.781,
+      "variacionSemanal": -0.001
     },
     "castellon": {
-      "precioMedio": 1.692,
-      "precioMin": 1.543,
-      "precioMax": 1.788,
-      "variacionSemanal": 0
+      "precioMedio": 1.69,
+      "precioMin": 1.544,
+      "precioMax": 1.785,
+      "variacionSemanal": -0.002
     },
     "ciudad-real": {
-      "precioMedio": 1.719,
-      "precioMin": 1.581,
-      "precioMax": 1.826,
-      "variacionSemanal": 0.001
+      "precioMedio": 1.715,
+      "precioMin": 1.582,
+      "precioMax": 1.817,
+      "variacionSemanal": -0.004
     },
     "cordoba": {
       "precioMedio": 1.739,
-      "precioMin": 1.628,
-      "precioMax": 1.827,
+      "precioMin": 1.629,
+      "precioMax": 1.832,
       "variacionSemanal": 0
     },
     "a-coruna": {
-      "precioMedio": 1.715,
-      "precioMin": 1.562,
-      "precioMax": 1.807,
-      "variacionSemanal": -0.001
+      "precioMedio": 1.712,
+      "precioMin": 1.561,
+      "precioMax": 1.808,
+      "variacionSemanal": -0.003
     },
     "cuenca": {
       "precioMedio": 1.707,
       "precioMin": 1.573,
       "precioMax": 1.798,
-      "variacionSemanal": 0.002
+      "variacionSemanal": 0
     },
     "girona": {
-      "precioMedio": 1.692,
-      "precioMin": 1.553,
-      "precioMax": 1.788,
-      "variacionSemanal": 0
+      "precioMedio": 1.687,
+      "precioMin": 1.554,
+      "precioMax": 1.777,
+      "variacionSemanal": -0.005
     },
     "granada": {
-      "precioMedio": 1.692,
-      "precioMin": 1.534,
-      "precioMax": 1.788,
-      "variacionSemanal": 0
+      "precioMedio": 1.69,
+      "precioMin": 1.535,
+      "precioMax": 1.789,
+      "variacionSemanal": -0.002
     },
     "guadalajara": {
-      "precioMedio": 1.725,
-      "precioMin": 1.562,
-      "precioMax": 1.813,
-      "variacionSemanal": 0
+      "precioMedio": 1.723,
+      "precioMin": 1.563,
+      "precioMax": 1.814,
+      "variacionSemanal": -0.002
     },
     "gipuzkoa": {
-      "precioMedio": 1.733,
-      "precioMin": 1.569,
-      "precioMax": 1.831,
-      "variacionSemanal": -0.001
+      "precioMedio": 1.731,
+      "precioMin": 1.57,
+      "precioMax": 1.823,
+      "variacionSemanal": -0.002
     },
     "huelva": {
-      "precioMedio": 1.753,
-      "precioMin": 1.655,
-      "precioMax": 1.835,
-      "variacionSemanal": 0.001
+      "precioMedio": 1.751,
+      "precioMin": 1.656,
+      "precioMax": 1.827,
+      "variacionSemanal": -0.002
     },
     "huesca": {
-      "precioMedio": 1.708,
-      "precioMin": 1.6,
-      "precioMax": 1.779,
-      "variacionSemanal": 0
+      "precioMedio": 1.711,
+      "precioMin": 1.601,
+      "precioMax": 1.785,
+      "variacionSemanal": 0.003
     },
     "jaen": {
-      "precioMedio": 1.744,
-      "precioMin": 1.628,
-      "precioMax": 1.826,
-      "variacionSemanal": 0.001
+      "precioMedio": 1.739,
+      "precioMin": 1.629,
+      "precioMax": 1.814,
+      "variacionSemanal": -0.005
     },
     "leon": {
-      "precioMedio": 1.725,
-      "precioMin": 1.562,
-      "precioMax": 1.807,
-      "variacionSemanal": 0
+      "precioMedio": 1.72,
+      "precioMin": 1.563,
+      "precioMax": 1.808,
+      "variacionSemanal": -0.005
     },
     "lleida": {
-      "precioMedio": 1.667,
-      "precioMin": 1.486,
-      "precioMax": 1.779,
-      "variacionSemanal": 0.001
+      "precioMedio": 1.665,
+      "precioMin": 1.487,
+      "precioMax": 1.78,
+      "variacionSemanal": -0.002
     },
     "la-rioja": {
       "precioMedio": 1.708,
-      "precioMin": 1.599,
+      "precioMin": 1.6,
       "precioMax": 1.798,
-      "variacionSemanal": 0.001
+      "variacionSemanal": 0
     },
     "lugo": {
-      "precioMedio": 1.767,
+      "precioMedio": 1.765,
       "precioMin": 1.685,
-      "precioMax": 1.816,
-      "variacionSemanal": 0
+      "precioMax": 1.817,
+      "variacionSemanal": -0.002
     },
     "madrid": {
-      "precioMedio": 1.719,
+      "precioMedio": 1.715,
       "precioMin": 1.572,
-      "precioMax": 1.831,
-      "variacionSemanal": 0
+      "precioMax": 1.827,
+      "variacionSemanal": -0.004
     },
     "malaga": {
-      "precioMedio": 1.752,
+      "precioMedio": 1.75,
       "precioMin": 1.628,
-      "precioMax": 1.835,
-      "variacionSemanal": 0
+      "precioMax": 1.832,
+      "variacionSemanal": -0.002
     },
     "murcia": {
-      "precioMedio": 1.688,
-      "precioMin": 1.581,
-      "precioMax": 1.775,
-      "variacionSemanal": 0
+      "precioMedio": 1.686,
+      "precioMin": 1.582,
+      "precioMax": 1.77,
+      "variacionSemanal": -0.002
     },
     "navarra": {
       "precioMedio": 1.674,
       "precioMin": 1.572,
-      "precioMax": 1.779,
+      "precioMax": 1.78,
       "variacionSemanal": 0
     },
     "ourense": {
-      "precioMedio": 1.74,
-      "precioMin": 1.627,
-      "precioMax": 1.803,
-      "variacionSemanal": 0
+      "precioMedio": 1.738,
+      "precioMin": 1.628,
+      "precioMax": 1.798,
+      "variacionSemanal": -0.002
     },
     "asturias": {
-      "precioMedio": 1.761,
-      "precioMin": 1.615,
-      "precioMax": 1.845,
-      "variacionSemanal": 0
+      "precioMedio": 1.759,
+      "precioMin": 1.616,
+      "precioMax": 1.836,
+      "variacionSemanal": -0.002
     },
     "palencia": {
-      "precioMedio": 1.753,
+      "precioMedio": 1.75,
       "precioMin": 1.572,
-      "precioMax": 1.835,
-      "variacionSemanal": 0
+      "precioMax": 1.827,
+      "variacionSemanal": -0.003
     },
     "las-palmas": {
       "precioMedio": 1.552,
       "precioMin": 1.44,
-      "precioMax": 1.6,
-      "variacionSemanal": 0.001
+      "precioMax": 1.601,
+      "variacionSemanal": 0
     },
     "pontevedra": {
-      "precioMedio": 1.722,
-      "precioMin": 1.562,
-      "precioMax": 1.813,
-      "variacionSemanal": 0
+      "precioMedio": 1.72,
+      "precioMin": 1.563,
+      "precioMax": 1.808,
+      "variacionSemanal": -0.002
     },
     "salamanca": {
       "precioMedio": 1.746,
       "precioMin": 1.572,
-      "precioMax": 1.826,
+      "precioMax": 1.827,
       "variacionSemanal": 0
     },
     "santa-cruz-de-tenerife": {
       "precioMedio": 1.623,
-      "precioMin": 1.543,
-      "precioMax": 1.687,
-      "variacionSemanal": 0.001
+      "precioMin": 1.544,
+      "precioMax": 1.688,
+      "variacionSemanal": 0
     },
     "cantabria": {
-      "precioMedio": 1.736,
-      "precioMin": 1.581,
-      "precioMax": 1.826,
-      "variacionSemanal": 0
+      "precioMedio": 1.734,
+      "precioMin": 1.582,
+      "precioMax": 1.827,
+      "variacionSemanal": -0.002
     },
     "segovia": {
-      "precioMedio": 1.71,
-      "precioMin": 1.59,
+      "precioMedio": 1.708,
+      "precioMin": 1.591,
       "precioMax": 1.798,
-      "variacionSemanal": 0
+      "variacionSemanal": -0.002
     },
     "sevilla": {
-      "precioMedio": 1.705,
-      "precioMin": 1.543,
-      "precioMax": 1.821,
-      "variacionSemanal": 0
+      "precioMedio": 1.706,
+      "precioMin": 1.544,
+      "precioMax": 1.827,
+      "variacionSemanal": 0.001
     },
     "soria": {
-      "precioMedio": 1.686,
-      "precioMin": 1.553,
-      "precioMax": 1.769,
-      "variacionSemanal": -0.001
+      "precioMedio": 1.684,
+      "precioMin": 1.554,
+      "precioMax": 1.77,
+      "variacionSemanal": -0.002
     },
     "tarragona": {
-      "precioMedio": 1.679,
+      "precioMedio": 1.677,
       "precioMin": 1.506,
-      "precioMax": 1.779,
-      "variacionSemanal": 0
+      "precioMax": 1.77,
+      "variacionSemanal": -0.002
     },
     "teruel": {
-      "precioMedio": 1.725,
-      "precioMin": 1.553,
-      "precioMax": 1.816,
-      "variacionSemanal": 0
+      "precioMedio": 1.721,
+      "precioMin": 1.554,
+      "precioMax": 1.814,
+      "variacionSemanal": -0.004
     },
     "toledo": {
-      "precioMedio": 1.723,
-      "precioMin": 1.581,
-      "precioMax": 1.826,
-      "variacionSemanal": -0.001
+      "precioMedio": 1.72,
+      "precioMin": 1.582,
+      "precioMax": 1.827,
+      "variacionSemanal": -0.003
     },
     "valencia": {
-      "precioMedio": 1.673,
-      "precioMin": 1.553,
-      "precioMax": 1.788,
-      "variacionSemanal": 0
+      "precioMedio": 1.672,
+      "precioMin": 1.554,
+      "precioMax": 1.787,
+      "variacionSemanal": -0.001
     },
     "valladolid": {
       "precioMedio": 1.701,
-      "precioMin": 1.567,
-      "precioMax": 1.807,
-      "variacionSemanal": -0.001
+      "precioMin": 1.568,
+      "precioMax": 1.808,
+      "variacionSemanal": 0
     },
     "bizkaia": {
-      "precioMedio": 1.723,
-      "precioMin": 1.562,
-      "precioMax": 1.835,
-      "variacionSemanal": 0
+      "precioMedio": 1.72,
+      "precioMin": 1.563,
+      "precioMax": 1.827,
+      "variacionSemanal": -0.003
     },
     "zamora": {
-      "precioMedio": 1.71,
-      "precioMin": 1.553,
-      "precioMax": 1.794,
-      "variacionSemanal": 0
+      "precioMedio": 1.703,
+      "precioMin": 1.554,
+      "precioMax": 1.789,
+      "variacionSemanal": -0.007
     },
     "zaragoza": {
-      "precioMedio": 1.704,
+      "precioMedio": 1.701,
       "precioMin": 1.573,
-      "precioMax": 1.788,
-      "variacionSemanal": 0
+      "precioMax": 1.789,
+      "variacionSemanal": -0.003
     },
     "araba-alava": {
-      "precioMedio": 1.737,
-      "precioMin": 1.6,
-      "precioMax": 1.835,
-      "variacionSemanal": 0.001
+      "precioMedio": 1.734,
+      "precioMin": 1.601,
+      "precioMax": 1.827,
+      "variacionSemanal": -0.003
     },
     "albacete": {
-      "precioMedio": 1.709,
-      "precioMin": 1.562,
-      "precioMax": 1.788,
+      "precioMedio": 1.708,
+      "precioMin": 1.563,
+      "precioMax": 1.789,
       "variacionSemanal": -0.001
     },
     "alicante": {
-      "precioMedio": 1.712,
+      "precioMedio": 1.711,
       "precioMin": 1.572,
-      "precioMax": 1.803,
-      "variacionSemanal": 0
-    },
-    "almeria": {
-      "precioMedio": 1.699,
-      "precioMin": 1.528,
-      "precioMax": 1.835,
-      "variacionSemanal": 0
-    },
-    "avila": {
-      "precioMedio": 1.744,
-      "precioMin": 1.638,
-      "precioMax": 1.816,
-      "variacionSemanal": 0
-    },
-    "badajoz": {
-      "precioMedio": 1.735,
-      "precioMin": 1.609,
-      "precioMax": 1.845,
-      "variacionSemanal": 0.001
-    },
-    "islas-baleares": {
-      "precioMedio": 1.793,
-      "precioMin": 1.694,
-      "precioMax": 1.854,
-      "variacionSemanal": 0
-    },
-    "barcelona": {
-      "precioMedio": 1.674,
-      "precioMin": 1.525,
-      "precioMax": 1.798,
+      "precioMax": 1.804,
       "variacionSemanal": -0.001
     },
+    "almeria": {
+      "precioMedio": 1.698,
+      "precioMin": 1.529,
+      "precioMax": 1.832,
+      "variacionSemanal": -0.001
+    },
+    "avila": {
+      "precioMedio": 1.743,
+      "precioMin": 1.638,
+      "precioMax": 1.817,
+      "variacionSemanal": -0.001
+    },
+    "badajoz": {
+      "precioMedio": 1.734,
+      "precioMin": 1.606,
+      "precioMax": 1.836,
+      "variacionSemanal": -0.001
+    },
+    "islas-baleares": {
+      "precioMedio": 1.794,
+      "precioMin": 1.695,
+      "precioMax": 1.855,
+      "variacionSemanal": 0.001
+    },
+    "barcelona": {
+      "precioMedio": 1.672,
+      "precioMin": 1.525,
+      "precioMax": 1.794,
+      "variacionSemanal": -0.002
+    },
     "burgos": {
-      "precioMedio": 1.713,
-      "precioMin": 1.581,
-      "precioMax": 1.816,
-      "variacionSemanal": 0
+      "precioMedio": 1.711,
+      "precioMin": 1.582,
+      "precioMax": 1.808,
+      "variacionSemanal": -0.002
     }
   }
 }

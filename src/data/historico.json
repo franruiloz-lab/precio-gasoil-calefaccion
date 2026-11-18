@@ -489,21 +489,21 @@
       "nacional": 1.706,
       "comunidad-valenciana": 1.69,
       "extremadura": 1.739,
-      "galicia": 1.73,
+      "galicia": 1.729,
       "madrid": 1.719,
       "murcia": 1.688,
       "navarra": 1.674,
       "pais-vasco": 1.73,
-      "la-rioja": 1.707,
-      "andalucia": 1.719,
+      "la-rioja": 1.708,
+      "andalucia": 1.72,
       "aragon": 1.709,
       "asturias": 1.761,
       "islas-baleares": 1.793,
-      "islas-canarias": 1.585,
+      "islas-canarias": 1.586,
       "cantabria": 1.736,
       "castilla-la-mancha": 1.717,
       "castilla-y-leon": 1.721,
-      "cataluna": 1.678
+      "cataluna": 1.677
     }
   ]
 }
